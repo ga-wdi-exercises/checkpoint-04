@@ -27,7 +27,13 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 
 Write your code here:
 ```ruby
-# code here
+class BeautyBeast
+  attr_accessor :person
+def offer_rose person
+  puts "Would you take this rose,#{{person}}, in exchange for giving an old beggar woman shleter from ibtter cold?"
+end
+
+prince = BeautyBeast.new("young prince")
 ```
 
 ### Question 2
