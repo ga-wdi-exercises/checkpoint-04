@@ -30,7 +30,7 @@ Write your code here:
 def offer_rose(person)
   puts "Would you take this rose #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
 end
-
+something.offer_rose("young prince")
 
 ```
 
@@ -101,7 +101,35 @@ Each lion should have:
 Create a new lion instance with the name `simba`
 
 ```ruby
-# code here
+require 'pry'
+class Animal
+  attr_accessor :name
+  def initialize(name)
+    @name = name
+  end
+  def greet
+    puts "Hello, I'm #{name}"
+  end
+
+end
+
+class Lion < Animal
+  attr_accessor :name
+  @@pack = []
+  def initialize(name, king)
+    @name = name
+    @king = king
+    @@pack << self
+  end
+  def self.pack
+  @@pack
+  end
+end
+
+
+pumba = Animal.new("Pumba")
+simba = Lion.new("Simba", true)
+binding.pry
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
@@ -118,7 +146,7 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+An ERD is short for Entity Relationship Diagram. Basically, its a tool that developers use to conceptualize or "draw out" the relationship between entities or models in our program. Attributes for these entities would be "Name, ID, Size(lamp), Age." A relationship exampe would be a "One to Many" relationship from a Person and a Pet. A person may have multiple pets, while the pet would have one owner.
 ```
 
 ### Question 6
@@ -129,5 +157,5 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+A schema is used to create the tables and define the structure of the Model. An example of a One to Many relationship includes an Artist Model that has many Songs. The Song Model "belongs_to: artist." With a foreign key, that links the two together, each Artist is represented by an ArtistID. That ArtistID is given to the songs written by the Artist.
 ```
