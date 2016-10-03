@@ -104,7 +104,25 @@ Each lion should have:
 Create a new lion instance with the name `simba`
 
 ```ruby
-# code here
+class Animal
+    attr_accessor :name
+    def initialize name
+        @name = name
+    end
+
+    def greet
+    end
+end
+
+pumba = Animal.new("Pumba")
+
+class Lion < Animal
+    def initilize
+        @pack
+    end
+end
+
+simba = Lion.new("simba")
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
@@ -132,5 +150,4 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
 ```
