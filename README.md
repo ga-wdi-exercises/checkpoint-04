@@ -173,5 +173,14 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+A schema is a .sql file that creates the structure of our database. It creates
+tables and defines the attributes (columns) of each table.
+
+To represent relationships in an SQL database we use foreign keys which are
+attribute identifiers (columns) in a table that correspond to columns in another
+table that has related data.
+
+In the person/wishes example, the wishes table might have an attribute of
+person_id to correspond to the id of the person who made the wish in the persons
+table.
 ```
