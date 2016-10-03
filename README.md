@@ -20,6 +20,11 @@ or the language specifier after them.
 ### Question 1
 
 Define a method called `offer_rose`, which should take one argument named `person`.
+// class Flower
+    def offer_rose
+      return "rose"
+      end
+  end
 
 When called the method should `puts` "Would you take this rose, `person`, in exchange for giving an old beggar woman shelter from the bitter cold?"
 
