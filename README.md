@@ -138,5 +138,7 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+A schema is the overall framework of a database. It is the structural side that contains columns and rows. The columns are the key identifiers while each row are instances of those keys.
+
+The one to many relationship shows that each key identifier can have multiple instances of that key. For example, lets say a column name could be "Artist", The rows underneath are different artists (aka Kanye, Lil Wayne, Tyga, etc). The one (artist) column has many rows (Kanye, Lil Wayne, Tyga, etc).
 ```

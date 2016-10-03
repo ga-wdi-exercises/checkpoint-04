@@ -1,10 +1,20 @@
 require 'pry'
 
-friends = ["Chip Potts", "Cogsworth", "Lumière", "Mrs. Potts"]
+class Animal
+  attr_accessor :name
 
-friends.each do |user|
-  puts "Belle is friends with #{user}"
+  def initialize (name)
+    @name = name
+  end
+
+  def greet
+    puts "Buenos Dias"
+  end
+
 end
+
+pumba =  Animal.new("Pumba")
+
 
 
 binding.pry
