@@ -54,7 +54,8 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-# code here
+belle = town[:residents].slice!(1)
+town[:castle][:guests].push(belle)
 ```
 
 ### Question 3
