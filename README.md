@@ -110,7 +110,23 @@ class Animal
     @name = name
   end
   def greeter name
-    "Hello my name is #{name}"
+  puts  "Hello my name is #{name}"
+  end
+end
+
+pumba = Animal.new("Pumba")
+
+class Lion < Animal
+  attr_accessor
+  @@pack = []
+  def initialize
+    @@pack << self
+  end
+  def greeter name
+    super;
+  end
+  def self.pack
+    @@pack
   end
 end
 
@@ -130,7 +146,9 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+An ERD is an entity relationship diagram.  We create ERD's to help determine the
+relationships between the data.  An ERD is used to prioritize order and scope.  For the example provided above a Genie has a one to many relationship with people but a one to one relationship with 1 person at any given
+time.  Each genie lives in or has one lamp (1:1).
 ```
 
 ### Question 6
@@ -141,5 +159,9 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+A schema is the outline for the table.  It states what will go in each column and
+whether they are null, integers or characters. A one to many relationship is represented
+by crows feet. For instance if there is one mom who has many children, she will have
+a single line from her box and the children will have the crows feet representing
+that there are many children.  
 ```
