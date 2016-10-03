@@ -27,7 +27,13 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 
 Write your code here:
 ```ruby
-# code here
+def offer_rose (person)
+  puts "Would you take this rose, #{@person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+
+def person
+  @person = person
+end
 ```
 
 ### Question 2
@@ -50,8 +56,8 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-# code here
-```
+town[:residents] .delete "Belle"
+town[:guests].push["Belle"]
 
 ### Question 3
 
@@ -97,7 +103,17 @@ Each lion should have:
 Create a new lion instance with the name `simba`
 
 ```ruby
-# code here
+class Animal
+
+  def initialize(name)
+    @name = name
+  end
+
+  def greet
+    return "hi, I am #{@name}"
+  end
+
+end
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
@@ -125,5 +141,7 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+Schema, like the word says is it like a scheme for a data base, it is a collection f objects for the data base.
+
+One to many is a relationship between to things in which one (a) has a lot of (b), but (b) has only one (a)!
 ```
