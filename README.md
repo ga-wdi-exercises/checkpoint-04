@@ -60,7 +60,8 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-# code here
+residents.delete("Belle")
+castle.merge("Belle")
 ```
 
 ### Question 3
