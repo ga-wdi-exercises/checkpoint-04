@@ -103,7 +103,38 @@ Each lion should have:
 Create a new lion instance with the name `simba`
 
 ```ruby
-# code here
+class Animal
+  attr_accessor :name
+  def initialize name
+    @name = name
+  end
+  def greet
+    puts "Hi there! I'm #{@name}"
+  end
+  def get_name
+    return @name
+  end
+  def set_name string
+    @name = string
+  end
+end
+Pumba = Animal.new "Pumba"
+Pumba.greet
+
+class Lion < Animal
+  attr_accessor :name, :king
+  @@pack = []
+  def initialize name
+    super name
+    @@pack << self
+    @king = false
+    if @name == "Simba"
+      @king = true
+    end
+  end
+end
+Simba = Lion.new "Simba"
+puts Simba.inspect
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
