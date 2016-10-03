@@ -27,7 +27,11 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 
 Write your code here:
 ```ruby
-# code here
+def offer_rose(person)
+  puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+
+offer_rose("Young Prince")
 ```
 
 ### Question 2
@@ -50,7 +54,8 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-# code here
+belle = town[:residents].slice!(1)
+town[:castle][:guests].push(belle)
 ```
 
 ### Question 3
@@ -72,7 +77,10 @@ Belle is friends with Mrs. Potts
 
 Write your code here:
 ```ruby
-# code here
+friends.each do |friend|
+  puts "Belle is friends with #{friend}"
+end
+
 ```
 ## Ruby OOP (meets Lion King)
 
@@ -97,7 +105,33 @@ Each lion should have:
 Create a new lion instance with the name `simba`
 
 ```ruby
-# code here
+class Animal
+  def initialize(name)
+    @name = name
+  end
+  def greet
+    puts "My name is #{@name}"
+  end
+  def name
+    @name
+  end
+  def name=(new_name)
+    @name = new_name
+  end
+end
+
+pumba = Animal.new('Pumba')
+
+class Lion < Animal
+  @@pack = []
+  def initialize(name)
+    super(name)
+    @king = @name == 'Simba'? true : false
+    @@pack < self
+  end
+end
+
+simba = Lion.new('Simba')
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
@@ -114,7 +148,23 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+An ERD is an entity-relationship diagram which is used to map the relationships
+between entities (datasets) in our application. We would use it to inform the
+design of our database, tables, attributes, and keys.
+
+1. A Genie would have attributes for an id, name, color, lamp_id(foreign key),
+and wishes_offered. A Genie would have one lamp but could have many people.
+
+2. A Lamp would have attributes for an id and a genie_id (foreign key). A Lamp
+would have one genie but could have many people.
+
+3. A Person would have attributes for an id, name, genie_id (foreign key),
+lamp_id (foreign key), and a pet_id (foreign key). A person would have one genie,
+one lamp, and one pet.
+
+4. A Pet would have attributes for an id, name, person_id (foreign key). A pet would
+have one person.
+
 ```
 
 ### Question 6
@@ -125,5 +175,14 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+A schema is a .sql file that creates the structure of our database. It creates
+tables and defines the attributes (columns) of each table.
+
+To represent relationships in an SQL database we use foreign keys which are
+attribute identifiers (columns) in a table that correspond to columns in another
+table that has related data.
+
+In the person/wishes example, the wishes table might have an attribute of
+person_id to correspond to the id of the person who made the wish in the persons
+table.
 ```
