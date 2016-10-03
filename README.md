@@ -127,7 +127,22 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+ERD is short for Entity Relationship Diagram and it helps visualize data relating to major topics. We use them to create applications to reinfroce the DRY (Don't Repeat Yourself) methodology and efficiently collect data.
+
+Attributes/Relationships:
+Genie
+  attr: color, powerful, name
+  rel: 1-to-1 with Lamp
+Lamp
+  attr: contains_genie, color
+  rel: 1-to-1 with Genie
+Person
+  attr: owns_lamp, name, ethnicity
+  rel: 1 to many with both lamps and pets
+Pet
+  attr: type, name, call
+  rel: many to 1 with Person
+
 ```
 
 ### Question 6
