@@ -57,10 +57,11 @@ Using Ruby, remove Belle from the town residents, and
 add her to the list of guests in the castle.
 
 Write your code here:
-```ruby
-# code here
-```
-
+residents.remove ("Belle")
+def add (guest)
+    @guests << guests
+    end
+    residents.add("Belle")
 ### Question 3
 
 Assume you have an array of strings representing friend's names:
