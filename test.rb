@@ -1,4 +1,4 @@
-require 'pry'
+
 
 town = {
   residents: ["Maurice", "Belle", "Gaston"],
@@ -9,7 +9,7 @@ town = {
   }
 }
 
-
+require 'pry'
 class Animal
   attr_accessor :name
   def initialize(name)
@@ -37,4 +37,12 @@ end
 
 pumba = Animal.new("Pumba")
 simba = Lion.new("Simba", true)
+friends = ["Chip Potts", "Cogsworth", "Lumière", "Mrs. Potts"]
+
+friends.each do |name|
+  puts "Belle is friends with #{name}"
+end
+
+
+
 binding.pry
