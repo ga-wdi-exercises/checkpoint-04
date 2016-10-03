@@ -55,6 +55,8 @@ add her to the list of guests in the castle.
 Write your code here:
 ```ruby
 # code here
+  town.delete("Belle")
+  town|guests:|("Belle")
 ```
 
 ### Question 3
