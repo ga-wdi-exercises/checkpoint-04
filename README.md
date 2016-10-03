@@ -27,7 +27,11 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 
 Write your code here:
 ```ruby
-# code here
+def offer_rose (person)
+puts ("Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?")
+end
+
+offer_rose "young prince"
 ```
 
 ### Question 2
@@ -50,7 +54,8 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-# code here
+residents.delete |Belle|
+guests << |Belle|
 ```
 
 ### Question 3
@@ -72,7 +77,9 @@ Belle is friends with Mrs. Potts
 
 Write your code here:
 ```ruby
-# code here
+friends.each do |friend|
+  puts "Belle is friends with #{friend}"
+end
 ```
 ## Ruby OOP (meets Lion King)
 
@@ -97,7 +104,28 @@ Each lion should have:
 Create a new lion instance with the name `simba`
 
 ```ruby
-# code here
+class Animal
+  attr_accessor :name
+
+  def initialize name
+    @name = name
+  end
+
+def greet
+end
+
+end
+
+animal_1 = new Animal "Pumba"
+
+class Lion < Animal
+  def pack = []
+  end
+
+
+
+end
+
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
@@ -114,7 +142,7 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+An ERD, also known as an Entity Relationship Diagram, is a tool we use to visualize and describe the data relating to the major entities that will exist in out programs.  It typically can have a one to one, one to many or many to many relationship.  A lamp can only have one genie, however, a person can have many lamps.  A person can also have many pets.  There's no direct relationship betweens pets and person.  There's a direct relationship between Genie and lamp.
 ```
 
 ### Question 6
@@ -125,5 +153,5 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+A schema describes that tables and fields in a relational database table and the relationship amongst those fields.  We could create a table of multiple people with people in the rows and wishes in the columns.  This represents and one to many relationship meaning that one person can have many wishes.
 ```
