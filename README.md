@@ -146,7 +146,23 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+An ERD is an entity-relationship diagram which is used to map the relationships
+between entities (datasets) in our application. We would use it to inform the
+design of our database, tables, attributes, and keys.
+
+1. A Genie would have attributes for an id, name, color, lamp_id(foreign key),
+and wishes_offered. A Genie would have one lamp but could have many people.
+
+2. A Lamp would have attributes for an id and a genie_id (foreign key). A Lamp
+would have one genie but could have many people.
+
+3. A Person would have attributes for an id, name, genie_id (foreign key),
+lamp_id (foreign key), and a pet_id (foreign key). A person would have one genie,
+one lamp, and one pet.
+
+4. A Pet would have attributes for an id, name, person_id (foreign key). A pet would
+have one person.
+
 ```
 
 ### Question 6
