@@ -132,7 +132,7 @@ Your answer:
 ```
 An ERD is a model that we use to show graphically how different entities are related with one another.
 We use them before building in order to help us determine how we want to go about creating
-the program and how certain items will interact with one another.  An example would be to start with "Genie" and draw a line above and put "Person" because a genie is a person
+the program and how certain items will interact with one another.  An example would be to start with "Genie" and draw a line above and put "Person" because a genie is a person.  Genie also has a lamp and quite possibly a pet to those could also be represented by drawing another line out of genie and putting those two in that box.
 ```
 
 ### Question 6
@@ -143,6 +143,6 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-people: person_name, 
+people: person_name,
 wishes:
 ```
