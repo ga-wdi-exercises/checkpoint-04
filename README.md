@@ -20,15 +20,23 @@ or the language specifier after them.
 ### Question 1
 
 Define a method called `offer_rose`, which should take one argument named `person`.
+// class Flower
+    def offer_rose
+      return "rose"
+      end
+  end
 
 When called the method should `puts` "Would you take this rose, `person`, in exchange for giving an old beggar woman shelter from the bitter cold?"
+// class Flower
+    def offer_rose
+      puts "Would you take this rose, `person`, in exchange for giving an old beggar woman shelter from the bitter cold?"
+      end
+  end
 
 Demonstrate calling the method, passing in "young prince" as the argument.
 
 Write your code here:
-```ruby
-# code here
-```
+youngPrince.offer_rose
 
 ### Question 2
 
@@ -49,10 +57,11 @@ Using Ruby, remove Belle from the town residents, and
 add her to the list of guests in the castle.
 
 Write your code here:
-```ruby
-# code here
-```
-
+residents.remove ("Belle")
+def add (guest)
+    @guests << guests
+    end
+    residents.add("Belle")
 ### Question 3
 
 Assume you have an array of strings representing friend's names:
@@ -71,9 +80,9 @@ Belle is friends with Mrs. Potts
 ```
 
 Write your code here:
-```ruby
-# code here
-```
+@friends.each do |friends|
+puts "Belle is friends with #{@friends}"
+end
 ## Ruby OOP (meets Lion King)
 
 ### Question 4
@@ -96,9 +105,37 @@ Each lion should have:
 
 Create a new lion instance with the name `simba`
 
-```ruby
-# code here
-```
+
+class Animal
+attr_accessor :name
+
+def initialize name
+@name = name
+end
+def greet
+    p "Hello, my name is #{@name}!"
+    end
+    Pumba = Animal.new("Pumba")
+end
+
+
+class Lion < Animal
+
+@pack = []
+def add_pack()
+@name << #(@pack)
+end
+
+king = @name  
+if king == Simba
+  puts "Roar"
+  end
+  if king != Simba
+  puts " You're not the king"
+  end
+
+end
+simba = Lion.new ("Simba")
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
 
