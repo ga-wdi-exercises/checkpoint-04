@@ -28,6 +28,9 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here:
 ```ruby
 # code here
+def offer_rose person
+  puts "Would you take this rose and help an old beggar, #{person}?"
+end
 ```
 
 ### Question 2
@@ -51,6 +54,8 @@ add her to the list of guests in the castle.
 Write your code here:
 ```ruby
 # code here
+town[:guests] << town[:residents].delete("Belle")
+
 ```
 
 ### Question 3
@@ -73,6 +78,9 @@ Belle is friends with Mrs. Potts
 Write your code here:
 ```ruby
 # code here
+friends.each do |friend|
+  puts "Belle is friends with #{friend}"
+end
 ```
 ## Ruby OOP (meets Lion King)
 
@@ -98,6 +106,28 @@ Create a new lion instance with the name `simba`
 
 ```ruby
 # code here
+class Animal
+  attr_accessor :name,
+  @@pack = "Lion"
+
+  def initialize name
+    @name = name
+    @king = true
+  end
+  def greet
+    Puts "Hi #{name}"
+  end
+end
+animal = new Animal "Pumba"
+
+class Lion < Animal
+  def greet
+    puts @@pack
+  end
+
+end
+
+lion = new Lion "simba"
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
@@ -114,6 +144,18 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
+An entity-relationship diagram (ERD) is a graphical representation of an information system that shows the relationship between people, objects, places, concepts or events within that system.
+Relationships
+  Genie, Lamp: one-to-one
+  Person, Genie: one-to-one
+  Person, Pet: one-to-many
+Attributes
+  Genie: name, person_id
+  Lamp: location, genie_id, person_id
+  Person: name, age, address
+  Pet: name, age, species, person_id
+
+
 Replace this with your answer
 ```
 
@@ -124,6 +166,9 @@ SQL database. If you need an example, you can use: people and wishes
 (one-to-many).
 
 Your answer:
+A database schema is a way to logically group objects such as tables, views, stored procedures etc.
+And means one parent can have many children.
+
 ```
 Replace this with your answer
 ```
