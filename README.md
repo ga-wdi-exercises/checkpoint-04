@@ -139,7 +139,7 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+ERD means Entity Relationship Diagram. The Genie would be the entity with lamp as an attribute. The Person would be the entity with the attribute pet.
 ```
 
 ### Question 6
@@ -150,4 +150,5 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
+An example of a schema is how one Artist has many songs. In an SQL database, the many songs would be assigned one id.
 ```
