@@ -54,8 +54,9 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-# code here
+town.delete_if {|key, value| key == :residents && value == "Belle" }
 ```
+note: could not get this to work
 
 ### Question 3
 
