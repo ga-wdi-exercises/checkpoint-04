@@ -27,7 +27,11 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 
 Write your code here:
 ```ruby
-# code here
+def offer_rose person
+  puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+
+offer_rose "young prince"
 ```
 
 ### Question 2
@@ -50,7 +54,7 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-# code here
+town.guests << town.residents.slice!(1)
 ```
 
 ### Question 3
@@ -72,7 +76,7 @@ Belle is friends with Mrs. Potts
 
 Write your code here:
 ```ruby
-# code here
+friends.each { |friend| puts "Belle is friends with #{friend}"}
 ```
 ## Ruby OOP (meets Lion King)
 
@@ -97,7 +101,26 @@ Each lion should have:
 Create a new lion instance with the name `simba`
 
 ```ruby
-# code here
+class Animal
+  attr_accessor :name
+  def initialize name
+    @name = name
+  end
+  def greet
+    puts "Hi, my name is #{name}."
+  end
+end
+
+class Lion < Animal
+  @@pack = []
+  def initialize name
+    @name = name
+    @king = name == "Simba" ? true : false
+    @@pack << self
+  end
+end
+
+simba = Lion.new("Simba")
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
@@ -114,7 +137,21 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+An 'entity relationship diagram' is a document used to plan how data will be stored in an application. They are used to understand and track what information is needed/used in different contexts and how information ought to be grouped. They are most commonly a visual representation of tables in boxes with columns listed as attributes and lines drawn between to indicate relationships between tables. The lines will end with symbols that indicate the nature of the relationship.
+
+class Person
+has_many: pets
+has_many: lamps
+
+class Pet
+belongs_to: person
+
+class Lamp
+belongs_to: person
+has_one: genie
+
+class Genie
+has_one: lamp
 ```
 
 ### Question 6
@@ -125,5 +162,5 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+A schema is a collection of tables in a database. Typically relationships between tables are represented by a foreign key. In a one to many relationship the foreign key would be a column in the 'many' table. In the wishes example there would be a column in the wishes table (probably called person_id) that points to the id column in the person table. This structuring allows for their to be a many to one relationship. That said, this alone does not mean that there is definitely a one to many relationship. You should probably rely on an ERD for that.
 ```
