@@ -27,13 +27,16 @@ Define a method called `offer_rose`, which should take one argument named `perso
   end
 
 When called the method should `puts` "Would you take this rose, `person`, in exchange for giving an old beggar woman shelter from the bitter cold?"
+// class Flower
+    def offer_rose
+      puts "Would you take this rose, `person`, in exchange for giving an old beggar woman shelter from the bitter cold?"
+      end
+  end
 
 Demonstrate calling the method, passing in "young prince" as the argument.
 
 Write your code here:
-```ruby
-# code here
-```
+youngPrince.offer_rose
 
 ### Question 2
 
