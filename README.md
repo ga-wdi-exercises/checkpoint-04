@@ -123,9 +123,11 @@ end
 pumba = Animal.new('Pumba')
 
 class Lion < Animal
+  @@pack = []
   def initialize(name)
     super(name)
     @king = @name == 'Simba'? true : false
+    @@pack < self
   end
 end
 
