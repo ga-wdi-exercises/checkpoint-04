@@ -151,7 +151,9 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+An ERD is an Entity Relationship Diagram, which is a fancy term for a visualization of the relationships between different entities in our data, e.g. classes.  Though it is useful in other circumstances than code, in this class, it will be used most to clarify how and when to institute a new class or a new instance.
+
+A genie, who might have attributes such as name, age, and array of wishes granted, will have a one to one relationship with its lamp.  The genie will have a many to many relationship with a person, who will probably have a wishes left attribute.  Pets will also be a many to many relationships, and might have an attribute type, which could be carpet or monkey.
 ```
 
 ### Question 6
