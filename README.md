@@ -81,7 +81,7 @@ Belle is friends with Mrs. Potts
 
 Write your code here:
 @friends.each do |friends|
-puts "Belle is friends with #{friends}"
+puts "Belle is friends with #{@friends}"
 end
 ## Ruby OOP (meets Lion King)
 
@@ -105,9 +105,37 @@ Each lion should have:
 
 Create a new lion instance with the name `simba`
 
-```ruby
-# code here
-```
+
+class Animal
+attr_accessor :name
+
+def initialize name
+@name = name
+end
+def greet
+    p "Hello, my name is #{@name}!"
+    end
+    Pumba = Animal.new("Pumba")
+end
+
+
+class Lion < Animal
+
+@pack = []
+def add_pack()
+@name << #(@pack)
+end
+
+king = @name  
+if king == Simba
+  puts "Roar"
+  end
+  if king != Simba
+  puts " You're not the king"
+  end
+
+end
+simba = Lion.new ("Simba")
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
 
