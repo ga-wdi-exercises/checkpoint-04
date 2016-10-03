@@ -108,6 +108,16 @@ Create a new lion instance with the name `simba`
 
 ```ruby
 # code here
+  class Animal
+    attr_accessor :name
+    def intialize(name,greet)
+      @name = name
+      def greet
+        puts @name
+      end
+    end
+    hog = Animal.new(pumba)
+
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
