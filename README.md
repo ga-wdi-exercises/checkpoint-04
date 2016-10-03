@@ -109,7 +109,7 @@ class Animal
   def initialize name
     @name = name
   end
-  def greeter name
+  def greeter
   puts  "Hello my name is #{name}"
   end
 end
@@ -122,14 +122,19 @@ class Lion < Animal
   def initialize
     @@pack << self
   end
-  def greeter name
+  def greeter
     super;
   end
   def self.pack
     @@pack
   end
+  def is_king
+    if @name == "Simba"
+      return true
+  end
 end
-
+simba = Lion.new("Simba")
+Lion.pack
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
