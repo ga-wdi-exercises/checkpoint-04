@@ -83,7 +83,7 @@ Belle is friends with Mrs. Potts
 
 Write your code here:
 ```ruby
-# code here
+# Not sure what to do here!
 ```
 ## Ruby OOP (meets Lion King)
 
@@ -108,7 +108,30 @@ Each lion should have:
 Create a new lion instance with the name `simba`
 
 ```ruby
-# code here
+class Animal
+  attr_accessor :name, :greet
+  def initialize name, greet
+    @name = name
+    @greet = greet
+  end
+end
+
+animal = animal.new("Pumba", "roar")
+
+class Lion < Animal
+  attr_accessor :pack :king
+
+  def pack
+    @pack = pack
+  end
+  def king
+    @king = king
+  end
+  if @name = "Simba"
+    @king = true
+  end
+end
+
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
@@ -125,7 +148,7 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+An ERD is an Entity Relationship Diagram which we use to help organize how we want to display content for an app. It also makes it easier to put data from the ERD into a table. A person would be an entity and have pet as an attribute. A Genie is an Entity with a Lamp as an attribute. The Person and Genie entities would have a relationship.
 ```
 
 ### Question 6
@@ -136,5 +159,5 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+A schema is a group of tables. You can show one to many relationships by thinking of an object that may have several different traits. A teacher can have many students. A student can have many different subjects.
 ```
