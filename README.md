@@ -147,7 +147,9 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+An ERD is an "Entity Relationship Diagram". ERDs are meant to describe how the various elements in an application are associated with each other. Creating an ERD will make it much easier to work with a large program, because you will have a good idea of the various classes, etc. you will have to write before you start coding.
+
+One lamp (color, size) has one genie (color, size, temperament, wishes_granted), and only one person at a time. One person (name, protagonist(true/false), catchphrases) can have many lamps. Many pets can have many people.
 ```
 
 ### Question 6
@@ -158,5 +160,10 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+A schema is the high-level collection of tables and columns that make up a database. It includes information on the relationships between entities (one-to-many, many-to-many, etc.).
+
+
+I imagine there are a few ways you could add wishes to a database: one table called `wishes` for everyone which would have a column connecting each wish to a person using a foreign id. Alternatively, each person could get their own wishes table. Right now, I'm not too sure on the advantages of one vs another (and with Active Record, it seems like you can kinda have boooth?)
+
+
 ```
