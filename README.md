@@ -81,7 +81,11 @@ Belle is friends with Mrs. Potts
 
 Write your code here:
 ```ruby
-# code here
+friends = ["Chip Potts", "Cogsworth", "Lumière", "Mrs. Potts"]
+
+friends.each do |user|
+  puts "Belle is friends with #{user}"
+end
 ```
 ## Ruby OOP (meets Lion King)
 

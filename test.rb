@@ -1,13 +1,10 @@
 require 'pry'
 
-town = {
-  residents: ["Maurice", "Belle", "Gaston"],
-  castle: {
-    num_rooms: 47,
-    residents: "Robby Benson",
-    guests: []
-  }
-}
+friends = ["Chip Potts", "Cogsworth", "Lumière", "Mrs. Potts"]
+
+friends.each do |user|
+  puts "Belle is friends with #{user}"
+end
 
 
 binding.pry
