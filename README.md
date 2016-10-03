@@ -53,7 +53,8 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-# code here
+town[:residents].delete("Belle")
+town[:castle, :guests] << "Belle"
 ```
 
 ### Question 3
@@ -75,7 +76,9 @@ Belle is friends with Mrs. Potts
 
 Write your code here:
 ```ruby
-# code here
+[:friends].each do
+  |friend| puts "Belle is friends with #{name}"
+end
 ```
 ## Ruby OOP (meets Lion King)
 
@@ -100,7 +103,17 @@ Each lion should have:
 Create a new lion instance with the name `simba`
 
 ```ruby
-# code here
+class Animal
+  attr_accessor :name
+
+  def initialize name
+    @name = name
+  end
+  def greeter name
+    "Hello my name is #{name}"
+  end
+end
+
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
