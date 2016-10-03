@@ -56,7 +56,9 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-# code here
+town[:residents].delete("Belle")
+town[:guests] << "Belle"
+
 ```
 
 ### Question 3
@@ -162,5 +164,5 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-A schema defines each column of a table. 
+A schema defines each column of a table.
 ```
