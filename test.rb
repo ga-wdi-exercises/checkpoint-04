@@ -8,6 +8,12 @@ town = {
     guests: []
   }
 }
+town[:residents].each_with_index do |name, index|
+
+  town[:residents].delete_at(1)
+puts town[:residents]
+
+end
 
 require 'pry'
 class Animal

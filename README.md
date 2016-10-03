@@ -54,7 +54,12 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-# code here
+town[:residents].each_with_index do |name, index|
+
+  town[:residents].delete_at(1)
+puts town[:residents]
+
+end
 ```
 
 ### Question 3
