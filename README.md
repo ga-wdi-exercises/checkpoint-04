@@ -27,7 +27,11 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 
 Write your code here:
 ```ruby
-# code here
+def offer_rose (person)
+  puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+
+offer_rose ("young prince")
 ```
 
 ### Question 2
@@ -50,7 +54,14 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-# code here
+
+
+def move (person)
+  town[:castle][:guests] << town[:residents].delete(person)
+end
+
+move ('Belle')
+
 ```
 
 ### Question 3
@@ -72,8 +83,12 @@ Belle is friends with Mrs. Potts
 
 Write your code here:
 ```ruby
-# code here
+
+friends.each do |character|
+ puts "Belle is friends with #{character}"
+end
 ```
+
 ## Ruby OOP (meets Lion King)
 
 ### Question 4
@@ -97,7 +112,40 @@ Each lion should have:
 Create a new lion instance with the name `simba`
 
 ```ruby
-# code here
+
+class Animal
+  attr_accessor :name
+
+  def initialize (name)
+    @name = name
+  end
+
+  def greet
+    puts "Hello, my name is #{@name}"
+  end
+
+end
+
+class Lion < Animal
+  @@pack = []
+
+  def king
+    if @name == "Simba"
+      @king = true
+    end
+  end
+
+  def self.pack
+    @@pack
+  end
+
+end
+
+
+pumba = Animal.new("Pumba")
+simba = Lion.new("Simba")
+
+
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
