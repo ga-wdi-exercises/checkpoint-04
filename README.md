@@ -27,7 +27,17 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 
 Write your code here:
 ```ruby
-# code here
+def initialize person
+  @person = person
+end
+
+def offer_rose(person)
+  puts "Would you take this rose, #{@person}"
+end
+
+youngPrince = person.new("young prince")
+
+offer_rose("young prince")
 ```
 
 ### Question 2
