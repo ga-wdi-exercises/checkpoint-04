@@ -172,7 +172,10 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+An ERD is an Entity Relationship Diagram which refers to the visual representation of the relationships of data sets.  Data sets can have a one-to-one relationship where they are only attributes of each other, one-to-many where a location has many cohorts and can be an attribute to many, and many-to-many when many attributes can be connected to a number of others.
+
+In the example above, the genie has a one-to-many relationship with the Lamp and the Person and visa versa, but the Pet has a one-to-one relationship with the Person.
+
 ```
 
 ### Question 6
