@@ -27,7 +27,12 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 
 Write your code here:
 ```ruby
-# code here
+def offer_rose person
+  puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end # offer_rose
+
+offer_rose "Prince Adam"
+
 ```
 
 ### Question 2
@@ -49,8 +54,9 @@ Using Ruby, remove Belle from the town residents, and
 add her to the list of guests in the castle.
 
 Write your code here:
-```ruby
-# code here
+```
+town = town[:residents] -["Belle"]
+puts town[:castle][:guests].push("Belle")
 ```
 
 ### Question 3
@@ -72,7 +78,9 @@ Belle is friends with Mrs. Potts
 
 Write your code here:
 ```ruby
-# code here
+friends.each do |each|
+       puts "Belle is friends with #{each}"
+     end  
 ```
 ## Ruby OOP (meets Lion King)
 
@@ -97,7 +105,29 @@ Each lion should have:
 Create a new lion instance with the name `simba`
 
 ```ruby
-# code here
+class Animal
+  # Place your code here
+  attr_accessor :name
+
+  def initialize name
+    @name=name
+  end # initialize
+  def greet
+  	puts (" Hello my name is #{@name}")
+  end #greet
+end  # Animal
+
+pumba= Animal.new "Pumba"
+pumba.greet
+
+class Lion < Animal
+	attr_accessor :king
+
+ @@all = []
+  def initialize
+    @@all << self
+  end # initialize
+end # Lion
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
@@ -114,7 +144,18 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+and ERD is an Entity Releationship Diagram,  It describes the the relationships
+between the various tables, and data witin the tables
+
+A Genie would have attributes of a Lamp .  He would be Owned by a Person
+A person would own a Pet
+
+Genie and Person would be tables,
+Lamp would be an attribute to Genie
+Pet would be an attribute to Person
+A Lamp would have a one to one releationsip between Genie and LampA Pet would
+have a one to many relations between Person and Pet
+
 ```
 
 ### Question 6
@@ -125,5 +166,10 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+A schema is the definition of a table.
+We represent one to many releations by having many items in one table each with an ID attribute to its Foreign key.
+
+People and Wishes are tables
+in the Wishes Table there are many wishes and its associated Person Id
+
 ```
