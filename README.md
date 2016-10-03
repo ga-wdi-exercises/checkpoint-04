@@ -27,7 +27,11 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 
 Write your code here:
 ```ruby
-# code here
+def offer_rose person
+    puts "Would you take this rose, #{person}, in exchange for a giving an old beggar woman shelter from the bitter cold?"
+end
+
+offer_rose("young prince")
 ```
 
 ### Question 2
@@ -50,8 +54,9 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-# code here
+town.delete_if {|key, value| key == :residents && value == "Belle" }
 ```
+note: could not get this to work
 
 ### Question 3
 
@@ -72,7 +77,9 @@ Belle is friends with Mrs. Potts
 
 Write your code here:
 ```ruby
-# code here
+friends.each do |friend|
+    puts "Belle is friends with #{friend}"
+end
 ```
 ## Ruby OOP (meets Lion King)
 
@@ -97,7 +104,25 @@ Each lion should have:
 Create a new lion instance with the name `simba`
 
 ```ruby
-# code here
+class Animal
+    attr_accessor :name
+    def initialize name
+        @name = name
+    end
+
+    def greet
+    end
+end
+
+pumba = Animal.new("Pumba")
+
+class Lion < Animal
+    def initilize
+        @pack
+    end
+end
+
+simba = Lion.new("simba")
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
@@ -114,7 +139,7 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+ERD means Entity Relationship Diagram. The Genie would be the entity with lamp as an attribute. The Person would be the entity with the attribute pet.
 ```
 
 ### Question 6
@@ -125,5 +150,5 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+An example of a schema is how one Artist has many songs. In an SQL database, the many songs would be assigned one id.
 ```
