@@ -143,7 +143,15 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+ERD is Entity Relationship Diagram and we use them to visualize the relationships between the entities in our programs. The types of relationships include one to one, one to many, and many to many.
+
+1. A Genie will have attributes of name, location
+2. Lamp will have attributes of name, owner, status
+3. A Person will have attributes of name
+4. Pet will have attributes of owner, name
+
+Genie has one to one relationship with Lamp and Person.
+Pet has one to one relationship with Person
 ```
 
 ### Question 6
