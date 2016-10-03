@@ -55,7 +55,21 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-# code here
+town = {
+  residents: ["Maurice", "Belle", "Gaston"],
+  castle: {
+    num_rooms: 47,
+    residents: "Robby Benson",
+    guests: []
+  }
+}
+
+puts town[:residents].each do |resident|
+	if resident = "Belle"
+		town[:guests] << "Belle"
+	end
+end
+
 ```
 
 ### Question 3
@@ -77,7 +91,12 @@ Belle is friends with Mrs. Potts
 
 Write your code here:
 ```ruby
-# code here
+friends = ["Chip Potts", "Cogsworth", "Lumière", "Mrs. Potts"]
+
+friends.each do |friend|
+	puts "Belle is friends with #{friend}"
+end
+
 ```
 ## Ruby OOP (meets Lion King)
 
@@ -102,7 +121,30 @@ Each lion should have:
 Create a new lion instance with the name `simba`
 
 ```ruby
-# code here
+class Animal
+	attr_accessor :name, :greet
+
+	def initialize(name)
+		@name = name
+	end
+
+	def greet
+		puts "Hello, my name is #{@name}"
+	end
+end
+
+Animal.new("Pumba")
+
+
+class Lion < ANIMAL
+	@@pack = []
+	def initialize(name)
+		@name = name
+		@@pack << self
+	end
+end
+
+Lion.new("simba")
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
@@ -119,7 +161,17 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+ERD is Entity Relationship Diagram and it is a visual plan of how you want to create a database and table structures.
+
+Genie: name-string, color-string, age-fixnum, free - boolean, number_of_wishes-fixnum, master-string
+  One-One relationship
+Lamp: color-string, genie_inside-boolean, cramped_in_there - boolean
+
+
+Person: f_name-string, l_name-string, age-fixnum, dob-date, height-string, weight_lbs:fixnum, hair-boolean, hair_color-string...
+One-One relationship, one-to-many relationship, many-many relationship
+Pet: type_of_animal-string, breed-string, weight-fixnum, weight_unit-string...
+
 ```
 
 ### Question 6
@@ -130,5 +182,7 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+A schema is what defines a table's columns and the names, data-type, and constraints.
+
+A one to many relationship is when one of something can have many  of another thing. In the case of people and wishes, Aladdin has 3 instances wishes, but those wishes are only for Aladdin. If Rajah somehow got a hold of the lamp and had control of the Genie and the Genie spoke tiger, Rajah would have a whole new set of 3 wishes separate from Aladdin. 
 ```
