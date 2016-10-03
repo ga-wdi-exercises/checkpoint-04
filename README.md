@@ -27,7 +27,13 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 
 Write your code here:
 ```ruby
-# code here
+def offer_rose (person)
+  puts "Would you take this rose, #{@person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+
+def person
+  @person = person
+end
 ```
 
 ### Question 2
@@ -50,8 +56,8 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-# code here
-```
+town[:residents] .delete "Belle"
+town[:guests].push["Belle"]
 
 ### Question 3
 
