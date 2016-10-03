@@ -164,5 +164,5 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+The schema is what controls the columns on the table, and organizes our data, along with their types and any constraints.  With the wishes example, each wish would have a foreign key linking it to its person, and their would be a constraint on the number of wishes for each person.
 ```
