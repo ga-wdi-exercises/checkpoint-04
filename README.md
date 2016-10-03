@@ -137,7 +137,21 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+An 'entity relationship diagram' is a document used to plan how data will be stored in an application. They are used to understand and track what information is needed/used in different contexts and how information ought to be grouped.
+
+class Person
+has_many: pets
+has_many: lamps
+
+class Pet
+belongs_to: person
+
+class Lamp
+belongs_to: person
+has_one: genie
+
+class Genie
+has_one: lamp
 ```
 
 ### Question 6
