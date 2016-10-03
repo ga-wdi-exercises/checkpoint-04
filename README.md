@@ -56,7 +56,12 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-# code here
+attr_accessor :residents, :guests
+belle = town[:residents][1]
+guests = town[:guests]
+town.pop("Belle")
+belle << :guests
+
 ```
 
 ### Question 3
@@ -78,7 +83,25 @@ Belle is friends with Mrs. Potts
 
 Write your code here:
 ```ruby
-# code here
+class Friends
+  attr_accessor :friends
+
+  def initialize = friends
+    @friends =friends
+    friends = ["Chip Potts", "Cogsworth", "Lumière", "Mrs. Potts"]
+  end
+
+  def greeting friends
+    @friends.each do |friend|
+    puts "Belle is friends with #{@friends}"
+  end
+
+end
+
+chip = Friends.new "Chip Potts"
+cogs = Friends.new "Cogsworth"
+lumi = Friends.new "Lumière"
+mrs = Friends.new "Mrs. Potts"
 ```
 ## Ruby OOP (meets Lion King)
 
