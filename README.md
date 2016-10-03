@@ -27,7 +27,10 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 
 Write your code here:
 ```ruby
-# code here
+def offer_rose (person)
+  puts "Would you take this rose, `person`, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+offer_rose("young prince")
 ```
 
 ### Question 2
@@ -50,7 +53,8 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-# code here
+town[:residents].delete("Belle")
+town[:castle, :guests] << "Belle"
 ```
 
 ### Question 3
@@ -72,7 +76,9 @@ Belle is friends with Mrs. Potts
 
 Write your code here:
 ```ruby
-# code here
+[:friends].each do
+  |friend| puts "Belle is friends with #{name}"
+end
 ```
 ## Ruby OOP (meets Lion King)
 
@@ -97,7 +103,38 @@ Each lion should have:
 Create a new lion instance with the name `simba`
 
 ```ruby
-# code here
+class Animal
+  attr_accessor :name
+
+  def initialize name
+    @name = name
+  end
+  def greeter
+  puts  "Hello my name is #{name}"
+  end
+end
+
+pumba = Animal.new("Pumba")
+
+class Lion < Animal
+  attr_accessor
+  @@pack = []
+  def initialize
+    @@pack << self
+  end
+  def greeter
+    super;
+  end
+  def self.pack
+    @@pack
+  end
+  def is_king
+    if @name == "Simba"
+      return true
+  end
+end
+simba = Lion.new("Simba")
+Lion.pack
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
@@ -114,7 +151,9 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+An ERD is an entity relationship diagram.  We create ERD's to help determine the
+relationships between the data.  An ERD is used to prioritize order and scope.  For the example provided above a Genie has a one to many relationship with people but a one to one relationship with 1 person at any given
+time.  Each genie lives in or has one lamp (1:1).
 ```
 
 ### Question 6
@@ -125,5 +164,9 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+A schema is the outline for the table.  It states what will go in each column and
+whether they are null, integers or characters. A one to many relationship is represented
+by crows feet. For instance if there is one mom who has many children, she will have
+a single line from her box and the children will have the crows feet representing
+that there are many children.  
 ```
