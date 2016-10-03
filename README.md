@@ -27,7 +27,11 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 
 Write your code here:
 ```ruby
-# code here
+def offer_rose(person)
+  puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+
+offer_rose("young prince")
 ```
 
 ### Question 2
@@ -50,7 +54,7 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-# code here
+town[:castle][:guests] << town[:residents].delete_at(1);
 ```
 
 ### Question 3
@@ -72,7 +76,9 @@ Belle is friends with Mrs. Potts
 
 Write your code here:
 ```ruby
-# code here
+friends.each do |friend|
+  puts "Belle is friends with #{friend}"
+end
 ```
 ## Ruby OOP (meets Lion King)
 
@@ -97,7 +103,34 @@ Each lion should have:
 Create a new lion instance with the name `simba`
 
 ```ruby
-# code here
+
+# not sure why this isn't working when I test. I get argument errors, expected 0, got 1 any time I try to make a new animal or Lion...
+class Animal
+  attr_accessor :name,
+  def initialize(name)
+    @name = name
+  end
+
+  def greet
+    puts "Hi there! I'm #{@name}"
+  end
+end
+
+class Lion < Animal
+  @@pack = []
+  attr_accessor :name, :king
+  def initialize(name)
+    super(name)
+    if @name == "Simba"
+      @king = true
+    end
+    @@pack << self
+  end
+end
+
+pumba = Animal.new("Pumba");
+
+
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
