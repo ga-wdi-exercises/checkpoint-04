@@ -27,7 +27,9 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 
 Write your code here:
 ```ruby
-# code here
+def offer_rose(person)
+puts "Would you take this rose, `person`, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
 ```
 
 ### Question 2
@@ -50,7 +52,17 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-# code here
+town = {
+  residents: ["Maurice", "Belle", "Gaston"],
+  castle: {
+    num_rooms: 47,
+    residents: "Robby Benson",
+    guests: []
+  }
+}
+def remove(name)
+
+end
 ```
 
 ### Question 3
@@ -72,7 +84,10 @@ Belle is friends with Mrs. Potts
 
 Write your code here:
 ```ruby
-# code here
+friends = ["Chip Potts", "Cogsworth", "Lumière", "Mrs. Potts"]
+friends.each do |friend|
+    puts "Belle is friends with [:friends]"
+  end
 ```
 ## Ruby OOP (meets Lion King)
 
@@ -97,7 +112,18 @@ Each lion should have:
 Create a new lion instance with the name `simba`
 
 ```ruby
-# code here
+
+class Animal(name,greet)
+  @name = name
+  @greet = greet
+end
+Animal.new("Pumba")
+class Lion(pack)
+  @pack = pack
+  @king = true
+end
+
+simba =Lion.new("simba")
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
@@ -114,7 +140,18 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+An entity-relationship diagram (ERD) is a data modeling technique
+
+The elements of an ERD are:
+Entities
+Relationships
+Attributes
+
+* Genie = name, number of wishes (related to lamp and person)
+* Lamp = type, size, (related to person and genie)
+* Person = name , location (related to pet, lamp and genie)
+* Pet = name , breed, owner_name (related to person)
+
 ```
 
 ### Question 6
@@ -125,5 +162,7 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+A schema is the organization or structure for a database.
+
+one to many relationship can be for both person and wishes, as person can have many wishes and whishes can be for many people (person).
 ```
