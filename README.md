@@ -162,5 +162,5 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+A schema defines each column of a table. 
 ```
