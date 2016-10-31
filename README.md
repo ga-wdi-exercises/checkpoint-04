@@ -27,7 +27,9 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 
 Write your code here:
 ```ruby
-# code here
+def offer_rose(person)
+  puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
 ```
 
 ### Question 2
@@ -50,7 +52,8 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-# code here
+town[residents].delete(2)
+town[castle][:guests] = "Belle"
 ```
 
 ### Question 3
@@ -72,7 +75,9 @@ Belle is friends with Mrs. Potts
 
 Write your code here:
 ```ruby
-# code here
+friends.each do |friend|
+puts "Belle is friends with #{friend}"
+end
 ```
 ## Ruby OOP (meets Lion King)
 
@@ -97,7 +102,37 @@ Each lion should have:
 Create a new lion instance with the name `simba`
 
 ```ruby
-# code here
+
+
+class Animal
+  attr_accessor :name
+
+  def initialize
+    @name = name
+  end
+
+  def greet
+    puts "Hi, my name is #{@name}!"
+  end
+end
+
+pumba = Animal.new("Pumba")
+
+class Lion < Animal
+  @@pack = []
+  @@king = false
+
+  def initialize
+    @@pack.push(self)
+  end
+
+  def king (@@king)
+    if @name = "Simba"
+      @@king = true
+    end
+end
+
+simba = Lion.new("Simba")
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
@@ -114,7 +149,12 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+ERD stands for Entity Relationship Diagram and its a tool used to map out how ideas, concepts, and objects will exist within a program. It's essentially a roadmap for how to piece together a program and the properties within those pieces.
+
+Example: A Person may have a pet and a lamp. Separate of that, a genie may be contained within that lamp.
+
+Person > Lamp > Genie
+Person> Pet
 ```
 
 ### Question 6
@@ -125,7 +165,12 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+A schema is the template for which to layout a databases rows and columns.
+
+A person can have many wishes.
+A Wish could have many people.
+
+This in my opinion is more along the lines of a many-to-many relationship model.
 ```
 
 ### Question 7
@@ -148,14 +193,14 @@ Write ruby code that will create a person.
 
 Your answer:
 ```
-Replace this with your answer
+angel = Person.create(name: "Angel", age: 33)
 ```
 
 Write ruby code that will query for any person that is 15 years of age
 
 Your answer:
 ```
-Replace this with your answer
+Person.where(age: 15)
 ```
 
 ### Sinatra
@@ -164,5 +209,7 @@ Write a route in sinatra that will print "hello world" in the web browser at the
 
 Your answer:
 ```
-Replace this with your answer
+get '/oh_hello' do
+  return "hello world"
+end
 ```
