@@ -27,7 +27,16 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 
 Write your code here:
 ```ruby
-# code here
+def initialize (person)
+  @person = person
+end
+
+def offer_rose
+puts "would you take this rose, #{person}, in exchange for giving an old begger woman shelter from the bitter cold?"
+end
+
+Person.new('young prince')
+
 ```
 
 ### Question 2
@@ -50,7 +59,9 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-# code here
+
+town.castle.guests << town.residents.delete("Belle")
+
 ```
 
 ### Question 3
@@ -72,7 +83,11 @@ Belle is friends with Mrs. Potts
 
 Write your code here:
 ```ruby
-# code here
+
+friends.each do |index|
+puts "Belle is friends with #{friends}"
+end
+
 ```
 ## Ruby OOP (meets Lion King)
 
@@ -97,7 +112,26 @@ Each lion should have:
 Create a new lion instance with the name `simba`
 
 ```ruby
-# code here
+
+class Animal
+def initialize (name, greet)
+  @name = name
+  @greet = greet
+  @king = king
+end
+
+class Lion < Animal
+  if @name = 'Simba'
+    puts @king
+  end
+  else
+    != 'king'
+  end
+end
+
+Animal.new('Pumba')
+Lion.new('Simba')
+
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
@@ -114,7 +148,11 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+An ERD is like a diagram. It helps us organize and map out what relationships there are within our code and helps us to visualize these relationships.
+
+Genie -> Lamp (1:1)
+Person -> Lamp (i guess 1:1...could be many to many)
+Person -> pet (1:many)
 ```
 
 ### Question 6
@@ -125,7 +163,7 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+A schema is a database. we represent relationships in sql with keys and values.
 ```
 
 ### Question 7
@@ -148,14 +186,18 @@ Write ruby code that will create a person.
 
 Your answer:
 ```
-Replace this with your answer
+Person.create({
+  {id: 1, name: Diana, age: 25}
+  })
+
 ```
 
 Write ruby code that will query for any person that is 15 years of age
 
 Your answer:
 ```
-Replace this with your answer
+
+
 ```
 
 ### Sinatra
