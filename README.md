@@ -27,7 +27,10 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 
 Write your code here:
 ```ruby
-# code here
+def offer_rose(person)
+    puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter form the better cold?"
+end
+offer_rose(young_prince)
 ```
 
 ### Question 2
@@ -50,7 +53,7 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-# code here
+town[:castle][:guests].push(town[:residents][1])
 ```
 
 ### Question 3
@@ -72,7 +75,9 @@ Belle is friends with Mrs. Potts
 
 Write your code here:
 ```ruby
-# code here
+friends.each do |friend|
+  puts "Belle is friends with #{friend}"
+end
 ```
 ## Ruby OOP (meets Lion King)
 
@@ -97,7 +102,42 @@ Each lion should have:
 Create a new lion instance with the name `simba`
 
 ```ruby
-# code here
+class Animal
+  attr_accessor :name
+
+  def initialize name
+    @name = name
+  end
+
+  def greet
+    puts "Hello my name is #{@name}"
+  end
+
+end
+
+pumba = Animal.new('Pumba')
+
+class Lion < Animal
+  attr_accessor :name
+  @@pack = []
+
+  def initialize name
+    @name = name
+    @@pack.push(self)
+    king(@name)
+  end
+
+  def king
+    if @name == 'Simba'
+      return true
+    else
+      return false
+    end
+  end
+
+end
+
+simba = Lion.new('simba')
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
@@ -114,7 +154,11 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+ERD takes all your Active Record models and processes all their associations with each other. We create them to help organize our website.
+
+Genie has_one Lamp
+Person has_many Pets
+
 ```
 
 ### Question 6
@@ -125,7 +169,11 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+A schema creates a template for your table that you would push your seeds through.
+Not quite sure what exactly you're asking about representing relationships but:
+class people has_many :wishes
+wishes belongs_to :people
+
 ```
 
 ### Question 7
@@ -148,14 +196,14 @@ Write ruby code that will create a person.
 
 Your answer:
 ```
-Replace this with your answer
+person = Person.create(id: 1, name: "brad", age: 22)
 ```
 
 Write ruby code that will query for any person that is 15 years of age
 
 Your answer:
 ```
-Replace this with your answer
+young_people = Person.select {|person| person[:age] < 15 }
 ```
 
 ### Sinatra
@@ -164,5 +212,7 @@ Write a route in sinatra that will print "hello world" in the web browser at the
 
 Your answer:
 ```
-Replace this with your answer
+get '/oh_hello' do
+"hello world"
+end
 ```
