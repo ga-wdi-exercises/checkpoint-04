@@ -19,7 +19,7 @@ or the language specifier after them.
 
 ### Question 1
 
-Define a method called `offer_rose`, which should take one argument named `person`.
+Define a method called `offer_rose `, which should take one argument named `person`.
 
 When called the method should `puts` "Would you take this rose, `person`, in exchange for giving an old beggar woman shelter from the bitter cold?"
 
@@ -27,7 +27,12 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 
 Write your code here:
 ```ruby
-# code here
+def offer_rose person
+  puts "Would you take this rose, #{person} in exchange for giving an old beggar woman shelter from the bitter cold"
+end
+
+tester = offer_rose("young prince")
+
 ```
 
 ### Question 2
@@ -50,7 +55,9 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-# code here
+cat = town[:residents].select {|character| character == "Belle"}
+town[:castle][:guests].push(cat)
+
 ```
 
 ### Question 3
@@ -72,7 +79,7 @@ Belle is friends with Mrs. Potts
 
 Write your code here:
 ```ruby
-# code here
+friends.each { |friend| puts "Belle is friends with  #{friend}" }
 ```
 ## Ruby OOP (meets Lion King)
 
@@ -97,7 +104,46 @@ Each lion should have:
 Create a new lion instance with the name `simba`
 
 ```ruby
-# code here
+
+
+
+class Animal
+  attr_accessor :name
+
+  def initialize(name)
+    @name = name
+  end
+
+  def greet
+    puts "hello "
+
+  end
+end
+
+class Lion < Animal
+attr_accessor:name
+  @@pack = []
+
+  def initialize(name)
+    @name = name
+    @@pack.push(name)
+  end
+
+  def find_king
+    if name == "Simba"
+      @king = true
+      puts "he is the #{@king} king, his name is #{name}"
+    end
+  end
+
+
+end
+
+pumba = Animal.new("Pumba")
+simba = Lion.new("Simba")
+simba.find_king
+
+
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
@@ -114,7 +160,12 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+ERD is a Entity Relationship Diagram and we create them for applications so we can organize and understand the relationships between our different entities and their attributes in our data.
+
+Genie
+Person has a lamp. The lamp is owned by a person
+Lamp holds a genie. Genie lives inside a lamp
+Person has a lamp, which holds a genie, who grants the person with a wish. Which is to get a pet.
 ```
 
 ### Question 6
@@ -125,7 +176,9 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+Schema is the outline of how we are going to structure our data. Also, it is the file where we create our tables.
+
+one-to-many example : A company has many employees.
 ```
 
 ### Question 7
@@ -148,14 +201,14 @@ Write ruby code that will create a person.
 
 Your answer:
 ```
-Replace this with your answer
+bob = Person.new("bob", 45)
 ```
 
 Write ruby code that will query for any person that is 15 years of age
 
 Your answer:
 ```
-Replace this with your answer
+young_people = persons.where(:age == 15)
 ```
 
 ### Sinatra
@@ -164,5 +217,7 @@ Write a route in sinatra that will print "hello world" in the web browser at the
 
 Your answer:
 ```
-Replace this with your answer
+get '/oh_hello'
+  puts "hello World"
+end
 ```
