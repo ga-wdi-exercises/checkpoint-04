@@ -27,7 +27,10 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 
 Write your code here:
 ```ruby
-# code here
+def offer_rose person
+  puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from
+  the bitter cold?"
+
 ```
 
 ### Question 2
@@ -73,6 +76,8 @@ Belle is friends with Mrs. Potts
 Write your code here:
 ```ruby
 # code here
+friends.each do |Chip Potts|
+  puts Belle
 ```
 ## Ruby OOP (meets Lion King)
 
@@ -97,7 +102,18 @@ Each lion should have:
 Create a new lion instance with the name `simba`
 
 ```ruby
-# code here
+class Animal
+  attr_accessor @name
+  def initialize @name, @greet
+   @name = name
+   @greet = greet
+ end
+  @name = "Pumba"
+ end
+ class Lion < Animal
+   if @name == "Simba"
+     puts @king == true
+
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
@@ -114,7 +130,9 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+An ERD is a model that we use to show graphically how different entities are related with one another.
+We use them before building in order to help us determine how we want to go about creating
+the program and how certain items will interact with one another.  An example would be to start with "Genie" and draw a line above and put "Person" because a genie is a person.  Genie also has a lamp and quite possibly a pet to those could also be represented by drawing another line out of genie and putting those two in that box.
 ```
 
 ### Question 6
@@ -125,7 +143,8 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+people: person_name,
+wishes:
 ```
 
 ### Question 7
