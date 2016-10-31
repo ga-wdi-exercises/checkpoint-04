@@ -27,7 +27,11 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 
 Write your code here:
 ```ruby
-# code here
+def offer_rose person
+  person = gets.chomp
+  puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+offer_rose "young prince"
 ```
 
 ### Question 2
@@ -50,7 +54,8 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-# code here
+town.delete("residents" :Belle)
+town.castle.guests.add(:Belle)
 ```
 
 ### Question 3
@@ -72,7 +77,10 @@ Belle is friends with Mrs. Potts
 
 Write your code here:
 ```ruby
-# code here
+friends.each do |friend|
+  puts "Belle is friends with #{friend}"
+end
+
 ```
 ## Ruby OOP (meets Lion King)
 
@@ -97,7 +105,32 @@ Each lion should have:
 Create a new lion instance with the name `simba`
 
 ```ruby
-# code here
+class Animal
+  def initialize name
+    @name = name
+  end
+
+  def greet
+    puts "Hello #{name}"
+  end
+end
+
+Pumba = Animal.new("Pumba")
+
+class Lion < Animal
+  def initialize
+    @pack = []
+    @king = true
+  end
+  def grow_pack
+    @pack.push(Lion.new)
+  end
+  def is_king
+    if @name == "Simba"
+      @king = true
+    end
+  end
+end
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
@@ -114,7 +147,7 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+An ERD is an entity-relationship diagram. It describes the relationships between different sets of data store in a database. It is useful for getting an idea of the different types of data a certain application will work with and how those types of data will interact with each other. In this example, genies and people could both have lamps and/or pets. Genies probably wouldn't have too many pets, but both would conceivably have lamps. Lamps and pets would not have genies or people though, and the diagram would make this relationship clear.
 ```
 
 ### Question 6
@@ -125,7 +158,7 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+A schema is a collection of database objects. It is essentially the blueprint for how data will be organized, assigning data types to names that will later be populated by a seed or some other form of input.  
 ```
 
 ### Question 7
@@ -148,14 +181,14 @@ Write ruby code that will create a person.
 
 Your answer:
 ```
-Replace this with your answer
+dude = Person.create(id: 1, name: "Sam", age: 26)
 ```
 
 Write ruby code that will query for any person that is 15 years of age
 
 Your answer:
 ```
-Replace this with your answer
+p = Person.where(age > 15)
 ```
 
 ### Sinatra
@@ -164,5 +197,9 @@ Write a route in sinatra that will print "hello world" in the web browser at the
 
 Your answer:
 ```
-Replace this with your answer
+require 'sinatra'
+
+get "/oh_hello" do
+  "hello world"
+end
 ```
