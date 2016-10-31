@@ -27,7 +27,12 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 
 Write your code here:
 ```ruby
-# code here
+def offer_rose person
+  puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+
+offer_rose "young prince"
+
 ```
 
 ### Question 2
@@ -43,6 +48,7 @@ town = {
     guests: []
   }
 }
+
 ```
 
 Using Ruby, remove Belle from the town residents, and
@@ -50,7 +56,10 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-# code here
+
+town.castle.residents << town.residents[1]
+town.delete.("Belle")
+
 ```
 
 ### Question 3
@@ -72,7 +81,10 @@ Belle is friends with Mrs. Potts
 
 Write your code here:
 ```ruby
-# code here
+friends.each do |x|
+  puts "Belle is friends with #{x}"
+end
+
 ```
 ## Ruby OOP (meets Lion King)
 
@@ -97,7 +109,38 @@ Each lion should have:
 Create a new lion instance with the name `simba`
 
 ```ruby
-# code here
+
+class Animal
+  attr_accessor :name
+  def initialize name
+    @name = name
+  end
+
+  def greet
+    puts "hello, my name is #{name}"
+  end
+
+end
+
+pumba = Animal.new("Pumba")
+
+
+  class Lion > Animal
+    def initialize (name, pack)
+      super (name)
+      @king = false
+      if @name == "Simba"
+        @king = true
+      end
+      @@pack = pack
+    end
+
+  end
+
+simba = Lion.new("Simba")    
+
+
+
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
@@ -114,7 +157,23 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+An ERD is a diagram that shows the relationships between various entities that make up an application. It's helpful to sketch these out before beginning to code them as the relationships can form a complex structure and may require foresight to design and implement without writing duplicative code or leaving out functionality.
+
+Genie/Lamp relationships:
+A Genie could have many masters (persons), but only one at a time
+A Genie would have many grantable wishes, but only 3 per person
+A Genie would presumably have a name (though not in Disney's version)
+
+A Lamp has one genie
+A Lamp has one owner(person)
+
+A Person could have many Lamps
+A Person has a maximum of 3 wishes per Lamp
+A Person could have many Pets
+A Person has an age/name/gender etc (attributes)
+
+A Pet has an age/name/gender etc
+
 ```
 
 ### Question 6
@@ -125,7 +184,8 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+A schema is the means to set up the relationships between our data and ruby. It sets up the tables that the seed file seeds data into, and joins the tables based on how they should relate.
+
 ```
 
 ### Question 7
@@ -148,14 +208,15 @@ Write ruby code that will create a person.
 
 Your answer:
 ```
-Replace this with your answer
+drew = Person.create(name: "Drew", age: 32)
+
 ```
 
 Write ruby code that will query for any person that is 15 years of age
 
 Your answer:
 ```
-Replace this with your answer
+Person.where(age: 15)
 ```
 
 ### Sinatra
@@ -164,5 +225,8 @@ Write a route in sinatra that will print "hello world" in the web browser at the
 
 Your answer:
 ```
-Replace this with your answer
+get '/oh_hello' do
+"hello world"
+end
+
 ```
