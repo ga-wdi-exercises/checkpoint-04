@@ -27,7 +27,8 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 
 Write your code here:
 ```ruby
-# code here
+def offer_rose (person)
+  puts"when you take this rose #{person}"
 ```
 
 ### Question 2
@@ -50,7 +51,8 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-# code here
+town[residents:.pop[1]]
+castle[guests:.push=("Belle")]
 ```
 
 ### Question 3
@@ -72,7 +74,11 @@ Belle is friends with Mrs. Potts
 
 Write your code here:
 ```ruby
-# code here
+friends.each do |apple|
+  puts "Belle is friends with #{apple[friends:[0]]}"
+  puts "Belle is friends with #{apple[friends:[1]]}"
+  puts "Belle is friends with #{apple[friends:[2]]}"
+  puts "Belle is friends with #{apple[friends:[3]]}"
 ```
 ## Ruby OOP (meets Lion King)
 
@@ -97,7 +103,31 @@ Each lion should have:
 Create a new lion instance with the name `simba`
 
 ```ruby
-# code here
+
+class Animal (name)
+@name = name;
+
+def greet
+  attr_reader :name
+  attr_writer :name
+end
+def Animal
+@name = "Pumba"
+end
+# def initialize (greet)
+#   @name = name
+
+end
+
+class Lion => Animal
+  @pack = pack
+
+
+
+
+
+end
+Had trouble finishing this question
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
@@ -114,7 +144,15 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+A Entity Relationship Diagram shows tables in a database and showcases their relationships between the tables that is within that database.
+
+Relationships are in parenthesis.
+Genie - attributes-Lamp(gold,must rub,) big (possibly blue, funny, three wishes ),
+Lamp- attributes- light(needs bulbs, ), various sizes(table lamp, floor lamp,),
+Person - attributes-height(various sizes, typically differ between countries), age(wide range, many countries use age to determine, drinking,smoking etc), mood(brain, constantly changing)
+Pet - attributes- size(various sizes large, small, or medium.)   
+
+
 ```
 
 ### Question 6
@@ -125,7 +163,13 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+Schema is a representation of a theory or plan in a form of an outline.
+
+
+artists - many songs
+pets - many animals
+cars - different amoutns of cars.
+
 ```
 
 ### Question 7
@@ -148,14 +192,14 @@ Write ruby code that will create a person.
 
 Your answer:
 ```
-Replace this with your answer
+person.Create(Name:"Travis")
 ```
 
 Write ruby code that will query for any person that is 15 years of age
 
 Your answer:
 ```
-Replace this with your answer
+person.Find(Age:15)
 ```
 
 ### Sinatra
@@ -164,5 +208,7 @@ Write a route in sinatra that will print "hello world" in the web browser at the
 
 Your answer:
 ```
-Replace this with your answer
+get '/' do
+"hello World"
+end
 ```
