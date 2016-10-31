@@ -28,6 +28,12 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here:
 ```ruby
 # code here
+person = "Young Prince"
+
+def offer_rose (person)
+  puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+
 ```
 
 ### Question 2
@@ -51,6 +57,9 @@ add her to the list of guests in the castle.
 Write your code here:
 ```ruby
 # code here
+town[:residents].delete("Belle")
+
+town[:castle][:guests].push("Belle")
 ```
 
 ### Question 3
@@ -72,7 +81,11 @@ Belle is friends with Mrs. Potts
 
 Write your code here:
 ```ruby
-# code here
+friends = ["Chip Potts", "Cogsworth", "Lumière", "Mrs. Potts"]
+
+friends.each do |user|
+  puts "Belle is friends with #{user}"
+end
 ```
 ## Ruby OOP (meets Lion King)
 
@@ -114,7 +127,22 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+ERD is short for Entity Relationship Diagram and it helps visualize data relating to major topics. We use them to create applications to reinfroce the DRY (Don't Repeat Yourself) methodology and efficiently collect data.
+
+Attributes/Relationships:
+Genie
+  attr: color, powerful, name
+  rel: 1-to-1 with Lamp
+Lamp
+  attr: contains_genie, color
+  rel: 1-to-1 with Genie
+Person
+  attr: owns_lamp, name, ethnicity
+  rel: 1 to many with both lamps and pets
+Pet
+  attr: type, name, call
+  rel: many to 1 with Person
+
 ```
 
 ### Question 6
@@ -125,7 +153,9 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+A schema is the overall framework of a database. It is the structural side that contains columns and rows. The columns are the key identifiers while each row are instances of those keys.
+
+The one to many relationship shows that each key identifier can have multiple instances of that key. For example, lets say a column name could be "Artist", The rows underneath are different artists (aka Kanye, Lil Wayne, Tyga, etc). The one (artist) column has many rows (Kanye, Lil Wayne, Tyga, etc).
 ```
 
 ### Question 7
