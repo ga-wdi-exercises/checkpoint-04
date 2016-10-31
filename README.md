@@ -27,7 +27,11 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 
 Write your code here:
 ```ruby
-# code here
+  def offer_rose(person)
+    "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+  end
+
+  offer_rose("young prince")
 ```
 
 ### Question 2
@@ -50,7 +54,8 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-# code here
+  town[:residents].delete("Belle")
+  town[:castle][:guests].push("Belle")
 ```
 
 ### Question 3
@@ -72,7 +77,9 @@ Belle is friends with Mrs. Potts
 
 Write your code here:
 ```ruby
-# code here
+friends.each do |person|
+  puts "Belle is friends with #{person}"
+end
 ```
 ## Ruby OOP (meets Lion King)
 
@@ -97,7 +104,40 @@ Each lion should have:
 Create a new lion instance with the name `simba`
 
 ```ruby
-# code here
+
+#---Animal class---
+
+  class Animal
+    attr_accessor :name
+
+    def initialize(name)
+      @name = name
+    end
+
+    def greet
+      puts "Hi I'm #{@name}"
+    end
+  end
+
+#---New Animal Instance---
+pumba = Animal.new("Pumba")
+
+#---New Lion Class---
+class Lion < Animal
+  @@pack
+
+  def initialize
+    super(name)
+    @king = false
+    if @name.downcase == "simba"
+      @king = true
+    end
+    @@pack.push(@name)
+  end
+end
+
+#---New Lion Instance---
+simba = Lion.new("simba")
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
@@ -114,7 +154,12 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+ERD >> A visual representation of the data structure in a system
+
+Genie Attributes >> ID, name, wishes_granted
+Lamp >> Color, Genie_ID
+Person >> ID, Name, Wishes, Genie_ID
+Pet >> Name, Animal_Type, Person_ID
 ```
 
 ### Question 6
@@ -125,7 +170,9 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+Data base schema is a representation of the data types and values that a table will contain.
+
+You represent this in SQL by including a foreign key from the one table inside the many table
 ```
 
 ### Question 7
@@ -148,14 +195,22 @@ Write ruby code that will create a person.
 
 Your answer:
 ```
-Replace this with your answer
+person1 = Person.create(id:1,name:"Lord Bobert",age:25)
 ```
 
 Write ruby code that will query for any person that is 15 years of age
 
 Your answer:
 ```
-Replace this with your answer
+allThePeeps = Person.all
+
+allThePeeps.each do |person|
+    if person[:age] == 15
+      puts person[:name]
+    end
+  end
+
+  wasn't really sure what you wanted me to return, so I putsed it...
 ```
 
 ### Sinatra
@@ -164,5 +219,7 @@ Write a route in sinatra that will print "hello world" in the web browser at the
 
 Your answer:
 ```
-Replace this with your answer
+get '/oh_hello' do
+  "Hello World"
+end
 ```
