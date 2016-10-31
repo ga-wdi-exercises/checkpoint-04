@@ -28,6 +28,12 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here:
 ```ruby
 # code here
+def offer_rose (person)
+  puts "Would you take this rose, person, in exchange for giving an old
+  beggar woman shelter from the bitter cold?"
+end
+
+offer_rose ("young prince"
 ```
 
 ### Question 2
@@ -51,6 +57,9 @@ add her to the list of guests in the castle.
 Write your code here:
 ```ruby
 # code here
+town.each do |name|
+  if name == "Belle"
+
 ```
 
 ### Question 3
@@ -73,6 +82,9 @@ Belle is friends with Mrs. Potts
 Write your code here:
 ```ruby
 # code here
+  friends.each do |friend|
+    puts "Belle is friends with #{friend}"
+  end
 ```
 ## Ruby OOP (meets Lion King)
 
@@ -98,6 +110,27 @@ Create a new lion instance with the name `simba`
 
 ```ruby
 # code here
+class Animal
+  attr_accessor :name
+
+
+  def initialize name, greet
+    @name = name
+    @greet = greet
+  end
+
+
+end
+
+class Lion < Animal
+  @@pack = Animal
+
+  def king
+    if @name == Simba
+      puts "true"
+    end
+
+end
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
@@ -114,7 +147,9 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+We create ERDs to keep our data separate from our logic code. Ultimately we use
+the ERD file to visualize and describe our data away from the file that will
+manipulate the data.
 ```
 
 ### Question 6
@@ -125,7 +160,9 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+Schemas are used to diagram relationships/plot between different data points.
+They can be one-to-one many-to-one or many-to-many. For the example above, one-to-many,
+for every one person they have many wishes.
 ```
 
 ### Question 7
@@ -148,7 +185,7 @@ Write ruby code that will create a person.
 
 Your answer:
 ```
-Replace this with your answer
+person.new("id=1", "name=Ross", "age=34")
 ```
 
 Write ruby code that will query for any person that is 15 years of age
@@ -164,5 +201,7 @@ Write a route in sinatra that will print "hello world" in the web browser at the
 
 Your answer:
 ```
-Replace this with your answer
+def "/oh_hello"
+  puts "hello world"
+end
 ```
