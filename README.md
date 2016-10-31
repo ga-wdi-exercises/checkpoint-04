@@ -27,7 +27,9 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 
 Write your code here:
 ```ruby
-# code here
+def offer_rose person
+  puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
 ```
 
 ### Question 2
@@ -50,7 +52,10 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-# code here
+  belle = town[:residents][1]
+  town[:castle][:guests] = belle
+  town.delete([:residents][1])
+
 ```
 
 ### Question 3
@@ -72,7 +77,9 @@ Belle is friends with Mrs. Potts
 
 Write your code here:
 ```ruby
-# code here
+friends.each do |name|
+  puts "Belle is friends with #{name}"
+end
 ```
 ## Ruby OOP (meets Lion King)
 
@@ -97,7 +104,32 @@ Each lion should have:
 Create a new lion instance with the name `simba`
 
 ```ruby
-# code here
+class Animal
+  attr_accessor :name
+
+  def initialize name
+    @name = name
+  end
+
+  def greeting
+    "Hello, my name is #{@name}"
+  end
+end
+
+Pumba = Animal.new("Pumba")
+
+class Lion << Animal
+  @@pack = []
+
+  def initialize
+    if @name == "Simba"
+      @king = true
+    else
+      @king = false
+    end
+    pack.push(animal)
+  end
+end
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
@@ -114,7 +146,7 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+ERD is a data modeling technique illustrating relationships within a framework. We create them for good database design. For example, one Genie might have many lamps, or one person might have many pets.
 ```
 
 ### Question 6
@@ -125,7 +157,7 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+Schemas are used in SQL to store database objects, organized by categories, rows and columns. One person could have many wishes.
 ```
 
 ### Question 7
@@ -148,14 +180,16 @@ Write ruby code that will create a person.
 
 Your answer:
 ```
-Replace this with your answer
+juliet = Person.create(name: "Juliet", age: 27)
 ```
 
 Write ruby code that will query for any person that is 15 years of age
 
 Your answer:
 ```
-Replace this with your answer
+persons.each do |user|
+ user[:age] = 15
+end
 ```
 
 ### Sinatra
@@ -164,5 +198,7 @@ Write a route in sinatra that will print "hello world" in the web browser at the
 
 Your answer:
 ```
-Replace this with your answer
+get '/oh_hello' do
+ puts "Hello World"
+end
 ```
