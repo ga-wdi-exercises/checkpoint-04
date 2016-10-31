@@ -27,7 +27,9 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 
 Write your code here:
 ```ruby
-# code here
+def offer_rose(person)
+  puts "Would you take this rose," person ", in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
 ```
 
 ### Question 2
@@ -50,7 +52,9 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-# code here
+residents.pop([1])
+#something
+guests.push("Belle")
 ```
 
 ### Question 3
@@ -72,7 +76,14 @@ Belle is friends with Mrs. Potts
 
 Write your code here:
 ```ruby
-# code here
+attr_accessor :name
+
+def friends
+  @friends = friends
+  @friends.each do |friend|
+    puts "Belle is friends with #{:name}"
+end
+
 ```
 ## Ruby OOP (meets Lion King)
 
@@ -97,7 +108,27 @@ Each lion should have:
 Create a new lion instance with the name `simba`
 
 ```ruby
-# code here
+class Animal
+attr_accessor :name
+
+  def initialize(name)
+  @name = name
+end
+
+def greet
+  @greet = greet
+end
+
+class Pumba < Animal
+end
+
+class Lion < Animal
+  king = true
+  @pack = []
+  if name == "Simba"  
+    puts king = true   <--#I understand this isn't correct
+  end
+  end
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
@@ -114,7 +145,12 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+From what I'm reading and understand, they're basically a blueprint or plan for the structure and layout of a web page. We create them to give us a clear idea of how we want to build the web site.
+
+Lamp < Contains Genie #1
+Person < rubs Lamp #2
+Genie < appears from Lamp #3
+Pet < person wishes for pet #4
 ```
 
 ### Question 6
@@ -125,7 +161,19 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+A schema is the organization or structure of a database
+
+Cart     John has one cart, but many items --- I didn't write it in SQL
+-------
+tran_id    first_name    last_name    items
+1          John          Doe          1:4:15:16
+
+
+Item
+-------
+item_id    name         price
+1          Ruby         $1.00
+2          Diamond      $2.00
 ```
 
 ### Question 7
@@ -148,7 +196,11 @@ Write ruby code that will create a person.
 
 Your answer:
 ```
-Replace this with your answer
+class Person < ActiveRecord::Base
+  @id = id
+  @name = name
+  @age = age
+end
 ```
 
 Write ruby code that will query for any person that is 15 years of age
@@ -164,5 +216,9 @@ Write a route in sinatra that will print "hello world" in the web browser at the
 
 Your answer:
 ```
-Replace this with your answer
+require 'sinatra'
+
+get '/' do
+  return 'Hello world!'
+end
 ```
