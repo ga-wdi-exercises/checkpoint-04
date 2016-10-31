@@ -27,7 +27,10 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 
 Write your code here:
 ```ruby
-# code here
+def offer_rose(person)
+  puts "Would you take this rose, #{person}?"
+end
+
 ```
 
 ### Question 2
@@ -50,7 +53,10 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-# code here
+
+castle[:guests] << residents[1]
+residents.delete("Belle")
+
 ```
 
 ### Question 3
@@ -72,7 +78,10 @@ Belle is friends with Mrs. Potts
 
 Write your code here:
 ```ruby
-# code here
+users = ["Chip Potts", "Cogsworth", "Lumiere", "Mrs. Potts"]
+users.each do |user|
+  puts user
+end
 ```
 ## Ruby OOP (meets Lion King)
 
@@ -97,7 +106,19 @@ Each lion should have:
 Create a new lion instance with the name `simba`
 
 ```ruby
-# code here
+
+class Animal
+  attr_accessor :name
+  attr_accessor :lion
+
+
+  def initialize(name, species)
+    @name = name
+    @species = species
+
+  end
+end
+
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
@@ -114,7 +135,7 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+An entity-relationship diagram (ERD) is a data modeling technique that graphically illustrates an information system’s entities and the relationships between those entities. An ERD is a conceptual and representational model of data used to represent the entity framework infrastructure.
 ```
 
 ### Question 6
@@ -125,7 +146,7 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+In computer programming, a schema is the organization or structure for a database. The activity of data modeling leads to a schema.
 ```
 
 ### Question 7
@@ -148,7 +169,16 @@ Write ruby code that will create a person.
 
 Your answer:
 ```
-Replace this with your answer
+  class Person
+  attr_accessor :age, :name
+  @@all = []
+
+  def initialize age, name
+    @age = age
+    @name = name
+    @@all.push(self)
+  end
+
 ```
 
 Write ruby code that will query for any person that is 15 years of age
@@ -164,5 +194,9 @@ Write a route in sinatra that will print "hello world" in the web browser at the
 
 Your answer:
 ```
-Replace this with your answer
+require 'sinatra'
+require 'sinatra/reloader'
+
+get '/:oh hello' do
+end
 ```
