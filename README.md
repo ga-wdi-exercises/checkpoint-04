@@ -27,7 +27,11 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 
 Write your code here:
 ```ruby
-# code here
+def offer_rose person
+  puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+
+offer_rose "young prince"
 ```
 
 ### Question 2
@@ -50,7 +54,8 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-# code here
+town[:residents].pop[1]
+town[:castle][:guests].push("Belle")
 ```
 
 ### Question 3
@@ -72,7 +77,9 @@ Belle is friends with Mrs. Potts
 
 Write your code here:
 ```ruby
-# code here
+friends.each do |friend|
+  puts "Belle is friends with #{friend}"
+end
 ```
 ## Ruby OOP (meets Lion King)
 
@@ -97,7 +104,40 @@ Each lion should have:
 Create a new lion instance with the name `simba`
 
 ```ruby
-# code here
+class Animal
+  attr_accessor :name
+
+  def initialize name
+    @name = name
+  end
+
+  def greeter
+    puts "Hi my nmae is #{@name}"
+  end
+
+end
+
+pumba = Animal.new("pumba")
+
+class Lion < Animal
+  @@pack = []
+
+  def initialize name
+    @king = false
+    @name = name
+    if @name == "simba"
+      @king = true
+    end
+    @@pack << self
+  end
+
+  def Lion.pack
+    return @@pack
+  end
+
+end
+
+simba = Lion.new("simba")
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
@@ -114,7 +154,12 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+An ERD is a tool we use to visualize and describe the data relating to the major entities that will exist in out programs. It ultimately lends itself to planning out and creating our database table structure.
+
+There might be a 1 to 1 relationship between a Genie and a lamp.
+
+There might be a 1 to many relationship between a person and their pets.
+
 ```
 
 ### Question 6
@@ -125,7 +170,9 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+A schema is a definition of your database structure, i.e. tables, primary keys, foreign keys, and other column descriptions
+
+We would represent a one-to-many relationship in a SQL database by implementing a relationship between a primary and foreign key across two tables.
 ```
 
 ### Question 7
@@ -148,14 +195,14 @@ Write ruby code that will create a person.
 
 Your answer:
 ```
-Replace this with your answer
+jon = Person.new("jon", 26)
 ```
 
 Write ruby code that will query for any person that is 15 years of age
 
 Your answer:
 ```
-Replace this with your answer
+Person.where(age > 15)
 ```
 
 ### Sinatra
@@ -164,5 +211,8 @@ Write a route in sinatra that will print "hello world" in the web browser at the
 
 Your answer:
 ```
-Replace this with your answer
+get '/oh_hello' do
+  puts "hello world"
+end
+
 ```
