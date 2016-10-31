@@ -196,7 +196,7 @@ Write ruby code that will query for any person that is 15 years of age
 
 Your answer:
 ```
-
+SELECT name FROM persons WHERE (age < 15)
 
 ```
 
@@ -206,5 +206,8 @@ Write a route in sinatra that will print "hello world" in the web browser at the
 
 Your answer:
 ```
-Replace this with your answer
+get '/oh hello'
+ print "hello world"
+end
+
 ```
