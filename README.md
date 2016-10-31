@@ -27,7 +27,13 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 
 Write your code here:
 ```ruby
-# code here
+class BeautyBeast
+  attr_accessor :person
+def offer_rose person
+  puts "Would you take this rose,#{{person}}, in exchange for giving an old beggar woman shleter from ibtter cold?"
+end
+
+prince = BeautyBeast.new("young prince")
 ```
 
 ### Question 2
@@ -50,7 +56,9 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-# code here
+town[:residents].delete("Belle")
+town[:guests] << "Belle"
+
 ```
 
 ### Question 3
@@ -72,7 +80,9 @@ Belle is friends with Mrs. Potts
 
 Write your code here:
 ```ruby
-# code here
+friends.each do |name|
+  puts "Belle is friends with #{name}"
+end
 ```
 ## Ruby OOP (meets Lion King)
 
@@ -97,7 +107,28 @@ Each lion should have:
 Create a new lion instance with the name `simba`
 
 ```ruby
-# code here
+class Animal
+	attr_accessor :name
+def initialize name
+	@name = name
+end
+def greet
+	puts "Hi my name is #{name}."
+end
+
+end
+
+
+class Lion < Animal
+	def name
+		if  #{name} == "Simba"
+		puts "true"
+	end
+end
+end
+
+disney = Animal.new("Pumba")
+disney_one = Lion.new("Simba")
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
@@ -114,7 +145,15 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+ERD is Entity Relationship Diagram and we use them to visualize the relationships between the entities in our programs. The types of relationships include one to one, one to many, and many to many.
+
+1. A Genie will have attributes of name, location
+2. Lamp will have attributes of name, owner, status
+3. A Person will have attributes of name
+4. Pet will have attributes of owner, name
+
+Genie has one to one relationship with Lamp and Person.
+Pet has one to one relationship with Person
 ```
 
 ### Question 6
@@ -125,7 +164,7 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+A schema defines each column of a table.
 ```
 
 ### Question 7
