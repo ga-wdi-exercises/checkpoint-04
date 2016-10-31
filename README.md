@@ -27,7 +27,11 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 
 Write your code here:
 ```ruby
-# code here
+def offer_rose person
+	puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+
+offer_rose "young prince"
 ```
 
 ### Question 2
@@ -50,7 +54,8 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-# code here
+town[:residents].delete 'Belle'
+town[:castle][:guests].push 'Belle'
 ```
 
 ### Question 3
@@ -72,7 +77,9 @@ Belle is friends with Mrs. Potts
 
 Write your code here:
 ```ruby
-# code here
+friends.each do |friend|
+	puts "Belle is friends with #{friend}"
+end
 ```
 ## Ruby OOP (meets Lion King)
 
@@ -97,7 +104,37 @@ Each lion should have:
 Create a new lion instance with the name `simba`
 
 ```ruby
-# code here
+class Animal
+	attr_accessor :name
+
+	def initialize name
+		@name = name
+	end
+
+	def greet
+		puts "Rawr, my name is #{name}."
+	end
+end
+
+pumba = Animal.new "Pumba"
+
+class Lion < Animal
+	attr_accessor :king
+	@@pack = []
+
+	def initialize name
+		super name
+		@@pack << self
+		puts @@pack
+		@name == "Simba" ? @king = true : @king = false
+	end
+
+	def self.pack
+		@@pack
+	end
+end
+
+simba = Lion.new "Simba"
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
@@ -114,7 +151,9 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+An ERD is an Entity Relationship Diagram and it is used to visualize the interconnectedness between tables in a database. This helps us in many ways, some of which are being able to organize our thoughts for building a database or reviewing the structure of a database before making edits.
+
+A genie would have a one-to-one relationship with a lamp. A lamp might have a one-to-many relationship with a person (e.g. one person might find many lamps). A pet would have a one-to-many relationship with a person as well since a pet would need a single registered owner. A pet would not have a relationship with a lamp or a genie -- unless it's a particularly awesome pet (see: Abu). A person could have a one-to-one relationship with a genie, but that relationship is potentially already accounted for via the person/lamp and genie/lamp connections.
 ```
 
 ### Question 6
@@ -125,7 +164,9 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+A schema is a tool in object-oriented programming used to categorize or templatize objects in a database. We define schemas with a name and structure after which its objects are modeled.
+
+A one-to-many relationship is represented line between two objects with a broom/crows-feet on the "many" end. A person can make many wishes and a wish belongs to only one person, so visualizing the relationship between the two would have the broom/crows-feet next to 'wishes' and a line extending to 'people'.
 ```
 
 ### Question 7
