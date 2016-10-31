@@ -27,7 +27,11 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 
 Write your code here:
 ```ruby
-# code here
+def offer_rose(person)
+  puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+
+offer_rose("young prince")
 ```
 
 ### Question 2
@@ -50,7 +54,10 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-# code here
+belle = town[:residents][1]
+town[:castle[:guests]].push(belle)
+town[:residents].delete_at(1)
+
 ```
 
 ### Question 3
@@ -72,7 +79,8 @@ Belle is friends with Mrs. Potts
 
 Write your code here:
 ```ruby
-# code here
+friends.each{|name| puts "Belle is friends with #{name}."}
+
 ```
 ## Ruby OOP (meets Lion King)
 
@@ -97,7 +105,34 @@ Each lion should have:
 Create a new lion instance with the name `simba`
 
 ```ruby
-# code here
+
+class Animal
+  attr_accessor: @name
+  def initialize(name)
+    @name: name
+  end
+  def greet
+    puts "Hello, #{@name}"
+  end
+end
+
+class Lion extend Animal
+  @@pack = 0
+  def initialize
+    @@pack += 1
+  end
+  @king: {
+    if @name == "Simba"
+      true
+    else
+      false
+    end
+  }
+end
+
+pumba = Animal.new("Pumba")
+
+simba = Lion.new("Simba")
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
@@ -105,7 +140,7 @@ Create a new lion instance with the name `simba`
 ### Question 5
 
 Describe what an ERD is, and why we create them for applications. Also give an
-example what the attributes and relationships might be for the following
+example of what the attributes and relationships might be for the following
 entities (no need to draw an ERD):
 * Genie
 * Lamp
@@ -114,7 +149,23 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+An ERD is a visual representation of the relationships between pieces data used in an application. It is helpful for planning and creating the structure of a database.  
+
+Genie(1-to-1 w/ Lamp):
+wishes - integer
+name -  string
+
+Lamp:
+material - string
+
+Person (one to many w/ lamp, pet):
+name - string
+dob - date
+
+Pet:
+name - string
+type - string
+tail - boolean
 ```
 
 ### Question 6
@@ -125,7 +176,7 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+A schema is is a blueprint for a database in sql. In an SQL database, one-to-many relationships can be represented by matching id's. Eg. 1 person will have three wishes (i.e. three wish id's). each wish will have a person id.
 ```
 
 ### Question 7
@@ -148,14 +199,14 @@ Write ruby code that will create a person.
 
 Your answer:
 ```
-Replace this with your answer
+donovan = Person.create(name: "donovan", age: 72)
 ```
 
 Write ruby code that will query for any person that is 15 years of age
 
 Your answer:
 ```
-Replace this with your answer
+Person.where(age: 15)
 ```
 
 ### Sinatra
@@ -164,5 +215,9 @@ Write a route in sinatra that will print "hello world" in the web browser at the
 
 Your answer:
 ```
-Replace this with your answer
+require 'sinatra'
+
+get '/oh_hello' do
+  return "hello world"
+end
 ```
