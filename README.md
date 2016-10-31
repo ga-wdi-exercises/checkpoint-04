@@ -27,7 +27,9 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 
 Write your code here:
 ```ruby
-# code here
+def offer_rose(person)
+  puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
 ```
 
 ### Question 2
@@ -50,7 +52,8 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-# code here
+  town[:residents].slice!(1)
+  town[:castle][:guests].push("Belle")
 ```
 
 ### Question 3
@@ -72,7 +75,9 @@ Belle is friends with Mrs. Potts
 
 Write your code here:
 ```ruby
-# code here
+friends.each do |i|
+  puts "Belle is friends with #{i}"
+end
 ```
 ## Ruby OOP (meets Lion King)
 
@@ -97,7 +102,28 @@ Each lion should have:
 Create a new lion instance with the name `simba`
 
 ```ruby
-# code here
+class Animal
+  attr_accessor :name
+  def initialize(name)
+    @name = name
+  end
+  def greet
+    puts "Hi, my name is #{@name}!"
+  end
+end
+
+class Lion < Animal
+  def initialize(name)
+    @pack = []
+    @king = false
+    if name == 'simba'
+      @king = true
+    end
+  end
+end
+
+simba = Lion.new("simba")
+
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
@@ -114,7 +140,7 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+ERD stand for entity-relationship diagram and we create them for applications to show how one group of data is connected to another. In regards to the example, the relationship between genie and lamp is that the genie belongs to the lamp and for the person and pet, the pet belongs to the person. Attributes that these examples might have would be what type of genie, lamp, etc. they are and their age.
 ```
 
 ### Question 6
@@ -125,7 +151,7 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+Schema is a collection of database objects that is linked with a specific database. Schemas are usually tables with data that are interrelated with each other which explains the one-to-many relationship: Every row of data in the table is somehow related to the other rows of data in the table.
 ```
 
 ### Question 7
@@ -148,14 +174,14 @@ Write ruby code that will create a person.
 
 Your answer:
 ```
-Replace this with your answer
+person = Person.create(id: "1", name: "Thinh", age: 24)
 ```
 
 Write ruby code that will query for any person that is 15 years of age
 
 Your answer:
 ```
-Replace this with your answer
+Person.where(age: 15)
 ```
 
 ### Sinatra
@@ -164,5 +190,9 @@ Write a route in sinatra that will print "hello world" in the web browser at the
 
 Your answer:
 ```
-Replace this with your answer
+require 'sinatra/reloader'
+
+get '/oh_hello' do
+  return "hello world"
+end
 ```
