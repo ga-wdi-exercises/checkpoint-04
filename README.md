@@ -27,7 +27,12 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 
 Write your code here:
 ```ruby
-# code here
+def offer_rose(person)
+  @person = person
+  puts "Would you take this rose, #{@person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+
+offer_rose("young prince")
 ```
 
 ### Question 2
@@ -50,7 +55,8 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-# code here
+town[:residents].push("Belle")
+town[:castle][:residents].pop(1)
 ```
 
 ### Question 3
@@ -72,7 +78,7 @@ Belle is friends with Mrs. Potts
 
 Write your code here:
 ```ruby
-# code here
+friends.each {|this| "Belle is friends with #{this}"}
 ```
 ## Ruby OOP (meets Lion King)
 
@@ -97,7 +103,33 @@ Each lion should have:
 Create a new lion instance with the name `simba`
 
 ```ruby
-# code here
+class Animal
+  attr_accessor :name
+
+  def initialize(name)
+    @name = name
+  end
+
+
+  def greet(name)
+    puts "Hello #{@name}"
+  end
+end
+
+class Lion < Animal
+  attr_accessor : pack
+
+  def initialize (name)
+    @@pack = [king: false]
+    @name = name
+    if @name.capitalize == "Simba"
+      @@pack[:king] = true
+    end
+  end
+end
+
+simba = Lion.new("Simba")
+
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
@@ -114,7 +146,9 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+an ERD is a 'flowchart' that shows the relationships and associations of data between the various components of an overall framework/program.
+
+A lamp has a genie, a person has a lamp, and a person has a pet
 ```
 
 ### Question 6
@@ -125,7 +159,9 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+a schema is a data 'template', which has the various categories and attributes of any data, sorted in some logical relationship, but does not contain any individual inputs of information.
+
+A one to many relationship could be represented in an SQL database by associating many wishes with one person (one ID)
 ```
 
 ### Question 7
@@ -148,14 +184,16 @@ Write ruby code that will create a person.
 
 Your answer:
 ```
-Replace this with your answer
+persons.new(name: = Alex, age: = 26)
 ```
 
 Write ruby code that will query for any person that is 15 years of age
 
 Your answer:
 ```
-Replace this with your answer
+persons.each {|person| if person[:age] == 15
+                              return person
+                              end}
 ```
 
 ### Sinatra
@@ -164,5 +202,7 @@ Write a route in sinatra that will print "hello world" in the web browser at the
 
 Your answer:
 ```
-Replace this with your answer
+get '/oh_hello' do
+print "Hello world"
+end
 ```
