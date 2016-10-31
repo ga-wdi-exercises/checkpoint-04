@@ -55,8 +55,8 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-castle.guests.push("Belle")
-residents.pop(1)
+town[:residents].push("Belle")
+town[:castle][:residents].pop(1)
 ```
 
 ### Question 3
@@ -106,8 +106,12 @@ Create a new lion instance with the name `simba`
 class Animal
   attr_accessor :name
 
-  def greet(name)
+  def initialize(name)
     @name = name
+  end
+
+
+  def greet(name)
     puts "Hello #{@name}"
   end
 end
@@ -116,10 +120,10 @@ class Lion < Animal
   attr_accessor : pack
 
   def initialize (name)
-    @@pack = [king: 0]
+    @@pack = [king: false]
     @name = name
-    if @name == "Simba"
-      @@pack[:king = 1]
+    if @name.capitalize == "Simba"
+      @@pack[:king] = true
     end
   end
 end
@@ -187,7 +191,9 @@ Write ruby code that will query for any person that is 15 years of age
 
 Your answer:
 ```
-persons.each {|person| if person[:age] == 15 return person}
+persons.each {|person| if person[:age] == 15
+                              return person
+                              end}
 ```
 
 ### Sinatra
