@@ -50,7 +50,7 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-# code here
+# r
 ```
 
 ### Question 3
@@ -114,7 +114,7 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+ERD (Entity-Relationship Diagram) - shows the relationships of entity sets stored in a database. An entity in this context is a component of data. In other words, ER diagrams illustrate the logical structure of databases.
 ```
 
 ### Question 6
@@ -125,7 +125,8 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+A schema is a collection of database objects (aka: tables) associated with one particular database username.
+
 ```
 
 ### Question 7
@@ -148,7 +149,13 @@ Write ruby code that will create a person.
 
 Your answer:
 ```
-Replace this with your answer
+persons.each do |person|
+  Person.create!({
+    name:       info[:name]
+    age:        info[:age]
+    height:     info[:height]
+    weight:     info[:weight]
+    })
 ```
 
 Write ruby code that will query for any person that is 15 years of age
@@ -164,5 +171,8 @@ Write a route in sinatra that will print "hello world" in the web browser at the
 
 Your answer:
 ```
-Replace this with your answer
+get '/oh_hello' do
+  "Hello World"
+end
+
 ```
