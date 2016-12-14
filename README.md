@@ -27,7 +27,14 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 
 Write your code here:
 ```ruby
-# code here
+
+def offer_rose (person)
+puts "Would you like to take this rose, #{person}, in exchange fro giving an old begger woman shelter from the bitter cold?"
+end
+
+offer_rose('young prince')
+
+
 ```
 
 ### Question 2
@@ -50,7 +57,11 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-# code here
+
+town.update
+
+
+
 ```
 
 ### Question 3
@@ -72,7 +83,13 @@ Belle is friends with Mrs. Potts
 
 Write your code here:
 ```ruby
-# code here
+
+def belle(friends)
+  friends.each do |friend|
+    puts "Bell is friends with #{friend}"
+  end
+end
+
 ```
 ## Ruby OOP (meets Lion King)
 
@@ -97,7 +114,38 @@ Each lion should have:
 Create a new lion instance with the name `simba`
 
 ```ruby
-# code here
+class Animal
+attr_accessor name
+
+  def initialize name
+    @name = name
+  end
+
+def greet
+  "Hi, my name is #{@name}"
+end
+
+# run these two commands
+pumba = Animal.new "pumba"
+pumba.greet
+
+class Lion < Animal
+attr_accessor :king
+@@pack = pack
+
+def initialize
+  @king = true
+end
+
+def king?
+if @name = "simba"
+  @king
+end
+
+end
+simba = Lion.new king
+simba.king?
+
 ```
 
 ## SQL, Databases, and ActiveRecord (meets Aladdin)
@@ -114,7 +162,18 @@ entities (no need to draw an ERD):
 
 Your answer:
 ```
-Replace this with your answer
+ERD is an entity relationship diagram - shows the relations between entities in a database. It's shown as a diagram.
+
+Genie - name, color
+Genie and Lamp and ONE TO ONE relationshipo
+
+Lamp - location
+
+Pet - name, species, gender
+
+Person - name, age, gender
+PERSON can be a one to MANY pets
+
 ```
 
 ### Question 6
@@ -125,7 +184,12 @@ SQL database. If you need an example, you can use: people and wishes
 
 Your answer:
 ```
-Replace this with your answer
+A schema can be descibe as a catalog of objects, it contains tables, views, relationships and privileges.
+
+We repersent a one to many by using lines. A straight line that connects to a line that has "fingers" on it is how we visualize a one-to-many relationship. Straight line part of the line is the one and the "fingers" are the many.
+
+An example of this is ONE coach to MANY football players.
+
 ```
 
 ### Question 7
