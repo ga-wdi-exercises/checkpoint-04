@@ -118,7 +118,9 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+An ERD graphically shows the relationships between entities in a system.  It can help in applications by showing which parts of said application will interact and feed off of each other in order to perform its desired function.
+
+A lamp would contain (own) a genie and a person would own a pet.
 ```
 
 ### Question 6
@@ -129,7 +131,7 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+The schema is the layout for how the database is constructed.  The one-to-many relationship is shown by people having many wishes (has-many), with each wish belonging to a single person (belongs-to).
 ```
 
 ### Question 7
@@ -154,7 +156,7 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+spiderman = Person.new("Peter Parker", "15")
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -162,7 +164,7 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+fifteen = Person.find_by(age < 15)
 ```
 
 ### Question 8
@@ -172,5 +174,7 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+GET '/oh_hello'
+  return "hello world"
+end
 ```
