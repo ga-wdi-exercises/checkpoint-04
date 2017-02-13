@@ -116,6 +116,25 @@ class Animal
 end
 
 pumba = Animal.new("Pumba")
+
+class Lion < Animal
+  @@pack = []
+  attr_accessor :king
+  def initialize(name)
+    super(name)
+    if @name = "Simba"
+      @king = true
+    else
+      @king = false
+    end
+    @@pack << self
+  end
+  def self.pack
+    @@pack
+  end
+end
+
+simba = Lion.new("Simba")
 ```
 
 ## SQL, Databases, and ActiveRecord
