@@ -110,6 +110,48 @@ Create a new lion instance with the name "Simba".
 
 ```ruby
 # code here
+class Animal
+  attr_accessor :name, :greet
+
+  def initialize(name)
+    @name = name
+  end
+
+  def greet
+    puts "Hello, I am #{name}."
+  end
+
+  def get_name
+    puts self.name
+  end
+
+  def set_name(input)
+    @name = input
+  end
+end
+
+pumba = Animal.new("Pumba")
+
+class Lion < Animal
+  attr_accessor :pack
+  @@pack = 0
+
+  def initialize(name)
+    super name
+    @@pack += 1
+  end
+
+  def king
+    if self.name == "Simba"
+      true
+    else false
+    end
+  end
+
+end
+
+simba = Lion.new("Simba")
+simba.king
 ```
 
 ## SQL, Databases, and ActiveRecord
