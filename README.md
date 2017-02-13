@@ -58,9 +58,8 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# guest = town[:residents][1]
+# town[:castle][:guests].push(town[:residents][1])
 # town[:residents].delete_at(1)
-# town[:guests].push(guest)
 ```
 
 ### Question 3
