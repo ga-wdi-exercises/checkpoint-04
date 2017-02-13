@@ -29,7 +29,10 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
-# code here
+def offer_rose(person)
+  puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+offer_rose("young prince")
 ```
 
 ### Question 2
@@ -54,7 +57,8 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+town.residents.delete_at(1)
+town.castle.guests.push("Belle")
 ```
 
 ### Question 3
@@ -77,7 +81,9 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+friends.each |friend|
+puts "Belle is friends with #{friend}"
+end
 ```
 
 ## Ruby OOP
@@ -100,7 +106,30 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+class Animal
+  attr_accessor :name
+  constructor(name)
+  @name = name
+  end
+  def greet (name)
+    puts "Hello #{@name}"
+  end
+
+end
+
+class Lion < Animal
+  super(name)
+  constructor(name, pack)
+  @pack = pack
+  end
+  def king(name)
+    if @name = "Simba"
+      puts "true"
+  end
+end
+
+Animal.new("Pumba")
+Lion.new("Simba", "Royal")
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -118,7 +147,9 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+An ERD is a blueprint of a relative database. To create an ERD you draw each class of data and draw the relationships between the classes with lines indicating what type of relationship they have (i.e. one to one, one to many, many to many).
+
+A person (attributes: name, birthday, etc.) can own a lamp(attributes: size, origin, etc.) and a pet(attributes: animal, age, etc.) so the person is related to the pet and lamp in a one to many relationship. The lamp is related to the genie(age, powers, etc.) one to one and also the person one to one but not the pet.
 ```
 
 ### Question 6
@@ -129,7 +160,7 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+**A schema is a blueprint of a table in a database that includes attributes and their constraints.
 ```
 
 ### Question 7
@@ -154,7 +185,7 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+tayor = persons.new("Taylor", "25")
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -162,7 +193,7 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+person_15 = persons[:age].find_all{|person| person[:age] == 15}
 ```
 
 ### Question 8
@@ -172,5 +203,7 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+get '/oh_hello'
+  return 'Hello world'
+end
 ```
