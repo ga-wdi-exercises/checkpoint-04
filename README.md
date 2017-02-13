@@ -53,7 +53,7 @@ add her to the list of guests in the castle.
 Write your code here:
 ```ruby
 town[:residents].delete("Belle")
-town[:castle:guests].push("Belle")
+town[:castle[:guests].push("Belle")
 
 
 ```
