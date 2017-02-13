@@ -129,7 +129,7 @@ class Lion < Animal
   pack = []
     attr_accessor :name
   def initialize (name)
-    super(@name)
+    super(name)
     if @name == "Simba"
               return true
             else
