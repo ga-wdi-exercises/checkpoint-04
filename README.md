@@ -1,5 +1,5 @@
 # Checkpoint 04
- 
+
 > If you have not completed the survey yet,
 please do so by the end of the day!
 
@@ -29,7 +29,10 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
-# code here
+def offer_rose(person)
+puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+offer_rose("young prince")
 ```
 
 ### Question 2
@@ -54,7 +57,8 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+town[:castle][:guests] << town[:residents][1]
+town[:residents].delete "Belle"
 ```
 
 ### Question 3
@@ -77,7 +81,7 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+friends.each{|friend| puts "Belle is friends with" + friend }
 ```
 
 ## Ruby OOP
@@ -100,7 +104,39 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+class Animal
+  attr_accessor :name
+  def initialize(name)
+    @name = name
+  end
+  def greet
+    puts "Hey, I'm #{name}"
+  end
+end
+
+class Lion < Animal
+  attr_accessor
+  @@pack = []
+  def initialize(name)
+    super(name)
+    @king = false;
+    king_name
+    @@pack << self
+  end
+  def king_name
+    if @name == "Simba"
+      @king = true
+    end
+  end
+  def pack_members
+    p @@pack
+  end
+end
+
+pumba = Animal.new("Pumba")
+simba = Lion.new("Simba")
+lionking = Lion.new("Mike")
+simba.pack_members
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -118,7 +154,15 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+Entity Relationship Diagram is a tool which we use to visualize the entities in our application and the data types inside each entity.
+Example of attributes:
+Genie: name = string
+Lamp: count = integer
+pet: name = string, count = integer
+example of relationships
+one-to-one: each lamp has one genie, and each genie lives in one Lamp
+one-to-many: each person can have many pets
+many-to-many: many pets can play with many persons
 ```
 
 ### Question 6
@@ -129,7 +173,9 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+Schema is a description of the tables in our database. It establishes the columns in these tables, states the heads of the columns, describes the type of data in each column, and states any constrictions about data in each column.
+We represent one-to-many relationship by having a primary id and a foreign id in the follower table. In the people's wishes example. Each person on the people table will have one id. In the wishes table, each wish will have its own primary id, and it will have a foreign id, which is the id if the person from the people table.
+
 ```
 
 ### Question 7
@@ -154,7 +200,7 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+mike = Person.create(name: "Mike", age: 250)
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -162,7 +208,7 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+Person.where(age < 15)
 ```
 
 ### Question 8
@@ -172,5 +218,8 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+get '/oh_hello' do
+  return "Hello world"
+end
+
 ```
