@@ -161,6 +161,9 @@ Your answer...
 
 ```
 A schema is a blueprint of a table in a database that includes attributes and their constraints.
+class People
+  has_many: wishes
+end
 ```
 
 ### Question 7
