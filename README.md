@@ -153,7 +153,8 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+ERD = entity relationship diagram. We do this to plan out our data structure before building the app.
+Person (attributes name, height, age), has a one to many relationship with Pet (type, name, color). Genie (name, powers, age) has a one to one relationship with Lamp (material, size).
 ```
 
 ### Question 6
@@ -164,7 +165,7 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+A schema defines the columns of a table - name, data type, constraints. You would represent a one to many relationship by using a JOIN on an ID from the "one" table into the "many", representing its 'foreign key'. This would look like SELECT * FROM wishes JOIN people ON wishes.people_id = people.id.
 ```
 
 ### Question 7
@@ -189,7 +190,7 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+Person.create (id: 1, name: "Sandra", age: 44)
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -197,7 +198,7 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+Person.where(age: 15)
 ```
 
 ### Question 8
@@ -207,5 +208,7 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+get '/oh_hello' do
+  return 'hello world'
+end
 ```
