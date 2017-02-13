@@ -110,7 +110,7 @@ Create a new lion instance with the name "Simba".
 ```ruby
 class animal
   attr_accessor :name, :greet
-  
+
   def initialize (name, greet)
     @name = name
     @greet = greet
@@ -120,15 +120,17 @@ end
 
 
 class lion < animal
-  attr_accessor :pack
+  attr_accessor :pack, :king
 
-  def initialize(name, greet, pack)
+  def initialize(name, greet, pack, king)
     super(name, greet)
     @pack = pack
+    @king = king
   end
 end
 
 Pumba = animal.new("Pumba", "Hi my name is pumba")
+Simba = lion.new("Simba", "Hi my name is Simba", true)
 
 
 
