@@ -22,8 +22,17 @@ town = {
 #remove belle from town's people
 town[:residents].pop[1]
 
-#add belle to castle
+# add belle to castle
 town[:guests] = "Belle"
+
+
+#question 3
+
+friends = ["Chip Potts", "Cogsworth", "Lumière", "Mrs. Potts"]
+
+friends.each do |friends|
+  puts "Belle is friends with #{friends}"
+end
 
 binding.pry
 

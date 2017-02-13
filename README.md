@@ -82,7 +82,10 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+
+friends.each do |friends|
+  puts "Belle is friends with #{friends}"
+end
 ```
 
 ## Ruby OOP
