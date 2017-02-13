@@ -123,6 +123,17 @@ end
 
 pumba = Animal.new("Pumba")
 
+class Lion < Animal
+  @@pack = []
+
+  def initialize(name,king)
+    super(name)
+    @king = king
+  end
+end
+
+  simba = Lion.new("Simba",true)
+
 
 ```
 
@@ -141,7 +152,11 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+ERD is short for Entity Relationship Diagram. We create them for application as a form of "pseudocoding" or planning out how each entity relates to another.
+
+A Person may have multiple pets, therefore the relationships would be a one-to-many;
+
+
 ```
 
 ### Question 6
@@ -152,7 +167,7 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+A schema defines what columns an application database has (column's name, data type, constraints)
 ```
 
 ### Question 7
