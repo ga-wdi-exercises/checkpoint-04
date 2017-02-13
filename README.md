@@ -185,7 +185,7 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+A schema is simply a way to use one constructor filled with variables to create many instances of that class - for example, defining a Person schema with attributes of name, age, ID, and favorite food.
 ```
 
 ### Question 7
