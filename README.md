@@ -29,7 +29,10 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
-# code here
+def offer_rose(person)
+  @person = person
+  puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
 ```
 
 ### Question 2
@@ -54,7 +57,9 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+town[:residents].pop[1]
+
+town[:guests] = "Belle"
 ```
 
 ### Question 3
@@ -77,7 +82,10 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+
+friends.each do |friends|
+  puts "Belle is friends with #{friends}"
+end
 ```
 
 ## Ruby OOP
@@ -100,7 +108,47 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+#
+class Animal
+  attr_accessor :name
+
+  def initialize(name)
+    @name = name
+  end
+
+  def greet
+    puts "Hello I am a #{name}"
+  end
+
+  def pumba
+    puts @@pumba
+  end
+end
+
+class Lion < Animal
+  attr_accessor :name, :pack, :king
+
+  def initialize(name, pack, king)
+    @name = name
+    @pack = pack
+    @king = king
+  end
+
+  def new_pack
+    @@new_pack
+  end
+
+  def king
+    if @king
+      true
+  end
+
+  def greet
+    puts "Hello I am a #{name}"
+  end
+end
+
+simba = Lion.new("Simba","king")
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -118,7 +166,7 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+An ERD is a type of Domain Modeling, it is a great way to organize sections of website and visualize the data as it relates to the different sections of our websites
 ```
 
 ### Question 6
@@ -129,7 +177,7 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+A schema is a table that stores information about about a specific model in our database.
 ```
 
 ### Question 7
@@ -154,7 +202,7 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+SELECT * FROM persons WHERE name = 'Sasha';
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -162,7 +210,7 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+persons.find_by(age: 15)
 ```
 
 ### Question 8
@@ -172,5 +220,5 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+http://localhost:4567/
 ```
