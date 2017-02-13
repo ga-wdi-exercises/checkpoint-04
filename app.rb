@@ -19,15 +19,17 @@ require "pry"
 # Question 2
 
 
-  # def town = {
-  #   residents: ["Maurice", "Belle", "Gaston"],
-  #   castle: {
-  #     num_rooms: 47,
-  #     residents: "Robby Benson",
-  #     guests: []
-  #     }
-  #   }
-  # end
+town = {
+  residents: ["Maurice", "Belle", "Gaston"],
+  castle: {
+    num_rooms: 47,
+    residents: "Robby Benson",
+    guests: []
+    }
+  }
+
+town.delete("Belle")
+town[:guests].push("Belle")
 
 
 
