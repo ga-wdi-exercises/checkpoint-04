@@ -193,7 +193,22 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+A schema is the code that tells SQL how to make our table, kind of like a recipe. An example can be found in Question 7 right below :).
+
+A one-to-many relationship would be represented like this:
+
+CREATE TABLE people(
+  id SERIAL PRIMARY KEY,
+  name VARCHAR NOT NULL,
+  age INT NOT NULL
+)
+CREATE TABLE wishes(
+  id SERIAL PRIMARY KEY,
+  content VARCHAR NOT NULL,
+  person_id FOREIGN KEY
+)
+
+The foreign key in `wishes` allows multiple wishes to be linked to the same person.
 ```
 
 ### Question 7
