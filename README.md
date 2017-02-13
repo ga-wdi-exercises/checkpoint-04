@@ -29,7 +29,13 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
-# code here
+
+def offer_rose person
+  @person = person
+  puts "Would you take this rose, #{@person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+
+offer_rose "young prince"
 ```
 
 ### Question 2
@@ -54,7 +60,12 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+attr_accessor :residents, :guests
+belle = town[:residents][1]
+guests = town[:guests]
+town.pop("Belle")
+belle << :guests
+
 ```
 
 ### Question 3
@@ -77,7 +88,25 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+class Friends
+  attr_accessor :friends
+
+  def initialize = friends
+    @friends =friends
+    friends = ["Chip Potts", "Cogsworth", "Lumière", "Mrs. Potts"]
+  end
+
+  def greeting friends
+    @friends.each do |friend|
+    puts "Belle is friends with #{@friends}"
+  end
+
+end
+
+chip = Friends.new "Chip Potts"
+cogs = Friends.new "Cogsworth"
+lumi = Friends.new "Lumière"
+mrs = Friends.new "Mrs. Potts"
 ```
 
 ## Ruby OOP
@@ -100,7 +129,36 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+class Animal
+
+  attr_accessor :name
+  def initialize name
+    @name = name
+  end
+
+  def greet
+    puts "Hello! I'm a #{@name}!"
+  end
+end
+
+pumba = Animal.new "Pumba"
+
+class Lion < Animal
+  attr_accessor :name, :king
+  @@pack = []
+  @king = king
+  def initialize name
+    @@pack << self
+    @king = false
+    if name == "Simba"
+      @king == true
+    elsif false
+    end    
+  end
+end
+
+simba = Lion.new "Simba"
+
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -118,7 +176,10 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+An ERD is an Entity Relationship Diagram which refers to the visual representation of the relationships of data sets.  Data sets can have a one-to-one relationship where they are only attributes of each other, one-to-many where a location has many cohorts and can be an attribute to many, and many-to-many when many attributes can be connected to a number of others.
+
+In the example above, the genie has a one-to-many relationship with the Lamp and the Person and visa versa, but the Pet has a one-to-one relationship with the Person.
+
 ```
 
 ### Question 6
