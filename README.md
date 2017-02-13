@@ -125,12 +125,12 @@ end
 pumba = Animal.new('Pumba')
 
 
-class Lion extends Animal
+class Lion < Animal
   pack = []
-
-  def initialize (name, king)
+    attr_accessor :name
+  def initialize (name)
     super(@name)
-    @king = if @name == "Simba"
+    if @name == "Simba"
               return true
             else
               return false
