@@ -29,7 +29,10 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
-# code here
+def offer_rose (person)
+  puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+
+end
 ```
 
 ### Question 2
@@ -54,7 +57,7 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+town[:residents].delete("Belle")
 ```
 
 ### Question 3
@@ -77,7 +80,9 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+friends.each do |name|
+  puts "Belle is friends with #{name}"
+end
 ```
 
 ## Ruby OOP
@@ -100,7 +105,29 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+class Animal
+  attr_accessor :name
+  def initialize(name)
+    @name = name
+  end
+  def greet
+    puts "Hello my name is #{name}"
+  end
+
+end
+
+
+class Lion
+  def initialize(name, pack)
+    super(name)
+    @pack = pack
+  end
+
+
+end
+
+pumba = Animal.new("Pumba")
+simba = Lion.new("Simba")
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -118,7 +145,7 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+ERD stands for Entity Relationship Diagram. We use them as a way to map out the relationship between different sets of data one may need in an application. 
 ```
 
 ### Question 6
