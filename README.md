@@ -29,7 +29,12 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
-# code here
+def offer_rose(person)
+  @person = person
+   puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+
+offer_rose("young prince")
 ```
 
 ### Question 2
@@ -54,7 +59,8 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+residents. delete(2)
+guests << "Belle"
 ```
 
 ### Question 3
@@ -77,7 +83,9 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+friends.each do |i|
+  puts "Belle is friends with " + i
+end
 ```
 
 ## Ruby OOP
@@ -100,7 +108,32 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+class animal
+  attr_accessor :name, :greet
+
+  def initialize (name, greet)
+    @name = name
+    @greet = greet
+  end
+end
+
+
+
+class lion < animal
+  attr_accessor :pack, :king
+
+  def initialize(name, greet, pack, king)
+    super(name, greet)
+    @pack = pack
+    @king = king
+  end
+end
+
+Pumba = animal.new("Pumba", "Hi my name is pumba")
+Simba = lion.new("Simba", "Hi my name is Simba", true)
+
+
+
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -118,7 +151,7 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+An ERD is Entity Relaionship Diagram, and its meant to draw out the various ways data relates to entities on yoru site.  It should help you plan out your website.  In the examples above, each entity can have many connections to the other. For example, the Genie and Lamp can have a one to one relationship, while the lamp also has a one-to-one relationship with the person.  The pet can have a many-to-many relationship to the person, while it has no relationships with the lamp or Genie.  The person and Genie can have a many to many relationship with each other.  Some attributes the genie would have is age, number of wishes granted, and number of wishes total.  The lamp can have material it's made out of.  The person can have aname, age, gender, height, number of wishes granted, number of wishes left.  The pet could have species, gender, height, and weight.
 ```
 
 ### Question 6
@@ -129,7 +162,7 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+Schema defines what columns it has.  If we were to represnt a one-to-many relationship, then the person would have 3 wishes.  We would have one table for the person, and another table for wishes.  The wishes table would tie to the person table with specific ID numbers since the person would be making more then one wish (3).
 ```
 
 ### Question 7
@@ -172,5 +205,7 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+get '/oh_hello' do
+  return "Hello world"
+end
 ```
