@@ -208,7 +208,7 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-A Schema is a collection of database objects associated with one Username. In this example, a Username would represent a single person and the objects contained within the Schema would be the wishes that have been made by that one Person.
+A Schema is a collection of database objects (in tables) associated with one Username. In this example, a Username would represent a single person and the objects contained within the Schema would be the wishes that have been made by that one Person.
 ```
 
 ### Question 7
