@@ -19,4 +19,27 @@ require "pry"
 # Question 2
 
 
+  # def town = {
+  #   residents: ["Maurice", "Belle", "Gaston"],
+  #   castle: {
+  #     num_rooms: 47,
+  #     residents: "Robby Benson",
+  #     guests: []
+  #     }
+  #   }
+  # end
+
+
+
+
+
+# Question 3
+
+
+friends = ["Chip Potts", "Cogsworth", "Lumière", "Mrs. Potts"]
+
+friends.each do |friend|
+  puts "Belle is friends with #{friend}."
+end
+
 binding.pry
