@@ -169,7 +169,12 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+An Entity Relationship Diagram is a tool used to display the relationships between different groups of data in our program. They are used to help plan and organize programs we are writing.
+
+Genie: can branch down into lamp, magic (which connects to wish-granting), and rules (which also connects to wish-granting)
+Lamp: cord (to electricity), bulb, lampshade, framework
+Person: name, friends/family/relationships, clothes
+Pet: owners, friends, toys, food
 ```
 
 ### Question 6
@@ -223,5 +228,7 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+get '/oh_hello' do
+  "hello world"
+end
 ```
