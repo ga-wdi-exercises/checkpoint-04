@@ -29,6 +29,16 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
+
+
+def offer_rose(person)
+# 	puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+
+# end
+
+# offer_rose('young prince')
+
+
 # code here
 ```
 
@@ -54,7 +64,9 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+ p town[:residents].delete("Belle")
+ p town
+ p town[:guests] << "Belle"
 ```
 
 ### Question 3
@@ -77,7 +89,7 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+friends.each{|x| p "Belle is friends with #{x}"}
 ```
 
 ## Ruby OOP
@@ -100,7 +112,28 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+class Lion < Animal
+	attr_accessor :name, :pack, :king
+	def initialize(name)
+		super(name)
+		@king = false
+		@@pack = []
+	end
+	def is_king
+		if @name == "Simba" 
+			@king = true
+		end
+	end
+end
+
+
+pumba = Animal.new("Pumba")
+p pumba.greet
+
+simba = Lion.new("Simba")
+p simba
+simba.is_king
+p simba
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -118,7 +151,9 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+Entity Relational Database, we use them in a similar way as pseudocode but also to help us keep track of how we are using data and how best to relate and keep it organized.   A Person can have many lamps, a lamp has a property of Genie which is a boolean value a person can also have many pets but each pet only has one true master.
+
+
 ```
 
 ### Question 6
@@ -129,7 +164,7 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+A Schema is what tells us the name and organization of a table we create. the columns represent the properties and the rows rep the individual instances of those classes. more than one row means that we have many instances of that type.
 ```
 
 ### Question 7
@@ -153,9 +188,11 @@ Write Ruby code that will create an instance of a person.
 
 Your answer...
 
+
 ```ruby
-Replace this with your answer
-```
+john = Person.new('John','73')
+
+persons.find_by( age >= 15)```
 
 Write Ruby code that will query for any person that is 15 years of age.
 
@@ -172,5 +209,7 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+get '/oh_hello' do
+return "Hello world"
+end
 ```
