@@ -109,7 +109,31 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+class Animal
+  attr_accessor :name
+  def initialize(name)
+    @name = name
+  end
+  def greet
+    puts "Hi my name is #{@name}!"
+  end
+end
+
+pumba = Animal.new("Pumba")
+
+class Lion < Animal
+  attr_accessor :king
+  def initialize(name)
+    super(name)
+    if @name == "Simba"
+      @king = true
+    else
+      @king = false
+    end
+  end
+end
+
+simba = Lion.new("Simba")
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -127,7 +151,18 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+An ERD or Entity Relationship Diagram is a chart that outlines the data in a application. It is used to visualize relationships between different attributes and help determine data structure.
+
+Attributes:
+- Genie: name, age, # of people served, magic abilities
+- Lamp: color, material, date manufactured
+- Person: name, age, gender, location
+- Pet: name, species, color, age
+
+Relationships:
+- A person might have many pets, but each pet will only belong to one person.
+- A person can also have many lamps. 
+- A lamp can have only one genie, and vice versa
 ```
 
 ### Question 6
