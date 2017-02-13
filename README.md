@@ -32,7 +32,11 @@ Write your code here...
 def offer_rose person
   puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
 end
+
+offer_rose "Bob Pizza"
 ```
+
+
 
 ### Question 2
 
@@ -56,8 +60,8 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-town.residents.delete("Belle")
-town.castle.guests << "Belle"
+town[:residents].delete("Belle")
+town[:castle][:guests] << "Belle"
 ```
 
 ### Question 3
