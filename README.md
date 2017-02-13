@@ -29,7 +29,12 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
-# code here
+def offer_rose(person)
+  @person = person
+  puts "Would you take this rose, #{@person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+
+offer_rose("young prince")
 ```
 
 ### Question 2
@@ -54,7 +59,8 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+town[:castle][:guests] << town[:residents][1]
+p town[:castle][:guests]
 ```
 
 ### Question 3
@@ -77,7 +83,9 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+friends.each do |friend|
+  puts "Belle is friends with " + friend
+end
 ```
 
 ## Ruby OOP
@@ -100,7 +108,33 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+class Animal
+
+  attr_accessor :name
+  def initialize(name)
+    @name = name
+  end
+
+  def greet
+    puts "Hi, my name is #{@name}"
+  end
+
+end
+
+pumba = Animal.new("Pumba")
+
+class Lion < Animal
+  @@pack = []
+
+  def initialize(name,king)
+    super(name)
+    @king = king
+  end
+end
+
+  simba = Lion.new("Simba",true)
+
+
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -118,7 +152,11 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+ERD is short for Entity Relationship Diagram. We create them for application as a form of "pseudocoding" or planning out how each entity relates to another.
+
+A Person may have multiple pets, therefore the relationships would be a one-to-many;
+
+
 ```
 
 ### Question 6
@@ -129,7 +167,7 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+A schema defines what columns an application database has (column's name, data type, constraints)
 ```
 
 ### Question 7
@@ -154,7 +192,8 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+INSERT INTO persons (name,age) VALUES ('Fiona',32);
+SELECT * FROM persons
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -162,7 +201,8 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+SELECT * FROM persons WHERE age = 15;
+
 ```
 
 ### Question 8
@@ -172,5 +212,7 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+get '/oh_hello' do
+  return 'hello world'
+end
 ```
