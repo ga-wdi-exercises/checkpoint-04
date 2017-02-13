@@ -210,7 +210,7 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+taylor = Person.create("Taylor", 25)
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -218,7 +218,7 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+Person.where(age = 15)
 ```
 
 ### Question 8
