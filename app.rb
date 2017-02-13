@@ -1,5 +1,13 @@
-def offer_rose(person)
-  puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
-end
+town = {
+  residents: ["Maurice", "Belle", "Gaston"],
+  castle: {
+    num_rooms: 47,
+    residents: "Robby Benson",
+    guests: []
+  }
+}
 
-offer_rose("young prince")
+town[:residents].delete("Belle")
+town[:castle][:residents] << " and Belle"
+puts town[:residents]
+puts town[:castle][:residents]
