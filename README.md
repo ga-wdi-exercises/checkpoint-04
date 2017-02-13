@@ -29,7 +29,11 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
-# code here
+def offer_rose("young prince")
+  puts "Would you take this rose, #{young prince}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+
+
 ```
 
 ### Question 2
@@ -54,7 +58,8 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+town[:residents].delete("Belle")
+town[:guests]= "Belle"
 ```
 
 ### Question 3
@@ -77,7 +82,9 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+friends.each do |friend|
+  puts "Belle is friends with #{friend}"
+end
 ```
 
 ## Ruby OOP
@@ -100,7 +107,40 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+class Animal
+  attr_accessor :name
+
+  def initialize (name)
+    @name = name
+  end
+
+  def greet(name)
+    puts "Hello, my name is #{name}"
+  end
+
+end
+
+Puma = Animal.new
+
+class Lion < Animal
+  attr_accessor :name
+  @@pack = []
+
+  def initialize (name, king)
+    @name = name
+    @king = king_or_not
+    @@pack.push(self)
+  end
+
+  def king_or_not(name)
+    if name == "Simba"
+      puts "#{name} is king"
+  end
+
+
+end
+
+Simba = Lion.new
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -118,7 +158,7 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+An ERD is a relational blueprint tool that lets us map out data and plan out our data structure. The lamp would be connected to the genie. The person would be connected to the lamp, the pet, and the genie. The genie would have a one to many relations to the person.
 ```
 
 ### Question 6
@@ -129,7 +169,7 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+A schema defines the columns in a table. For each column, it defines the name, data type, and any constraints. We represent a one to many with a fork symbol or using the parent id in the children table. So one person would have many wishes. So the wishes table would have the person id.
 ```
 
 ### Question 7
@@ -154,7 +194,7 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+steve = Person.new(name: "steve", age:23)
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -162,7 +202,7 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+Person.find_by(age: 15)
 ```
 
 ### Question 8
@@ -172,5 +212,8 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+get '/oh_hello' do
+  "Hello World"
+end
+
 ```
