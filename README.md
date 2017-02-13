@@ -29,7 +29,12 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
-# code here
+
+Def 'offer_rose'
+   Puts “Would you take this rose in exchange for giving an old beggar woman shelter from the bitter cold!”
+end
+
+
 ```
 
 ### Question 2
@@ -45,6 +50,8 @@ town = {
     guests: []
   }
 }
+
+
 ```
 
 Using Ruby...
@@ -54,7 +61,9 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+puts "Belle".pop
+x = guests
+guests << "Belle"
 ```
 
 ### Question 3
@@ -77,7 +86,7 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+puts Belle is friends with ["Chip Potts", "Cogsworth", "Lumière", "Mrs. Potts"].each
 ```
 
 ## Ruby OOP
@@ -100,7 +109,21 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+
+Class Animal
+     Attr_accessor: name, :greeting,
+end
+
+Class Lion  <  Animal
+
+Attr_accessor: king,
+
+Lion_instance = Lion.new
+Lion_instance.name = "Simba"
+
+End
+
+
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -118,7 +141,12 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+The ERD is a graphical representation of an information system that shows the relationship between people, objects, places, concepts or events within that system.
+
+Genie - person, lives in a bottle, grants wishes
+Lamp - may house a genie. My provide light and/or decoration
+Person - name, age, gender
+pet - animal, dog, cat, snake
 ```
 
 ### Question 6
@@ -129,7 +157,9 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+A database schema is the skeleton structure that represents the logical view of the entire database. It defines how the data is organized and how the relations among them are associated. It formulates all the constraints that are to be applied on the data.
+
+We reprent 1 to many relationships by drawing the diagram. 
 ```
 
 ### Question 7
@@ -154,7 +184,7 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+person_instance = person.new
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -162,7 +192,7 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+puts "You're 15 years old" if age is > 15 && if age is < 16
 ```
 
 ### Question 8
@@ -172,5 +202,7 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+get '/oh_hello' do
+  return 'hello world'
+end
 ```
