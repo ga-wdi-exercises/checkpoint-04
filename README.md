@@ -29,7 +29,13 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
-# code here
+
+def offer_rose(person)
+puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+
+offer_rose("young prince")
+
 ```
 
 ### Question 2
@@ -54,7 +60,9 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+elle = town[:residents].slice!(1)
+town[:castle][:guests].push(belle)
+
 ```
 
 ### Question 3
@@ -77,7 +85,9 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+friends.each do |friend|
+puts "Belle is friends with #{friend}"
+end
 ```
 
 ## Ruby OOP
@@ -100,7 +110,29 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+Partially answered and not completed. Having trouble building this code adn running out of time. I think I get the idea of what needs to be done and I only need more time to work on it.
+class Animal
+  attr_accessor :name, :greet
+
+
+def initialize (name)
+  @name = name
+  @greet = []
+end
+
+def greet
+  return "Hakuna Matata #{name}"
+end
+
+# class Lion > Animal(name, pack)
+#   attr_accessor :pack
+#   super(name)
+#   if name == "Simba"
+#     return true
+#   end
+end
+
+pumba = Animal.new("Pumba")
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -118,7 +150,7 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+ERD stands for Entity Relationship Diagram which shares a similar concept to pseudocoding, that is building the concepts of an app, drawing out the relationship of the things the app needs to work (ie: Users, employees, products, etc). Essentially is a tool we use to visualize and describe the data relating to the major entities that will exist in out programs.
 ```
 
 ### Question 6
