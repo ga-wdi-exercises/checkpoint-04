@@ -30,6 +30,10 @@ Write your code here...
 
 ```ruby
 # code here
+  def offer_rose (person)
+    puts "Would you take this rose," (person) "in exchange for giving an old beggar  
+    woman shelter form the bitter cold?"
+  end
 ```
 
 ### Question 2
@@ -55,6 +59,8 @@ Write your code here...
 
 ```ruby
 # code here
+  town.delete("Belle")
+  town|guests:|("Belle")
 ```
 
 ### Question 3
@@ -78,6 +84,10 @@ Write your code here...
 
 ```ruby
 # code here
+  friends.each do |name|
+    puts "Belle is friends with #{name}"
+  end
+
 ```
 
 ## Ruby OOP
@@ -101,6 +111,16 @@ Create a new lion instance with the name "Simba".
 
 ```ruby
 # code here
+  class Animal
+    attr_accessor :name
+    def intialize(name,greet)
+      @name = name
+      def greet
+        puts @name
+      end
+    end
+    hog = Animal.new(pumba)
+
 ```
 
 ## SQL, Databases, and ActiveRecord
