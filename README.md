@@ -29,7 +29,10 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
-# code here
+def offer_rose person
+  puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+offer_rose "young prince"
 ```
 
 ### Question 2
@@ -54,7 +57,8 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+town[:residents].delete("Belle")
+town[:castle][:guests].push("Belle")
 ```
 
 ### Question 3
@@ -77,7 +81,10 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+friends = ["Chip Potts", "Cogsworth", "Lumière", "Mrs. Potts"]
+friends.each do |friend|
+  puts "Belle is friends with #{friend}"
+end
 ```
 
 ## Ruby OOP
@@ -100,7 +107,37 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+class Animal
+  attr_accessor :name
+
+  def initialize name
+    @name = name
+  end
+
+  def greet
+    "Hello, I'm #{@name}"
+  end
+end
+
+pumba = Animal.new("Pumba")
+
+class Lion < Animal
+  attr_accessor :pack, :name
+
+  @@pack = 0
+
+  def initialize name, king
+    super(name)
+    @@pack += 1
+    @king = king
+  end
+
+  def pack_size
+    @@pack
+  end
+end
+
+simba = Lion.new("Simba", true)
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -118,7 +155,34 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+Genie:
+  - Attributes
+  1) inBottle (boolean)
+  2) name (string)
+  - Relationships
+  1) One-to-one with Lamp
+Lamp:
+  - Attributes
+  1) hasGenie (boolean)
+  2) material (string)
+  - Relationships
+  1) One-to-one with Genie
+Person:
+  - Attributes
+  1) lamps (number)
+  2) pets (number)
+  3) name (string)
+  4) age (number)
+  - Relationships
+  1) One-to-many with Lamp
+  2) One-to-many with Pet
+Pet:
+  - Attributes
+  1) name (string)
+  2) species (string)
+  3) age (number)
+  - Relationships
+  1) Many-to-one with Person
 ```
 
 ### Question 6
@@ -129,7 +193,22 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+A schema is the code that tells SQL how to make our table, kind of like a recipe. An example can be found in Question 7 right below :).
+
+A one-to-many relationship would be represented like this:
+
+CREATE TABLE people(
+  id SERIAL PRIMARY KEY,
+  name VARCHAR NOT NULL,
+  age INT NOT NULL
+)
+CREATE TABLE wishes(
+  id SERIAL PRIMARY KEY,
+  content VARCHAR NOT NULL,
+  person_id FOREIGN KEY
+)
+
+The foreign key in `wishes` allows multiple wishes to be linked to the same person.
 ```
 
 ### Question 7
@@ -151,10 +230,10 @@ CREATE TABLE persons(
 
 Write Ruby code that will create an instance of a person.
 
-Your answer...
+
 
 ```ruby
-Replace this with your answer
+Person.create( { :name => "Vince", :age => "22"} )
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -162,7 +241,8 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+
+Person.find_by(age: 15)
 ```
 
 ### Question 8
@@ -172,5 +252,7 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+get '/oh_hello' do
+  return "hello world"
+end
 ```
