@@ -29,7 +29,10 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
-# code here
+def offer_rose (person)
+  offer_rose(young prince)
+  puts "Would you take this rose" + person, "in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
 ```
 
 ### Question 2
@@ -54,7 +57,9 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+a = residents
+a.delete(Belle)
+guests.add_person (Belle)
 ```
 
 ### Question 3
@@ -77,7 +82,23 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+friends = [
+  {
+    name: "Chip Potts",
+  },
+  {
+    name: "Cogsworth",
+  },
+  {
+    name: "Lumière",
+  {
+    name: "Mrs. Potts"
+  }]
+
+while
+  friends.each do |friend|
+    puts "Belle is friends with " + friends[:name] + "?"
+end
 ```
 
 ## Ruby OOP
@@ -100,7 +121,25 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+class Animal
+  attr_reader :name, :greet
+  def initialize (name, greet)
+    @name = name
+    @greet = greet
+      puts "Pumba"
+  end
+end
+
+class Lion < Animal
+  attr_reader :name, :greet
+  def initialize (name, greet)
+    @name = name
+    @greet = greet
+  if name == Simba
+    puts  Lion && King
+  end
+  end
+end
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -118,7 +157,14 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+An ERD (entity-relationship diagram) gives an overview of your models and how they are associated.
+
+The attributes and relationships for the example ERD might be . . .
+
+- Genie: wishes, amount
+- Lamp: material, shape, weight
+- Person: wishes, hope, amount
+- Pet: animal, type,
 ```
 
 ### Question 6
@@ -129,7 +175,8 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+Schema, defines what columns it has within a table. We represent a one-to-many relationship in a SQL database by using tables and columns.
+
 ```
 
 ### Question 7
@@ -154,7 +201,7 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+SELECT Person WHERE ActiveRecord = "Person";
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -162,7 +209,7 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+SELECT Person WHERE ActiveRecord (Person, DOB,)= "Person";
 ```
 
 ### Question 8
@@ -172,5 +219,9 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+require 'sinatra'
+
+get '/oh_hello' do
+  return 'hello world'
+end
 ```
