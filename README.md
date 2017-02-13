@@ -80,7 +80,12 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+friends = ["Chip Potts", "Cogsworth", "Lumière", "Mrs. Potts"]
+index = 0
+while index < friends.length
+  puts "Belle is friends with " + friends[index]
+  index += 1
+end
 ```
 
 ## Ruby OOP
