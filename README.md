@@ -35,7 +35,6 @@ def offer_rose(person)
 end
 
 offer_rose("young prince")
-
 ```
 
 ### Question 2
@@ -61,6 +60,7 @@ Write your code here...
 
 ```ruby
 # code here
+town.residents["Belle"] << town.castle("guests")
 ```
 
 ### Question 3
