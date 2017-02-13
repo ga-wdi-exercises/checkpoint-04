@@ -29,7 +29,10 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
-# code here
+def offer_rose(person)
+  puts "Would you take this rose, #{:person} in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+
 ```
 
 ### Question 2
@@ -54,7 +57,7 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+town[:castle][:guests] << town[:residents][1]
 ```
 
 ### Question 3
@@ -77,7 +80,12 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+friends = ["Chip Potts", "Cogsworth", "Lumière", "Mrs. Potts"]
+index = 0
+while index < friends.length
+  puts "Belle is friends with " + friends[index]
+  index += 1
+end
 ```
 
 ## Ruby OOP
@@ -100,7 +108,34 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+class Animal
+  attr_reader :name
+
+  def initialize(name)
+    @name = name
+  end
+
+  def greet
+    puts "Hello " + @name
+
+  end
+end
+
+class Lion < Animal
+  pack = [] << @name
+
+def king
+  if name == 'simba'
+    return true
+    puts 'King' + @name
+  else
+    return false
+end
+end
+end
+
+simba = Animal.new('Simba')
+scar = Animal.new('Scar')
 ```
 
 ## SQL, Databases, and ActiveRecord
