@@ -57,8 +57,8 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-town.residents.delete(1)
-town.guests.push("Belle")
+residents.delete_at(1)
+guests.push("Belle")
 ```
 
 ### Question 3
