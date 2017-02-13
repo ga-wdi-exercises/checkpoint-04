@@ -30,6 +30,14 @@ Write your code here...
 
 ```ruby
 # code here
+
+
+def  offer_rose(person)
+  puts "Would you take this rose , person , in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+
+offer_rose("young prince")
+
 ```
 
 ### Question 2
@@ -55,6 +63,9 @@ Write your code here...
 
 ```ruby
 # code here
+own.delete("Belle")
+
+guests.push("Belle")
 ```
 
 ### Question 3
@@ -78,6 +89,7 @@ Write your code here...
 
 ```ruby
 # code here
+puts "Belle is friends with #{friends}!"
 ```
 
 ## Ruby OOP
@@ -116,9 +128,9 @@ entities (no need to draw an ERD)...
 - Pet
 
 Your answer...
-
+Erd stands for Entity Relationship which is a tool used to describe the relationship between data and major entities that are in a program.
+Genie to lamp  and person to pet would both be one-to-one.
 ```
-Replace this with your answer
 ```
 
 ### Question 6
@@ -127,7 +139,7 @@ Describe what a schema is, and how we represent a one-to-many relationship in a
 SQL database. If you need an example, you can use `people` and `wishes` models.
 
 Your answer...
-
+Schemas are used to define a column's name, data type , and any constraints a column might have within a table.
 ```
 Replace this with your answer
 ```
@@ -173,4 +185,7 @@ Your answer...
 
 ```ruby
 Replace this with your answer
+get /hello do
+print "hello world"
+end
 ```
