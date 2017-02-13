@@ -29,7 +29,11 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
-# code here
+# def offer_rose(person)
+# 	puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+# end
+#
+# offer_rose('young prince')
 ```
 
 ### Question 2
@@ -54,7 +58,8 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+# town[:castle][:guests].push(town[:residents][1])
+# town[:residents].delete_at(1)
 ```
 
 ### Question 3
@@ -77,7 +82,9 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+# friends.each do |place|
+# 	puts "Belle is friends with #{place}"
+# end
 ```
 
 ## Ruby OOP
@@ -100,7 +107,40 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+# class Animal
+# 	def initialize(name)
+# 		@name = name
+# 	end
+# 	
+# 	def greet
+# 		puts "Hello, I am #{@name}"
+# 	end
+# 	
+# 	def get_name
+# 		@name
+# 	end
+# 	
+# 	def set_name(new_name)
+# 		@name = new_name
+# 	end
+# 	
+# end
+#
+# pumba = Animal.new("Pumba")
+#
+# class Lion < Animal
+# 	@@pack = [name]
+# 	def initialize(name)
+# 		super(name)
+# 		if name == 'Simba'
+# 			@king = TRUE
+# 		else
+# 			@king = FALSE
+# 		end
+# 	end
+# end
+#
+# simba = Lion.new("Simba")
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -118,7 +158,22 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+An ERD is an Entity Relationship Diagram. The reason we create an ERD for
+applications is to be able to better understand the relationships between
+different classes and see how all the classes are linked and what attributes
+would go into the classes. We are also able to determine from the get go whether
+or not a class will have a one-to-one relationship with another class or a
+one to many relationship. Given the example above:
+The Person will be the center (main class) in this ERD. The person(attributes:
+food, water, shelter, clothes, location, age, sleep, money, etc) has a
+one-to-one relationship with the pet(attributes: owner, species, shelter,
+location, etc). The pet shares no other relationship with any of the other
+entities. The person also has a one-to-one relationship with the lamp
+(attributes: type of lamp, age, location, contents). The lamp shares a
+one-to-one relationship with the genie because only one genie lives in that lamp
+The Genie (attributes: type of genie, location, number of wishes granted, rules)
+will have a one-to-many relationship with the person because over time the Genie
+has multiple masters.
 ```
 
 ### Question 6
@@ -129,7 +184,18 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+The schema refers to the database table in SQL and how each entity within the
+database is related to one another. A one to many relationship in a SQL schema
+is shown such that the same user will be repeated multiple times for the
+corresponding relationship. For example with people and wishes:
+In an SQL table, if person 1 = Kevin and person 2 = Jamal and we both have 3
+wishes. It would be represented by:
+Kevin: wish 1
+Kevin: wish 2
+Kevin: wish 3
+Jamal: wish 1
+Jamal: wish 2
+Jamal: wish 3
 ```
 
 ### Question 7
@@ -154,7 +220,7 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+# person = Person.new(name: "Kevin", age: "23")
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -162,7 +228,7 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+# Person.find_by(age: 15)
 ```
 
 ### Question 8
@@ -172,5 +238,9 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+# require 'sinatra'
+# require 'sinatra/reloader'
+# get '/oh_hello' do
+#   return "Hello World!!"
+# end
 ```
