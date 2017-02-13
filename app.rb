@@ -1,3 +1,6 @@
+require 'sinatra'
+require 'sinatra/reloader'
+
 # Question 1
 
 def offer_rose (a1="Young Prince")
@@ -20,8 +23,9 @@ town = {
     guests: []
   }
 }
-residents.delete(2)
-residents << 'Belle'
+town.residents.delete_at(2)
+town.castle.guests << 'Belle'
+town[:castle]
 
 #Question 3
 friends = ["Chip Potts", "Cogsworth", "Lumière", "Mrs. Potts"]
@@ -31,11 +35,12 @@ puts "Belle is friends with #{i}"
 end
 
 # Question 4
-class Animal (name, greet)
-  attr_accessor :name :greet
+class Animal (name)
+  attr_accessor :name
   def initialize
     @name = name
-    @greet = greet
+  end
+  def greet
   end
 end
 
@@ -43,10 +48,33 @@ animal = Animal.new
 animal.name = "Pumba"
 
 class Lion < Animal
-  def initialize(name, greet, pack)
-    super(name, greet)
-    @pack = pack
+  @@pack = []
+  king == false
+  def initialize(name)
+    super(name)
+    @@pack << self
   end
+  def check_king
+    puts "What is your name?"
+    if name == "Simba" == true
+    else == false
+    end
+end
+
+lion1 = Lion.new("Joe")
+
+
+class Person < ActiveRecord::Base
+end
+person1=Person.new(1, "John Smith", 15)
+
+people =[]
+result = people.select do |age|
+  age == 15
+end
+
+get '/oh_hello' do
+  return "hello world"
 end
 
 # Question 5
@@ -55,4 +83,4 @@ end
 # A person has a lamp that contains a genie. This genie can grants 1 wish. That person ask the genie for a pet.
 
 # Question 6
-# Ran out of time
+# A schema is a blueprint. A database schema is the collection fo relation schemas for a whole database. An example would be the "parent" or wishes.
