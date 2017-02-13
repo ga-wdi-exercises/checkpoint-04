@@ -29,7 +29,9 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
-# code here
+def offer_rose(person)
+  puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
 ```
 
 ### Question 2
@@ -54,7 +56,8 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+town[:residents].delete("Belle")
+town[:castle][:guests].push("Belle")
 ```
 
 ### Question 3
@@ -77,7 +80,7 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+friends.each{ |x| puts "Belle is friends with #{x}"}
 ```
 
 ## Ruby OOP
@@ -100,7 +103,39 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+class Animal
+
+  attr_accessor :name
+
+  def initialize(name)
+    @name = name
+  end
+
+  def greet
+    puts "Hi"
+  end
+
+end
+
+pumba = Animal.new("Pumba")
+
+class Lion < Animal
+  @@pack = 0
+  def initialize(name)
+    @name = name
+    @@pack += 1
+  end
+
+  def king
+    if @name == "Simba"
+      puts "I am the king"
+    else puts "nah"
+    end
+  end
+
+end
+
+simba = Lion.new("Simba")
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -118,7 +153,13 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+An erd is a outline that is made before making the database. It helps
+order your information into manageable bites.
+
+One lamp will have one genie.
+
+One person may have many pets.
+
 ```
 
 ### Question 6
