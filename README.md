@@ -29,7 +29,11 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
-# code here
+# # def offer_rose(person)
+#   @ person = person
+#    def person
+#      puts "Would you take this rose #{@person}"
+#    end
 ```
 
 ### Question 2
@@ -54,7 +58,7 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+#
 ```
 
 ### Question 3
@@ -77,7 +81,12 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+# friends = ["Chip Potts", "Cogsworth", "Lumière", "Mrs. Potts"]
+
+# friends.each do |name|
+#   puts "Belle is friends with Chip Potts"
+
+# end
 ```
 
 ## Ruby OOP
@@ -100,7 +109,32 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+# class Animal
+  attr_accessor :name
+  def initialize (name)
+    @name = name
+  end
+  def greet
+    puts "I am #{@name}"
+ end
+ end
+  # def get_name
+  #   return #{@name}
+  # end  
+  # def set_name
+  #   puts ""
+  # end
+# class Lion << Animal
+#   def initialize(pack)
+#     @pack = pack
+#     @animal << self
+# end
+#   def king
+#     if "#{self.name} is Simba"
+#       puts "true"
+#     else
+#       return false
+# end
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -117,9 +151,11 @@ entities (no need to draw an ERD)...
 
 Your answer...
 
-```
-Replace this with your answer
-```
+ERD allows developers to keep al the information organized. ERD is allows shows the relationship between people/things/objects.
+
+Lamp = name, id,
+person = firstname, lastname, email
+Pet = id, breed, name
 
 ### Question 6
 
@@ -128,9 +164,8 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 
 Your answer...
 
-```
-Replace this with your answer
-```
+Schema represents a theory or plan of an outline or model.
+One to many relationships are like for example a person can be assigned to many task and a task may only be assigned to one person
 
 ### Question 7
 
@@ -162,15 +197,27 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+# def age #method that will return true or false
+# #      if @age = 15
+# #      return true
+# #    else
+# #      return false
+# #    end
+# #   
+
 ```
 
 ### Question 8
 
 Write a route in Sinatra that will print "hello world" in the web browser at the following URL: `http://localhost:4567/oh_hello`
 
-Your answer...
+Your answer..
 
 ```ruby
-Replace this with your answer
+# require "sinatra"
+# require "sinatra/reloader"
+#
+# # get "/" do
+# #   return "Hello World"
+# # end
 ```
