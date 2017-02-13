@@ -29,7 +29,15 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
-# code here
+def offer_rose(person)
+
+    puts "Would you take this rose, #{person} in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+
+
+person = "young prince"
+
+offer_rose(person)
 ```
 
 ### Question 2
@@ -54,7 +62,12 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+#to remove belle
+town[:castle][:guests] << town[:residents].delete("Belle")
+#to keep belle in the previous array
+town[:castle][:guests] << town[:residents][1]
+p town[:residents]
+puts town[:castle]
 ```
 
 ### Question 3
@@ -77,7 +90,9 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+friends.each do  |friend|
+  puts "Belle is friends with #{friend}"
+end
 ```
 
 ## Ruby OOP
@@ -100,7 +115,49 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+class Animal
+  attr_accessor :name
+
+def initialize name
+@name = name
+end
+
+def greeter(name)
+puts "Rorrr.... I am #{@name}, I am the king of the pride "
+end
+
+end
+
+p pumba = Animal.new("pumba")
+
+
+
+class Lion < Animal
+  #sorry for not following instructions a group of lions is called a Pride, not a pack
+@@pride = []
+
+def initialize name
+@king = false
+@name = name
+if name == "simba"
+@king = true
+ @@pride << name
+p greeter(name)
+else
+  @king = false
+ p @@pride << name
+end
+
+end
+
+def Lion.pride
+return @@pride
+end
+
+end
+
+p simba = Lion.new("simba")
+p pumba = Lion.new("pumba")
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -118,7 +175,11 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+ERD - Entity relationship diagram is a diagram which shows the relationship between an entity and a set of data inputs in a table
+ERD- shows the relationships of entity sets stored in a database
+We create an ERD for an application is in order to understand the relationship between each data sets in an application.
+-In order to understand better what a user might be seeing and interacting within the application
+Genie(power, magic) =>(lamp(light, touch)) => Person(name, id) => pet(name, wish id)
 ```
 
 ### Question 6
@@ -129,7 +190,21 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+Schema - is the organization or structure for a database.
+people(
+  id - SERIAL PRIMARY KEY,
+  name - VARCHAR not NULL,
+  gender - VARCHAR NULL
+  )
+
+wishes(  
+  id - int not NULL,
+  people id - INT not NULL,
+  type - VARCHAR  NULL
+  )
+
+
+People could have many wishes.
 ```
 
 ### Question 7
@@ -154,7 +229,7 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+jonathan = Person.new(name: "Jonathan", age: 35)
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -162,7 +237,7 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+person.where(age: 15)
 ```
 
 ### Question 8
@@ -172,5 +247,7 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+get `oh_hello` do
+  puts "hello world"
+end
 ```
