@@ -30,6 +30,16 @@ Write your code here...
 
 ```ruby
 # code here
+person = ""
+
+def offer_rose(person)
+	puts "Would you take this rose, " + person + ", in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+
+Young_Prince.offer_rose
+
+????? just a guess.
+	
 ```
 
 ### Question 2
@@ -55,6 +65,11 @@ Write your code here...
 
 ```ruby
 # code here
+
+	town.update(residents: "'Maurice', 'Gaston'")
+	town.update(guests: "Belle")
+
+I'll come back to this one also
 ```
 
 ### Question 3
@@ -78,6 +93,9 @@ Write your code here...
 
 ```ruby
 # code here
+friends.each do |friend|
+	puts "Belle is friends with " + friend
+end
 ```
 
 ## Ruby OOP
@@ -101,6 +119,34 @@ Create a new lion instance with the name "Simba".
 
 ```ruby
 # code here
+
+class Animal
+	def initialize(name)
+		@name = name
+	end
+
+end
+
+class Lion < Animal
+
+	@@pack = []
+
+	def initialize(name)
+		super(name)
+		@pack = pack
+		@king = king
+		@@pack.push(self)
+		@is_king =
+			if self.name == "Simba" #what next??
+			end
+	end
+
+end
+
+
+pumba = Animal.new("Pumba")
+simba = Lion.new("Simba")
+
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -118,7 +164,11 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+ERD is a diagram that graphically displays relationships between entities in a domain. This can be one to one, one to many or many to one relationships.
+
+Lamp would have one Genie
+Person could have many lamps
+Person could have many Pets 
 ```
 
 ### Question 6
@@ -129,7 +179,7 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+A schema defines the fields and data types that are populated in those fields within database tables. Data types can include integers and strings, etc.
 ```
 
 ### Question 7
