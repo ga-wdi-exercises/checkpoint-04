@@ -107,7 +107,37 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+class Animal
+  attr_accessor :name
+  def initialize name
+    @name = name
+  end
+  def greet
+    puts "Hi my name is #{@name.to_s}"
+  end
+end
+
+class Lion < Animal
+  attr_accessor :king
+  @@pack = []
+  def intialize name
+    super (name)
+    @@pack.push(self)
+    if @name == 'simba'
+      @king = true
+    else
+      @king = false
+    end
+  end
+  def self.list
+    puts @@pack
+  end
+  def king
+    puts @king
+  end
+end
+
+# theres a syntax error in here somewhere
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -140,7 +170,7 @@ Your answer...
 ```
 a schema is what we feed into a sql database before we feed it instances of that schema in order to populate a chart with those things. basically it lets the database know what kind of thing we are about to feed to it and what kinds of properties those things have and what kinds of limitations there are on what can be values of those properties (for instance: no strings, only floats, must be unique etc.)
 
-the best way to represent a one to many relationship is to assign an id trait to the thing that there is one of (say, persons) and then to assign to the same id number to each one of the many things assigned to that one (for instance, by assigning a 'person_id' trait to each 'wish' and then to) 
+the best way to represent a one to many relationship is to assign an id trait to the thing that there is one of (say, persons) and then to assign to the same id number to each one of the many things assigned to that one (for instance, by assigning a 'person_id' trait to each 'wish' and then to make sure that the 'person_id' trait of the wish is the same as the persons 'id' trait)
 ```
 
 ### Question 7
@@ -165,7 +195,7 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+isaac = Person.create(name: "Isaac", age: 24)
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -173,7 +203,7 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+Person.find_by
 ```
 
 ### Question 8
@@ -183,5 +213,7 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+get '/oh_hello' do
+  return 'hello world'
+end
 ```
