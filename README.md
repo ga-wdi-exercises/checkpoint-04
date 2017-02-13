@@ -18,7 +18,7 @@ or the language specifier after them.
 
 ## Ruby Basics & Enumerables
 
-### Question 1
+<!-- ### Question 1
 
 Define a method called `offer_rose`, which should take one argument named `person`.
 
@@ -26,11 +26,28 @@ When called the method should `puts` "Would you take this rose, `person`, in exc
 
 Demonstrate calling the method, passing in "young prince" as the argument.
 
-Write your code here...
+<!-- Write your code here... -->
 
 ```ruby
-# code here
-```
+require "pry"
+
+class Person
+
+  def initialize (name)
+    @name = name
+  end
+
+  def offer_rose
+    puts "Would you take this rose, #{@name}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+  end
+
+end
+
+young_prince = Person.new("Young Prince")
+
+binding.pry
+
+``` -->
 
 ### Question 2
 
@@ -54,7 +71,19 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+
+town = {
+  residents: ["Maurice", "Belle", "Gaston"],
+  castle: {
+    num_rooms: 47,
+    residents: "Robby Benson",
+    guests: []
+    }
+  }
+
+town.delete("Belle")
+town[:guests].push("Belle")
+
 ```
 
 ### Question 3
@@ -77,9 +106,19 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
-```
 
+require "pry"
+
+friends = ["Chip Potts", "Cogsworth", "Lumière", "Mrs. Potts"]
+
+friends.each do |friend|
+  puts "Belle is friends with #{friend}."
+end
+
+binding.pry
+
+```
+ -->
 ## Ruby OOP
 
 ### Question 4
@@ -118,7 +157,19 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+An ERD (Entity Relationship Diagram)is a map of relationships between defined entities in a program; a tool used to visualize and describe the data relating to the major entities that will exist in out programs.
+
+
+
+Genie - home, color, gender, age
+Lamp - type, color, age, location
+Person - name, hair color, gender, age
+Pet - owner, species, age, color
+
+Pet ----- Person
+Person ------< Pet
+Genie ------Lamp
+Person -----< Lamp
 ```
 
 ### Question 6
@@ -126,10 +177,9 @@ Replace this with your answer
 Describe what a schema is, and how we represent a one-to-many relationship in a
 SQL database. If you need an example, you can use `people` and `wishes` models.
 
-Your answer...
 
 ```
-Replace this with your answer
+A schema defines what columns a table in a database has.  One to many is shown as a single line with a crows foot at the other end connecting 2 categories;  people -----< wishes
 ```
 
 ### Question 7
