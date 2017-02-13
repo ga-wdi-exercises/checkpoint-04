@@ -29,7 +29,9 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
-# code here
+def offer_rose person
+  puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
 ```
 
 ### Question 2
@@ -54,7 +56,8 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+town.residents.delete("Belle")
+town.castle.guests << "Belle"
 ```
 
 ### Question 3
@@ -77,7 +80,9 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+friends.each do |friend|
+  puts "Belle is friends with #{friend}"
+end
 ```
 
 ## Ruby OOP
@@ -100,7 +105,32 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+class Animal
+  attr_accessor :name
+
+  def initialize name
+    @name = name
+  end
+
+  def greet
+    puts "Hi, my name is #{@name}."
+  end
+end
+
+class Lion < Animal
+  attr_accessor :king
+  @@pack = []
+
+  def initialize name
+    super(name)
+    if name == "Simba"
+      @king = true
+    else
+      @king = false
+    end
+    @@pack << self
+  end
+end
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -118,7 +148,11 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+An ERD -- or "Entity Relationship Diagram" -- is a visual tool we use to identify the data values being saved in an application, groupings of those data values and the relationships between them.
+
+Sample relationships...
+- A one-to-one relationship between Genie and Lamp
+- A one-to-many relationship between Person and Pet
 ```
 
 ### Question 6
@@ -129,7 +163,7 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+A schema is a blueprint for a table. It defines the name of not only the table itself but its columns (along with each columns data type and optional constraints). Each column corresponds to an attribute that belongs to an instance of that table.
 ```
 
 ### Question 7
@@ -154,7 +188,7 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+Person.create(name: "Bob", age: 30)
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -162,7 +196,7 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+Person.where(age: 15)
 ```
 
 ### Question 8
@@ -172,5 +206,7 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+get "/oh_hello" do
+  return "hello world"
+end
 ```
