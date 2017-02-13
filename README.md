@@ -29,7 +29,12 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
-# code here
+
+def offer_rose(person)
+  puts "Would you take this rose, #{person}?"
+end
+
+offer_rose("young prince")
 ```
 
 ### Question 2
