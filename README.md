@@ -150,7 +150,7 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+ERD stands for Entity Relationship Diagram which shares a similar concept to pseudocoding, that is building the concepts of an app, drawing out the relationship of the things the app needs to work (ie: Users, employees, products, etc). Essentially is a tool we use to visualize and describe the data relating to the major entities that will exist in out programs.
 ```
 
 ### Question 6
