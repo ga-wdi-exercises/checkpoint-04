@@ -29,7 +29,9 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
-# code here
+def offer_rose(person)
+	puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
 ```
 
 ### Question 2
@@ -48,13 +50,15 @@ town = {
 ```
 
 Using Ruby...
+
 - Remove Belle from the town residents
 - Add her to the list of guests in the castle.
 
 Write your code here...
 
 ```ruby
-# code here
+town[:residents] = ["Maurice, Gaston"]
+town[:guests] = "Belle"
 ```
 
 ### Question 3
@@ -77,7 +81,9 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+friends.each do |friend|
+  puts "Belle is friends with #{friend}"
+end
 ```
 
 ## Ruby OOP
@@ -100,7 +106,45 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+class Animal
+  attr_accessor :name
+
+  def initialize(name)
+    @name = name
+  end
+
+  def get_name
+    return @name
+  end
+  
+  def set_name(new_name)
+    @name = new_name
+  end
+
+  def greet
+    puts "Hi! My name is #{@name}!"
+  end
+
+end
+
+pumba = Animal.new("Pumba")
+
+class Lion < Animal
+  @@pack = []
+  
+  def initialize(name)
+    super(name)
+    @king = false
+    @@pack << self
+    
+    if @name == "Simba"
+      @king = true
+    end
+    
+  end
+end
+
+simba = Lion.new("Simba")
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -118,7 +162,11 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+An ERD is an entity relationship diagram containing one-to-one, one-to-many and many-to-many relationships between data entities. We create them to map out data relationships before building the app to make our lives easier!
+
+Person - Pet = One to Many
+Genie - Lamp = One to One
+
 ```
 
 ### Question 6
@@ -129,7 +177,7 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+A database schema represents the structure of a database. It shows how data is organized and what relationship they have to each other. To represent a one-to-many relationship petween 'people' and 'wishes' we might create two tables, 'people' and 'wishes', where each wish in the 'wishes' table contains a person_id that links to an appropriate person on the 'people' table.
 ```
 
 ### Question 7
@@ -154,7 +202,8 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+adam = Person.new(name: "Adam", age: "26")
+adam.save
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -162,7 +211,7 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+person.where(age: 15)
 ```
 
 ### Question 8
@@ -171,6 +220,11 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 
 Your answer...
 
-```ruby
-Replace this with your answer
+```
+require 'sinatra'
+require 'sinatra/reloader'
+
+get '/oh_hello' do
+	"hello world"
+end
 ```
