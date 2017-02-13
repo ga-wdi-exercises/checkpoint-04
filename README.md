@@ -29,6 +29,21 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
+class RoseOffer
+
+  def initialize(person)
+    @person = person
+
+
+    puts "Would you take this Rose, #{@person}, in
+    exhange for giving an old beggar woman
+    shelter from the bitter cold?"
+
+  end
+end
+
+offer = RoseOffer.new("young prince")
+
 # code here
 ```
 
@@ -54,6 +69,9 @@ Using Ruby...
 Write your code here...
 
 ```ruby
+
+town.delete[:residents["Belle"]]
+
 # code here
 ```
 
@@ -77,6 +95,11 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
+for x in friends do
+  friends.each {|x|}
+  puts "Belle is friends with #{x}"
+end
+
 # code here
 ```
 
@@ -100,6 +123,34 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
+class Animal
+
+  def initialize (name, greet)
+    @name = name
+    @greet = greet
+  end
+
+end
+
+class Lion < Animal
+
+  pack = []
+
+   def initialize (name, greet)
+     @name = name
+     @greet = greet
+
+     pack << @name
+   end
+
+
+
+end
+
+
+animal = Animal.new("Pumba", "I am in Lion King")
+animal2 = Animal.new("Simba", "I am Also in Lion King")
+
 # code here
 ```
 
