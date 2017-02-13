@@ -59,7 +59,8 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+town[:castle][:guests] << town[:residents][1]
+p town[:castle][:guests]
 ```
 
 ### Question 3
