@@ -81,7 +81,10 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+friends = ["Chip Potts", "Cogsworth", "Lumière", "Mrs. Potts"]
+friends.each do |friend|
+  puts "Belle is friends with #{friend}"
+end
 ```
 
 ## Ruby OOP
@@ -104,7 +107,37 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+class Animal
+  attr_accessor :name
+
+  def initialize name
+    @name = name
+  end
+
+  def greet
+    "Hello, I'm #{@name}"
+  end
+end
+
+pumba = Animal.new("Pumba")
+
+class Lion < Animal
+  attr_accessor :pack, :name
+
+  @@pack = 0
+
+  def initialize name, king
+    super(name)
+    @@pack += 1
+    @king = king
+  end
+
+  def pack_size
+    @@pack
+  end
+end
+
+simba = Lion.new("Simba", true)
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -122,7 +155,34 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+Genie:
+  - Attributes
+  1) inBottle (boolean)
+  2) name (string)
+  - Relationships
+  1) One-to-one with Lamp
+Lamp:
+  - Attributes
+  1) hasGenie (boolean)
+  2) material (string)
+  - Relationships
+  1) One-to-one with Genie
+Person:
+  - Attributes
+  1) lamps (number)
+  2) pets (number)
+  3) name (string)
+  4) age (number)
+  - Relationships
+  1) One-to-many with Lamp
+  2) One-to-many with Pet
+Pet:
+  - Attributes
+  1) name (string)
+  2) species (string)
+  3) age (number)
+  - Relationships
+  1) Many-to-one with Person
 ```
 
 ### Question 6
