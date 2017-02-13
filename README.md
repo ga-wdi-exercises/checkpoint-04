@@ -30,6 +30,11 @@ Write your code here...
 
 ```ruby
 # code here
+def offer_rose(person)
+  puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+
+offer_rose("young prince")
 ```
 
 ### Question 2
@@ -55,6 +60,7 @@ Write your code here...
 
 ```ruby
 # code here
+town.residents["Belle"] << town.castle("guests")
 ```
 
 ### Question 3
@@ -78,6 +84,9 @@ Write your code here...
 
 ```ruby
 # code here
+friends.each do |name|
+  puts "Belle is friends with #{name}"
+end
 ```
 
 ## Ruby OOP
@@ -101,6 +110,48 @@ Create a new lion instance with the name "Simba".
 
 ```ruby
 # code here
+class Animal
+  attr_accessor :name, :greet
+
+  def initialize(name)
+    @name = name
+  end
+
+  def greet
+    puts "Hello, I am #{name}."
+  end
+
+  def get_name
+    puts self.name
+  end
+
+  def set_name(input)
+    @name = input
+  end
+end
+
+pumba = Animal.new("Pumba")
+
+class Lion < Animal
+  attr_accessor :pack
+  @@pack = 0
+
+  def initialize(name)
+    super name
+    @@pack += 1
+  end
+
+  def king
+    if self.name == "Simba"
+      true
+    else false
+    end
+  end
+
+end
+
+simba = Lion.new("Simba")
+simba.king
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -118,7 +169,12 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+An Entity Relationship Diagram is a tool used to display the relationships between different groups of data in our program. They are used to help plan and organize programs we are writing.
+
+Genie: can branch down into lamp, magic (which connects to wish-granting), and rules (which also connects to wish-granting)
+Lamp: cord (to electricity), bulb, lampshade, framework
+Person: name, friends/family/relationships, clothes
+Pet: owners, friends, toys, food
 ```
 
 ### Question 6
@@ -129,7 +185,7 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+A schema is simply a way to use one constructor filled with variables to create many instances of that class - for example, defining a Person schema with attributes of name, age, ID, and favorite food.
 ```
 
 ### Question 7
@@ -154,7 +210,7 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+taylor = Person.create("Taylor", 25)
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -162,7 +218,7 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+Person.where(age = 15)
 ```
 
 ### Question 8
@@ -172,5 +228,7 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+get '/oh_hello' do
+  "hello world"
+end
 ```
