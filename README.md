@@ -29,7 +29,11 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
-# code here
+def offer_rose person
+  puts "Would you take this rose, #{person.to_s}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+
+offer_rose 'young prince'
 ```
 
 ### Question 2
@@ -54,7 +58,8 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+town[:castle][:guests] << town[:residents][1]
+town[:residents].slice!(1)
 ```
 
 ### Question 3
@@ -77,7 +82,9 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+friends.each do |fren|
+  puts "Belle is friends with #{fren.to_s}"
+end
 ```
 
 ## Ruby OOP
@@ -100,7 +107,37 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+class Animal
+  attr_accessor :name
+  def initialize name
+    @name = name
+  end
+  def greet
+    puts "Hi my name is #{@name.to_s}"
+  end
+end
+
+class Lion < Animal
+  attr_accessor :king
+  @@pack = []
+  def intialize name
+    super (name)
+    @@pack.push(self)
+    if @name == 'simba'
+      @king = true
+    else
+      @king = false
+    end
+  end
+  def self.list
+    puts @@pack
+  end
+  def king
+    puts @king
+  end
+end
+
+# theres a syntax error in here somewhere
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -118,7 +155,9 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+An ERD is a diagram showing all the entities, relationships between those entities and properties of those entities in a particular system (at least all those relevant for creating a computer model of the system)
+Take Genies, Lamps, and Persons. First of all there will probably be a one to one relationship between between genies and lamps (one genie to a lamp) a one to many relationship between persons and lamps (one person can have many lamps) and (somewhat redundantly) a one to many relationship between persons and genies. next there will probably be a some characteristics of the genies, the lamps and the people. For instance, the genies might have a 'years_in_captivity' trait with a integer or float as a value, the person might have a 'name' trait with a string as a value, the lamps might have a 'price' trait with a float as a value and so on...
+
 ```
 
 ### Question 6
@@ -129,7 +168,9 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+a schema is what we feed into a sql database before we feed it instances of that schema in order to populate a chart with those things. basically it lets the database know what kind of thing we are about to feed to it and what kinds of properties those things have and what kinds of limitations there are on what can be values of those properties (for instance: no strings, only floats, must be unique etc.)
+
+the best way to represent a one to many relationship is to assign an id trait to the thing that there is one of (say, persons) and then to assign to the same id number to each one of the many things assigned to that one (for instance, by assigning a 'person_id' trait to each 'wish' and then to make sure that the 'person_id' trait of the wish is the same as the persons 'id' trait)
 ```
 
 ### Question 7
@@ -154,7 +195,7 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+isaac = Person.create(name: "Isaac", age: 24)
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -162,7 +203,7 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+Person.find_by
 ```
 
 ### Question 8
@@ -172,5 +213,7 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+get '/oh_hello' do
+  return 'hello world'
+end
 ```
