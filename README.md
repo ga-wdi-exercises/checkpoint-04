@@ -57,7 +57,7 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-town.residents.delete_at(1)
+town[:residents].delete_at(1)
 town.castle.guests.push("Belle")
 ```
 
@@ -108,7 +108,7 @@ Create a new lion instance with the name "Simba".
 ```ruby
 class Animal
   attr_accessor :name
-  constructor(name)
+  initialize(name)
   @name = name
   end
   def greet (name)
@@ -119,7 +119,7 @@ end
 
 class Lion < Animal
   super(name)
-  constructor(name, pack)
+  initialize(name, pack)
   @pack = pack
   end
   def king(name)
@@ -160,7 +160,7 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-**A schema is a blueprint of a table in a database that includes attributes and their constraints.
+A schema is a blueprint of a table in a database that includes attributes and their constraints.
 ```
 
 ### Question 7
@@ -185,7 +185,7 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-tayor = persons.new("Taylor", "25")
+tayor = persons.create(name: "Taylor", age: 25)
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -193,7 +193,7 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-person_15 = persons[:age].find_all{|person| person[:age] == 15}
+person_15 = persons.find_by(age: 15)
 ```
 
 ### Question 8
