@@ -28,7 +28,8 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here:
 ```ruby
 def offer_rose (person)
-  puts"when you take this rose #{person}"
+  puts "when you take this rose #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
 ```
 
 ### Question 2
@@ -51,8 +52,10 @@ add her to the list of guests in the castle.
 
 Write your code here:
 ```ruby
-town[residents:.pop[1]]
-castle[guests:.push=("Belle")]
+town[:residents].delete("Belle")
+town[:castle:guests].push("Belle")
+
+
 ```
 
 ### Question 3
@@ -74,11 +77,8 @@ Belle is friends with Mrs. Potts
 
 Write your code here:
 ```ruby
-friends.each do |apple|
-  puts "Belle is friends with #{apple[friends:[0]]}"
-  puts "Belle is friends with #{apple[friends:[1]]}"
-  puts "Belle is friends with #{apple[friends:[2]]}"
-  puts "Belle is friends with #{apple[friends:[3]]}"
+friends.each do |friend|
+  puts "Belle is friends with #{friend}"
 ```
 ## Ruby OOP (meets Lion King)
 
@@ -104,29 +104,43 @@ Create a new lion instance with the name `simba`
 
 ```ruby
 
-class Animal (name)
-@name = name;
+class Animal
+  attr_accessor @name
 
-def greet
-  attr_reader :name
-  attr_writer :name
-end
-def Animal
-@name = "Pumba"
-end
-# def initialize (greet)
-#   @name = name
+  def initialize(name)
+    @name = name
+  end
 
+def get_name
+  @name
 end
 
-class Lion => Animal
-  @pack = pack
+def set_name
+  @name
+end
+
+def say_name
+  "hello my name is #{@name}"
+end
+end
 
 
 
+class Lion < Animal
+
+  def initialize (name, pack)
+    @name = name
+    @pack = []
+  end
+
+def king
+  if "#{@name} = Simba"
+    puts "true"
+  end
 
 
 end
+
 Had trouble finishing this question
 ```
 
@@ -148,8 +162,8 @@ A Entity Relationship Diagram shows tables in a database and showcases their rel
 
 Relationships are in parenthesis.
 Genie - attributes-Lamp(gold,must rub,) big (possibly blue, funny, three wishes ),
-Lamp- attributes- light(needs bulbs, ), various sizes(table lamp, floor lamp,),
-Person - attributes-height(various sizes, typically differ between countries), age(wide range, many countries use age to determine, drinking,smoking etc), mood(brain, constantly changing)
+Lamp-  various sizes(table lamp, floor lamp,),
+Person - attributes(various sizes, typically differ between countries), age(wide range, many countries use age to determine, drinking,smoking etc), mood(brain, constantly changing)
 Pet - attributes- size(various sizes large, small, or medium.)   
 
 
@@ -168,7 +182,7 @@ Schema is a representation of a theory or plan in a form of an outline.
 
 artists - many songs
 pets - many animals
-cars - different amoutns of cars.
+cars - different amounts of models.
 
 ```
 
@@ -192,14 +206,14 @@ Write ruby code that will create a person.
 
 Your answer:
 ```
-person.Create(Name:"Travis")
+Person.new(name:"Travis Batts")
 ```
 
 Write ruby code that will query for any person that is 15 years of age
 
 Your answer:
 ```
-person.Find(Age:15)
+Person.find_by(age: 15)
 ```
 
 ### Sinatra
@@ -208,7 +222,7 @@ Write a route in sinatra that will print "hello world" in the web browser at the
 
 Your answer:
 ```
-get '/' do
-"hello World"
+get '/oh hello' do
+puts "hello World"
 end
 ```
