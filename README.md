@@ -113,7 +113,35 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+class Animal
+  attr_accessor :name
+  def initialize (name)
+    @name = name
+  end
+  def greet
+    "Hello, my name is #{@name}"
+  end
+end
+pumba = Animal.new('Pumba')
+
+
+class Lion extends Animal
+  pack = []
+
+  def initialize (name, king)
+    super(@name)
+    @king = if @name == "Simba"
+              return true
+            else
+              return false
+            end
+  end
+
+  def add_pack (name)
+    pack.push(name)
+  end
+
+end
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -131,8 +159,10 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
-```
+Entity Relationship Diagram (ERD) helps create our database structure and outline the data to stay organized
+
+Genie would have a one to one relationship with a lamp with attributes name, age, catch-phrase. Lamps would also have an arrow pointing to a person - many to one scenario with attr: age, type, style. The person will be connected to pets by a many one to many or many to many or 1 to 1 with attr: name, age, marital status.
+pet would have attr: name, age, type, species.
 
 ### Question 6
 
@@ -142,7 +172,7 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+A schema is like the theme of all the columns such as players and each instance would be a player with different attributes like team, age, points. THis would show a one to many relationship because it has many characteristics of the player.
 ```
 
 ### Question 7
@@ -167,7 +197,8 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+INSERT INTO persons (name, age) VALUES ("Eva", 24);
+
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -175,7 +206,7 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+SELECT * FROM persons WHERE age > 15;
 ```
 
 ### Question 8
@@ -185,5 +216,9 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+require 'sinatra'
+
+get '/oh_hello' do
+  return "hello world"
+end
 ```
