@@ -163,7 +163,12 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+An ERD is an entity-relationship diagram which is a technique for graphically illustrating relationships between an entity and their attributes with other entities.  We create them to show how we will structure our database and the flow of the data between entities
+
+- Genie - name, lamp_id
+- Lamp - genie_id, size, material, person_id, lamp_id
+- Person - lamp_id, wishes, name, pet_ids
+- Pet - name, type, owner_id
 ```
 
 ### Question 6
