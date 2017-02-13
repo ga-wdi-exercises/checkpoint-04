@@ -166,7 +166,7 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+An ERD is a type of Domain Modeling, it is a great way to organize sections of website and visualize the data as it relates to the different sections of our websites
 ```
 
 ### Question 6
@@ -177,7 +177,7 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+A schema is a table that stores information about about a specific model in our database.
 ```
 
 ### Question 7
@@ -202,7 +202,7 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+SELECT * FROM persons WHERE name = 'Sasha';
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -210,7 +210,7 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+persons.find_by(age: 15)
 ```
 
 ### Question 8
@@ -220,5 +220,5 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+http://localhost:4567/
 ```
