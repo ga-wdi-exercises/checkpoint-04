@@ -105,7 +105,32 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+class Animal
+
+  attr_accessor :name
+
+  def initialize (name)
+    @name = name
+    @greet = greet
+  end
+
+  def greet
+    return "My name is  #{@name}"
+  end
+
+end
+
+
+pumba = Animal.new('Pumba')
+
+class Lion < Animal
+  @@pack = 0
+
+  def initialize(name, king)
+
+  end
+
+end
 ```
 
 ## SQL, Databases, and ActiveRecord
