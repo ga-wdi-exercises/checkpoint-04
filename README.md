@@ -84,6 +84,9 @@ Write your code here...
 
 ```ruby
 # code here
+friends.each do |name|
+  puts "Belle is friends with #{name}"
+end
 ```
 
 ## Ruby OOP
