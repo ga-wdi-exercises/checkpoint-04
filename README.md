@@ -71,7 +71,6 @@ town[:residents].delete("Belle")
 town[:castle][:residents] << " and Belle"
 puts town[:residents]
 puts town[:castle][:residents]
-
 ```
 
 ### Question 3
@@ -117,7 +116,46 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+class Animal
+  attr_accessor :name
+  def initialize(name)
+    @name = name
+  end
+
+  def greet
+    puts "Hi, my name is #{name}!"
+  end
+end
+
+class Lion < Animal
+  attr_accessor :name, :king, :pack
+  @@pack = []
+  def initialize(name)
+    super(name)
+    @@pack << self
+    if @name == "Simba"
+      @king = true
+    else
+      @king = false
+    end
+  end
+
+  def kingship
+    puts "It is #{king} that I am king."
+  end
+
+  def self.pack
+    @@pack
+  end
+end
+
+pumba = Animal.new("Pumba")
+simba = Lion.new("Simba")
+nala = Lion.new("Nala")
+
+puts Lion.pack
+simba.kingship
+nala.kingship
 ```
 
 ## SQL, Databases, and ActiveRecord
