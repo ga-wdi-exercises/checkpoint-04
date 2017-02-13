@@ -29,7 +29,12 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
-# code here
+
+def offer_rose(person)
+  puts "Would you take this rose, #{person}?"
+end
+
+offer_rose("young prince")
 ```
 
 ### Question 2
@@ -54,7 +59,14 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+town[:residents].delete_at(1)
+town[:castle][:guests] << "Belle"
+
+# or
+
+belle = town[:residents].delete_at(1)
+town[:castle][:guests] << belle
+
 ```
 
 ### Question 3
@@ -77,7 +89,9 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+
+friends.each {|friend| puts "Belle is friends with #{friend}"}
+
 ```
 
 ## Ruby OOP
@@ -100,7 +114,38 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+class Animal
+  attr_accessor :name
+  def initialize(name)
+    @name = name
+  end
+
+  def greet
+    puts "Hello my name is #{@name}."
+  end  
+end
+
+pumba = Animal.new("Pumba")
+
+class Lion < Animal
+
+  @@pack = []
+  def initialize(name)
+    super(name)
+    @name == "Simba" ? @king = true : @king = false
+    @@pack.push(self)
+  end
+
+  def self.get_pack
+    return @@pack
+  end
+end
+
+simba = Lion.new("Simba")
+
+
+
+
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -118,7 +163,12 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+An ERD is an entity-relationship diagram which is a technique for graphically illustrating relationships between an entity and their attributes with other entities.  We create them to show how we will structure our database and the flow of the data between entities
+
+- Genie - name, lamp_id
+- Lamp - genie_id, size, material, person_id, lamp_id
+- Person - lamp_id, wishes, name, pet_ids
+- Pet - name, type, owner_id
 ```
 
 ### Question 6
@@ -129,7 +179,10 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+A schema is the logical structure of a database.  It defines tables, the data in the tables, type of data and any constraints.
+In SQL you represent a 1:many relationship by using a primary key and a foreign key:
+For one person you would have a primary key that would be given to a wish as a foreign key.  
+Example: Each wish "row" would be given the primary key of the person that made that wish as a foreign key.
 ```
 
 ### Question 7
@@ -154,7 +207,7 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+andy = Person.create(name: "Andy Flickinger", age: 29)
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -162,7 +215,7 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+Person.where(age: == 15)
 ```
 
 ### Question 8
@@ -172,5 +225,7 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+gget '/oh_hello' do
+  return "Hello world"
+end
 ```
