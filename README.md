@@ -29,7 +29,11 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
-# code here
+def offer_rose(person)
+  puts "Would you like this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+
+offer_rose("young prince")
 ```
 
 ### Question 2
@@ -54,7 +58,8 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+town[:castle][:residents] = ["Robby Benson", "Belle"]
+town[:residents] = ["Maurice", "Gaston"]
 ```
 
 ### Question 3
@@ -77,7 +82,7 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+friends.each { |e| puts "Belle is friends with #{e}"}
 ```
 
 ## Ruby OOP
@@ -100,7 +105,37 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+class Animal
+  attr_accessor :name
+  def initialize (name)
+    @name = name
+  end
+  def greet
+    puts "Roar my name is #{name}, be scared!"
+  end
+end
+
+pumba = Animal.new("Pumba")
+
+class Lion < Animal
+  attr_accessor :name, :king, :pack
+  @@pack = []
+  def initialize (name)
+    super (name)
+    if name == "Simba"
+      @king = true
+    else
+      @king = false
+    end
+    @@pack.push(self)
+  end
+  def get_pack
+    return @@pack
+  end
+end
+
+simba = Lion.new("Simba")
+
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -118,7 +153,8 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+ERD = entity relationship diagram. We do this to plan out our data structure before building the app.
+Person (attributes name, height, age), has a one to many relationship with Pet (type, name, color). Genie (name, powers, age) has a one to one relationship with Lamp (material, size).
 ```
 
 ### Question 6
@@ -129,7 +165,7 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+A schema defines the columns of a table - name, data type, constraints. You would represent a one to many relationship by using a JOIN on an ID from the "one" table into the "many", representing its 'foreign key'. This would look like SELECT * FROM wishes JOIN people ON wishes.people_id = people.id.
 ```
 
 ### Question 7
@@ -154,7 +190,7 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+Person.create (id: 1, name: "Sandra", age: 44)
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -162,7 +198,7 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+Person.where(age: 15)
 ```
 
 ### Question 8
@@ -172,5 +208,7 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+get '/oh_hello' do
+  return 'hello world'
+end
 ```
