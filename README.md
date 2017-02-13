@@ -1,5 +1,5 @@
 # Checkpoint 04
-
+ 
 > If you have not completed the survey yet,
 please do so by the end of the day!
 
