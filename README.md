@@ -29,7 +29,24 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
-# code here
+require "pry"
+
+class Person
+
+  def initialize (name)
+    @name = name
+  end
+
+  def offer_rose
+    puts "Would you take this rose, #{@name}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+  end
+
+end
+
+young_prince = Person.new("Young Prince")
+
+binding.pry
+
 ```
 
 ### Question 2
