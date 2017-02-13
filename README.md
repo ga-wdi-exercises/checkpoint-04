@@ -29,7 +29,12 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
-# code here
+def offer_rose(person)
+  puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+
+offer_rose("young prince")
+``Would you take this rose, young prince, in exchange for giving an old beggar woman shelter from the bitter cold?
 ```
 
 ### Question 2
@@ -54,7 +59,8 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+belle = town[:residents].delete("Belle")
+town[:castle][:guests].push("Belle")
 ```
 
 ### Question 3
@@ -77,7 +83,7 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+friends.each {|x| puts "Belle is friends with #{x}"}
 ```
 
 ## Ruby OOP
@@ -100,7 +106,38 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+class Animal
+  attr_accessor :name
+
+  def initialize(name)
+    @name = name
+  end
+
+  def greet
+    puts "Hello #{@name}!"
+  end
+end
+
+class Lion < Animal
+  attr_accessor :name, :king, :pack
+  @@pack = 0
+
+  def initialize(name)
+    super(name)
+    @@pack +=1
+    @king = false
+    if @name == "Simba"
+      @king = true
+    end
+  end
+
+  def self.pack
+    @@pack
+  end
+end
+
+simba = Lion.new("Simba")
+=> #<Lion:0x007f35c051e580 @name="Simba", @king=true>
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -116,9 +153,17 @@ entities (no need to draw an ERD)...
 - Pet
 
 Your answer...
+ERDs (entity relationship diagrams) show the relationship between data entities and attribites.
+They are useful for applicaitons because they show how the components of the data set are related to each other. For the examples:
+
 
 ```
-Replace this with your answer
+--Each genie might have one lamp, so the lamp could be an attribute of the genie, with a one-to-one relatiosnhip.
+--A genie might have multiple people, but each person probably has only one genie (a one-to-many relationship).
+--Each person could have multiple pets, but each pet probably has only one owner (one-to-many)
+--A genie would have the attributes name and freedom
+--A person would have the attributes name and wishes
+--A pet would have the attributes name and species
 ```
 
 ### Question 6
@@ -129,7 +174,8 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+A schema defines the columns that will be used in a table. A one-to-many relationship
+is represented by linking one row in one table to multiple rows in another table through a foreign key.
 ```
 
 ### Question 7
@@ -154,7 +200,7 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+person1 = Person.create(id: 1, name: "Joe", age: 23)
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -162,7 +208,7 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+Person.where(age < 15)
 ```
 
 ### Question 8
@@ -172,5 +218,7 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+get '/oh_hello' do
+  return "Hello world!""
+end
 ```
