@@ -30,6 +30,15 @@ Write your code here...
 
 ```ruby
 # code here
+def offer_rose(person)
+
+	puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+
+end
+
+
+offer_rose("young prince")
+
 ```
 
 ### Question 2
@@ -55,6 +64,9 @@ Write your code here...
 
 ```ruby
 # code here
+town[:guests] = town[:residents].fetch(1)
+town[:residents].delete("Belle")
+
 ```
 
 ### Question 3
@@ -78,6 +90,7 @@ Write your code here...
 
 ```ruby
 # code here
+friends.each{|e| puts "Belle is friends with #{e}"}
 ```
 
 ## Ruby OOP
@@ -101,6 +114,48 @@ Create a new lion instance with the name "Simba".
 
 ```ruby
 # code here
+class Animal
+	attr_accessor :name
+
+	def initialize(name)
+			@name=name
+	end
+	def greet
+		puts "Hello #{@name}"
+	end
+
+end
+
+
+class Lion < Animal
+
+	attr_accessor :pack
+
+	@@pack =0
+
+	def initialize(name)
+		super(name)
+		if(@name =="Simba")
+			@king = true
+		else
+			@king = false
+		end
+
+		@@pack +=1
+	end
+
+	def get_pack_num
+		@@pack
+	end
+
+end
+
+pumba = Animal.new("Pumba")
+
+timon = Lion.new("Timon")
+
+simba = Lion.new("Simba")
+
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -118,7 +173,12 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+An ERD is a way for us to represent a diagram of relationships. It describes how we want to model specific collections of data within our database schema.
+
+Genie is a 1:1 relationship with a lamp, The genie belongs to the one lamp
+and the lamp belongs to the one genie. Each lamp can only have one genie ( or I have not seen Aladdin in far too long..)
+
+a Person to a pet is a M:1 relationship (this assumes EACH pet has 1 owner, if Mom buys pet then mom is owner not dad even if dad is there) A person may have many pets and a pet can only have one owner.
 ```
 
 ### Question 6
@@ -129,7 +189,16 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+A schema is the skeleton diagram containing the attributes of each table as well as the relationships between the tables. It allows us to visualize and see how the data is related and represented within the database.
+1:1
+1:M
+M:M (which needs its own table between with common attributes)
+
+in a SQL database we represent a people as the one side and wishes as the many side
+
+a person can have many wishes but a wish may only belong to one person.
+
+
 ```
 
 ### Question 7
@@ -154,7 +223,8 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+
+person = Person.create(name: "Bob", age:14)
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -162,7 +232,7 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+Person.where(age: 15)
 ```
 
 ### Question 8
@@ -172,5 +242,7 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+get "/oh_hello" do
+  "Hello World"
+end
 ```
