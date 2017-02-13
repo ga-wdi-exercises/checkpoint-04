@@ -173,7 +173,31 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+ERD stands for Entity Relationship Diagram. It is used to demonstrate the storage of data an information that might be used by a program and to show the relationships between different collections stored in a database.
+
+A Genie might have the following Attributes:
+  - name
+  - wishes remaining
+  and would have a one-to-one relationship with a Lamp
+
+A Lamp might have the following Attributes:
+  - material
+  - age
+  - dirtiness
+  and would have a one-to-one relationship with a Genie and a one-to-many relationship with a Person
+
+A Person might have the following Attributes:
+  - name
+  - age
+  - nationality
+  and would have a one-to-many relationship with Lamps and a many-to-many relationship with Pets (pets can be owned by multiple members of the same family, for example)
+
+A Pet might have the following Attributes:
+  - name
+  - species
+  - age
+  - fluffiness
+  and would have a many-to-many relationship with multiple Persons
 ```
 
 ### Question 6
@@ -184,7 +208,7 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+A Schema is a collection of database objects associated with one Username. In this example, a Username would represent a single person and the objects contained within the Schema would be the wishes that have been made by that one Person.
 ```
 
 ### Question 7
