@@ -85,7 +85,9 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+friends.each do |friend|
+puts "Belle is friends with #{friend}"
+end
 ```
 
 ## Ruby OOP
@@ -108,7 +110,29 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+Partially answered and not completed. Having trouble building this code adn running out of time. I think I get the idea of what needs to be done and I only need more time to work on it.
+class Animal
+  attr_accessor :name, :greet
+
+
+def initialize (name)
+  @name = name
+  @greet = []
+end
+
+def greet
+  return "Hakuna Matata #{name}"
+end
+
+# class Lion > Animal(name, pack)
+#   attr_accessor :pack
+#   super(name)
+#   if name == "Simba"
+#     return true
+#   end
+end
+
+pumba = Animal.new("Pumba")
 ```
 
 ## SQL, Databases, and ActiveRecord

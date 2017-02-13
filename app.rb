@@ -20,11 +20,40 @@ require "pry"
 # town[:castle][:guests].push(belle)
 
 # Q3
-# 
+#
 # friends = ["Chip Potts", "Cogsworth", "Lumière", "Mrs. Potts"]
 #
 # friends.each do |friend|
 #   puts "Belle is friends with #{friend}"
 # end
+
+# Q4
+
+
+class Animal
+  attr_accessor :name, :greet
+
+
+def initialize (name)
+  @name = name
+  @greet = []
+end
+
+def greet
+  return "Hakuna Matata #{name}"
+end
+
+# class Lion > Animal(name, pack)
+#   attr_accessor :pack
+#   super(name)
+#   if name == "Simba"
+#     return true
+#   end
+end
+
+pumba = Animal.new("Pumba")
+
+
+
 
 binding.pry
