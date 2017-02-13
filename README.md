@@ -22,6 +22,8 @@ or the language specifier after them.
 
 Define a method called `offer_rose`, which should take one argument named `person`.
 
+
+
 When called the method should `puts` "Would you take this rose, `person`, in exchange for giving an old beggar woman shelter from the bitter cold?"
 
 Demonstrate calling the method, passing in "young prince" as the argument.
@@ -30,6 +32,11 @@ Write your code here...
 
 ```ruby
 # code here
+def offer_rose(person)
+  puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+
+offer_rose("young prince)")
 ```
 
 ### Question 2
@@ -54,7 +61,11 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+
+town[:castle][:guests] << town[:residents][1]
+town[:residents].delete_at(1)
+
+
 ```
 
 ### Question 3
@@ -78,6 +89,12 @@ Write your code here...
 
 ```ruby
 # code here
+
+friends.each do |each_friend|
+  puts "Bell is friends with #{each_friend}"
+end
+
+
 ```
 
 ## Ruby OOP
@@ -101,6 +118,40 @@ Create a new lion instance with the name "Simba".
 
 ```ruby
 # code here
+
+class Animal
+  attr_accessor :name
+  def initialize(name)
+    @name = name
+  end
+  def greet
+    "HELLO YOU MAY CALL ME #{@name.upcase}"
+  end
+end
+
+pumba = Animal.new("Pumba")
+
+class Lion < Animal
+  @@pack = []
+  attr_reader :king
+  def initialize(name)
+    super(name)
+    if name == "Simba"
+      king = true
+    else
+      king = false
+    end
+    @@pack << self
+  end
+  def self.pack
+    return @@pack
+  end
+
+end
+
+simba = Lion.new("Simba")
+
+
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -118,7 +169,18 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+ERD stands for Entity Relationship Diagram. An ERD gives a graphical representation of relationships
+between entities.  It allows us to understand how something is put together (or should be), and it also
+lets us see what the minimum data we would need in a database.  
+
+There should be a 1:1 relationship with Genie and Lamp, and since there can be multiple lamps, a theoretical 1 to many for
+Person to lamp, although in practice it would be 1:1.  There should also be a 1 to many relationship with Person to pet.
+
+A few attributes I could see is:
+Genie: Power Level, Age, Alignment (evil, neutral, good etc), Master, Free
+Lamp: Dirty
+Person: Alignment, Foolishness, Number of wishes
+Pet: Texture, price, stains, monkey or carpet
 ```
 
 ### Question 6
@@ -129,7 +191,21 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+a schema is the structure of the database we create written in a language that can be parsed by the program.  Basically
+it provides the blueprint for the database.
+
+to create a one to many relationship, you would need to provide the "many" portion, such as wishes, a column that contains the
+ID of the person that has the wish.  This would allow the wishes table to have multiple wishes associated with one person ID.
+
+within ruby this would look like this:
+
+class People < ActiveRecord::Base
+  has_many :wishes
+
+class Wish < ActiveRecord::Base
+  belongs_to :people
+end
+
 ```
 
 ### Question 7
@@ -154,7 +230,7 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+eazyE = Person.create(name: "Eazy-E", age: 25)
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -162,7 +238,7 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+Person.where("age > ?", 15)
 ```
 
 ### Question 8
@@ -172,5 +248,7 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+get '/oh_hello' do
+  return "hello world"
+end
 ```
