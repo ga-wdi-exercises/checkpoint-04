@@ -59,7 +59,14 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+town[:residents].delete_at(1)
+town[:castle][:guests] << "Belle"
+
+# or
+
+belle = town[:residents].delete_at(1)
+town[:castle][:guests] << belle
+
 ```
 
 ### Question 3
