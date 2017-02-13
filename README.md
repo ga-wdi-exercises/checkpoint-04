@@ -29,7 +29,11 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
-# code here
+def offer_rose(person)
+  puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+
+offer_rose("young prince")
 ```
 
 ### Question 2
@@ -54,7 +58,19 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+town = {
+  residents: ["Maurice", "Belle", "Gaston"],
+  castle: {
+    num_rooms: 47,
+    residents: "Robby Benson",
+    guests: []
+  }
+}
+
+town[:residents].delete("Belle")
+town[:castle][:residents] << " and Belle"
+puts town[:residents]
+puts town[:castle][:residents]
 ```
 
 ### Question 3
@@ -77,7 +93,7 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+friends.each {|friend| puts "Belle is friends with #{friend}"}
 ```
 
 ## Ruby OOP
@@ -100,7 +116,46 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+class Animal
+  attr_accessor :name
+  def initialize(name)
+    @name = name
+  end
+
+  def greet
+    puts "Hi, my name is #{name}!"
+  end
+end
+
+class Lion < Animal
+  attr_accessor :name, :king, :pack
+  @@pack = []
+  def initialize(name)
+    super(name)
+    @@pack << self
+    if @name == "Simba"
+      @king = true
+    else
+      @king = false
+    end
+  end
+
+  def kingship
+    puts "It is #{king} that I am king."
+  end
+
+  def self.pack
+    @@pack
+  end
+end
+
+pumba = Animal.new("Pumba")
+simba = Lion.new("Simba")
+nala = Lion.new("Nala")
+
+puts Lion.pack
+simba.kingship
+nala.kingship
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -118,7 +173,31 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+ERD stands for Entity Relationship Diagram. It is used to demonstrate the storage of data an information that might be used by a program and to show the relationships between different collections stored in a database.
+
+A Genie might have the following Attributes:
+  - name
+  - wishes remaining
+  and would have a one-to-one relationship with a Lamp
+
+A Lamp might have the following Attributes:
+  - material
+  - age
+  - dirtiness
+  and would have a one-to-one relationship with a Genie and a one-to-many relationship with a Person
+
+A Person might have the following Attributes:
+  - name
+  - age
+  - nationality
+  and would have a one-to-many relationship with Lamps and a many-to-many relationship with Pets (pets can be owned by multiple members of the same family, for example)
+
+A Pet might have the following Attributes:
+  - name
+  - species
+  - age
+  - fluffiness
+  and would have a many-to-many relationship with multiple Persons
 ```
 
 ### Question 6
@@ -129,7 +208,7 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+A Schema is a collection of database objects (in tables) associated with one Username. In this example, a Username would represent a single person and the objects contained within the Schema would be the wishes that have been made by that one Person.
 ```
 
 ### Question 7
@@ -154,7 +233,7 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+will = Person.new(name: "Will Hawkins", age: 25)
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -162,7 +241,7 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+Person.where(age > 15)
 ```
 
 ### Question 8
@@ -172,5 +251,9 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+require 'sinatra'
+
+get '/oh_hello' do
+  return 'hello world'
+end
 ```
