@@ -179,7 +179,10 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+A schema is the logical structure of a database.  It defines tables, the data in the tables, type of data and any constraints.
+In SQL you represent a 1:many relationship by using a primary key and a foreign key:
+For one person you would have a primary key that would be given to a wish as a foreign key.  
+Example: Each wish "row" would be given the primary key of the person that made that wish as a foreign key.
 ```
 
 ### Question 7
