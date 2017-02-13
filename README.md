@@ -29,7 +29,10 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
-# code here
+def offer_rose(person)
+  puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+offer_rose("young prince")
 ```
 
 ### Question 2
@@ -54,7 +57,8 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+residents.delete_at(1)
+guests.push("Belle")
 ```
 
 ### Question 3
@@ -77,7 +81,7 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+  friends.each {|friend| puts "Belle is friends with #{friend}."}
 ```
 
 ## Ruby OOP
@@ -100,7 +104,33 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+class Animal
+
+  attr_accessor :name
+
+  def initialize(name)
+    @name = name
+  end
+
+  def greet
+    "Hi, my name is #{name.capitalize}."
+  end
+
+end
+
+pumba = Animal.new("Pumba")
+
+class Lion < Animal
+  def initialize(name, pack, king)
+    super(name)
+    @pack = pack
+    @king = false
+      if @name == "Simba"
+        @king = true
+  end    
+end
+
+simba = Lion.new("Simba")
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -118,7 +148,10 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+ERD is a way for us to visualize the structure of a database. Like pseudocoding the database beforehand but way more important.
+A Person would have one-to-many relationship with Lamp and Pet. A one Person can have many lamps and many pets.
+A Genie would have one-to-one relationship with the lamp. A one Genie can live in one Lamp.
+A Genie would have a many-to-many relationship with Person and Pet. Many Genies can be friends with many People and many Pets.
 ```
 
 ### Question 6
@@ -129,7 +162,8 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+Schema is a way of categorizing the objects in a database. Each item would have a column representing it's primary key that is unique to them. Other items can refer to that id as foreign key and link itself to the original item. 3 types of doing that is one-to-one, one-to-many and many-to-many.
+A User can have many Orders(pass User's primary key as a foreign key in the Order table). An Order can have many Items(pass Order's primary key as a foreign key in the Item table). An Item can have descriptions in many Languages(pass Item's primary key as a foreign key in the Language table).
 ```
 
 ### Question 7
@@ -154,7 +188,7 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+lena = Person.create(name: "Lena", age: 23)
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -172,5 +206,9 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+require "sinatra"
+
+get "/oh_hello" do
+  return "hello world"
+end
 ```
