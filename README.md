@@ -161,7 +161,7 @@ Attributes:
 
 Relationships:
 - A person might have many pets, but each pet will only belong to one person.
-- A person can also have many lamps. 
+- A person can also have many lamps.
 - A lamp can have only one genie, and vice versa
 ```
 
@@ -173,7 +173,9 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+A schema is used to define what columns/attributes a data model will have. It acts like a blueprint for different classes. Each row in a table represents an instance.
+
+A "people" model might have a table called person with columns that include id, name, age, gender, and location. A "wishes" model might have a table called wish with columns that include id, wish, and person_id. A person can be linked to multiple wishes via the person_id.
 ```
 
 ### Question 7
@@ -198,7 +200,7 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+erica = Person.new(name: "Erica", age: 24)
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -206,7 +208,7 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+Person.where(age: 15)
 ```
 
 ### Question 8
@@ -216,5 +218,7 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+get "/oh_hello" do
+  return "hello world"
+end
 ```
