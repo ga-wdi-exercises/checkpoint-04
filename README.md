@@ -29,7 +29,10 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
-# code here
+def offer_rose person
+  puts "Would you take this rose, #{person.to_s}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+offer_rose 'young prince'
 ```
 
 ### Question 2
@@ -54,7 +57,9 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+town[:residents].slice!(1)
+town[:castle][:guest] << "Belle"
+return guests:
 ```
 
 ### Question 3
@@ -77,7 +82,9 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+friends.each do |i|
+  puts "Belle is friends with #{i}"
+end
 ```
 
 ## Ruby OOP
@@ -100,7 +107,21 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+class Animal(name){
+  attr_accessor :name
+  def initialize :name
+    @name = name
+  end
+  def greet
+}
+animal = Animal.new
+animal.name = "Pumba"
+
+class Lion < Animal
+  attr_accessor :king
+  def initialize (name)
+    if name = "Simba"
+      :king = true
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -118,7 +139,7 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+An ERD is a graphical representation of relationships between entities.  We create them so we have a visual aid to quickly connect relationships in our head.  First we would have the person entity and would give it attributes of name, age, gender.  Connected to the person would be pet and lamp.  The person owns the pet, but there could be multiple person for one pet or multiple pets for one person.  The person must find the lamp so there is one person to one lamp.  The lamp will have attributes of size, color, and power type.  The pet will have attributes of type, weight, name.  The genie will be connected to the lamp because the genie resides within the lamp.  There is one genie per lamp.  The genie will have attritbutes of name, and # of wishes.
 ```
 
 ### Question 6
@@ -129,7 +150,8 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+A schema is like the template for the table in the database.  Usually wen we run the schema it will drop and then add a new table to have a fresh start.  We represent a one to many relationship in SQL by assigning one thing a specific ID tag and assigning the same tag to the other entities in the relationship.  This means the ID tag will be common between all of items and forms the relationship.
+
 ```
 
 ### Question 7
@@ -154,7 +176,7 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+persons.create(:name, :age)
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -172,5 +194,5 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+###Ran out of time to complete
 ```
