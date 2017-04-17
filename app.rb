@@ -19,17 +19,20 @@ class Animal
 
 end
 
-class Lion < Person
 
-    def get_name
-        return @name
-    end
+class Lion < Animal
 
-    def set_name
-        @name = name
-    end
+        attr_accessor :name, :king
+        @@pack = []
 
-    def greet
-        puts "Hi! My name is #{@name}"
-
+        def initialize(name)
+            super(name)
+            @king = false
+            @@pack.push(self)
+     if
+       name == "Simba" then @king === true
+     end
 end
+
+pumba = Animal.new("Pumba")
+simba = Lion.new("simba")
