@@ -29,7 +29,11 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
-# code here
+def offer_rose(person)
+  puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+
+offer_rose("Young Prince")
 ```
 
 ### Question 2
@@ -54,7 +58,9 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+town[:residents].delete("Belle")
+
+town[:castle][:guests].push("Belle")
 ```
 
 ### Question 3
@@ -77,7 +83,9 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+friends.each do |friend|
+  puts "Belle is friends with #{friend}."
+end
 ```
 
 ## Ruby OOP
@@ -100,7 +108,39 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+#make Animal class
+class Animal
+  attr_accessor :name
+
+  def initialize(name)
+    @name = name
+  end
+  def greet
+    "Hello! My name is #{@name}."
+  end
+end
+#create class Lion
+
+class Lion < Animal
+  attr_accessor :name, :king
+  @@pack = []
+  def initialize(name)
+    super(name)
+    @king = false
+    @@pack.push(self)
+    if
+      name == "Simba" then @king === true
+    end    
+  end
+  def check_pack
+    puts @@pack
+  end
+end
+
+#create new animal instance Pumba, Simba
+pumba = Animal.new("Pumba")
+simba = Animal.new("Simba")
+
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -118,7 +158,12 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+An ERD is an Entity Relationship Diagram. This diagram lists the components of a database and  their datatypes, as well as how these components relate to one another (i.e. on a one-to one basis, a one-to-many basis, a many-to-many basis, as well as what kind of data the component is made up of (for example, strings, integers, and any data-type restrictions.))
+
+In the above - drawing a line that represents the relationship to Genie and Lamp (Each lamp has one Genie, each Genie has one Lamp).
+
+Draw a line that represents Person and Pet (Each person can have many pets; each pet can have one person.)
+
 ```
 
 ### Question 6
@@ -129,7 +174,7 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+Schema defines the columns in our table. The name of the table is listed out as well as the columns it will be composed of, what kind of data will be in that column (i.e. integers, text) and denotes which column will contain the unique serial or identifier key - this column must have a unique value for each row.)
 ```
 
 ### Question 7
@@ -154,7 +199,7 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+INSERT INTO persons (name, age) VALUES ('Whitney Purdum', 30);
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -162,7 +207,7 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+SELECT * FROM persons WHERE age < 15;
 ```
 
 ### Question 8
@@ -172,5 +217,7 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+get '/oh_hello' do
+  "hello world"
+end
 ```
