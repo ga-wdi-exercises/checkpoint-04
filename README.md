@@ -29,7 +29,12 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
-# code here
+require 'pry'
+class User
+  def offer_rose (person)
+    @person = person
+  end
+
 ```
 
 ### Question 2
@@ -74,7 +79,7 @@ Belle is friends with Lumière
 Belle is friends with Mrs. Potts
 ```
 
-Write your code here...
+Write your code here
 
 ```ruby
 # code here
