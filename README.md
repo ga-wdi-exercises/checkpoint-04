@@ -202,7 +202,7 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+new_person = Person.create(name: "Hali Bakarr", age: 24)
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -210,7 +210,7 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+Person.where("age == 15")
 ```
 
 ### Question 8
@@ -220,5 +220,7 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+get '/oh_hello' do
+  "hello world"
+end
 ```
