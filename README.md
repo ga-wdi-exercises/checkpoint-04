@@ -114,7 +114,7 @@ class Animal
     @name = name
 
   def say_hello
-    puts "hello person my name is #{@name}"
+    puts "hello person, my name is #{@name}"
   end
 
 class Lion < Animal
@@ -127,6 +127,9 @@ class Lion < Animal
       then @king = true
     else
       then @king = false
+    end
+    @@pack += 1
+  end
 
 ```
 
@@ -145,7 +148,13 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+ERD is and entity relationship diagram, we use these to help visualize relationships our major enitities will have with eachother.
+
+genie-lamp: one to one
+genie-person: one to one
+person - pet: one to many
+lamp - person: one to many
+
 ```
 
 ### Question 6
@@ -156,7 +165,7 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+
 ```
 
 ### Question 7
@@ -181,7 +190,7 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+Person.create(name:"Conner", age:"22")
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -189,7 +198,7 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+Person.where(age:15)
 ```
 
 ### Question 8
@@ -199,5 +208,7 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+get '/oh_hello' do
+  puts "hello world"
+end
 ```
