@@ -131,7 +131,7 @@ class Lion < Animal
       @@pack += 1
     end    
 
-    def how_many
+    def self.how_many
       puts @@pack
     end  
 end
