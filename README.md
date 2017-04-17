@@ -29,7 +29,11 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
-# code here
+def offer_rose(person="young prince")
+  puts "Would you like this rose #{person}"
+end
+
+offer_rose
 ```
 
 ### Question 2
@@ -54,7 +58,11 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+town[:residents].delete("Belle")
+
+town[:castle] = ["Robby Benson", "Belle"]
+
+town[:residents]
 ```
 
 ### Question 3
@@ -77,7 +85,9 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+friends.each do |name|
+  puts "Bella is friends with #{name}!"
+end
 ```
 
 ## Ruby OOP
