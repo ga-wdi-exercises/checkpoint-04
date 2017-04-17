@@ -167,7 +167,8 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+matt_caplan = Person.create(id:1, name:"Matthew Caplan", age: 27)
+matt_caplan.save
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -175,7 +176,8 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+fifteen = Person.find_by("age >= 15")
+fifteen.save
 ```
 
 ### Question 8
@@ -186,6 +188,6 @@ Your answer...
 
 ```ruby
 get '/oh_hello'
-  puts "Hello world!"
+  puts "hello world!"
 end
 ```
