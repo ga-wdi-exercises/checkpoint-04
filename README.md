@@ -106,7 +106,29 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
+class Animal
+  attr_accessor :name
+  def initialize name
+    @name = name
+  end
+  def greet
+    puts "My name is #{name}."
+  end
+end
 
+class Lion < Animal
+  attr_accessor :king
+  @@pack = []
+  def initialize name
+    super(name)
+    if name == "Simba"
+      @king = true
+    else
+      @king = false
+    end
+    @@pack << self
+  end
+end
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -139,7 +161,7 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 
 Your answer...
 ```
-
+schema is a blueprint for a database. one-to-many relationship is defined as a relationship between two tables that one table can have multiple matching tables. 
 ```
 
 ### Question 7
