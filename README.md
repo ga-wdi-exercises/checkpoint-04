@@ -29,7 +29,9 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
-# code here
+def offer_rose(person)
+  puts "Would you take this rose #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end  
 ```
 
 ### Question 2
@@ -54,7 +56,8 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+town[:residents].delete("Belle")
+town[:castle][:guests] << "Belle"
 ```
 
 ### Question 3
@@ -77,7 +80,9 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+friends.each do |friend|
+  puts "Belle is friends with #{friend}"
+end  
 ```
 
 ## Ruby OOP
@@ -100,8 +105,37 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
-```
+class Animal
+attr_accessor :name
+
+  def initialize(name)
+    @name = name
+  end
+  def greet
+    puts "Hello there"
+  end
+end
+
+Animal.new("Pumba")
+
+class Lion < Animal
+@@pack = 0
+
+    def initialize(name, king)
+      super(name)
+      if name == "Simba"
+        @king = TRUE
+      else  
+        @king = false
+      end
+      @@pack += 1
+    end    
+
+    def how_many
+      puts @@pack
+    end  
+end
+    ```
 
 ## SQL, Databases, and ActiveRecord
 
@@ -118,7 +152,12 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+An ERD is an Entity Relationship Diagram. Using this diagram helps conceptualize the relationships between Objects in an Object oriented computer language environment and how we might access them in reference to each other.
+Genie has one Lamp
+lamp belongs to one Genie
+
+Person can have many pets
+a pet can only have one person    
 ```
 
 ### Question 6
@@ -129,7 +168,16 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+A schema sets the contents of the rows and columns of a table in a database.
+
+class People
+  has_many :wishes
+end
+
+class Wishes
+  belongs_to :people
+end  
+
 ```
 
 ### Question 7
@@ -154,15 +202,17 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+Al = Person.create(name: 'al', age: 2)
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
 
 Your answer...
 
-```ruby
-Replace this with your answer
+```
+
+Person.Where('age == 15')
+
 ```
 
 ### Question 8
@@ -172,5 +222,7 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+Get '/' do
+  puts 'hello world'
+end
 ```
