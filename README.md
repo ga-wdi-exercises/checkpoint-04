@@ -147,7 +147,29 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+ERD stands for "Entity Relationship Diagram". It is uses to model the relationships of objects to one another.
+
+Genie:
+  id: 234
+  wishes_remain: 3,
+  home_id: 34
+
+Lamp:
+  id: 34,
+  origin: desert,
+  has_been_rubbed: true
+
+
+Person:
+  id: 4934,
+  address: "432 Jabroni Drive",
+  pet_id: 5894,
+
+Pet:
+  id: 5894
+  type: "dog",
+  vaccinated: true
+
 ```
 
 ### Question 6
@@ -158,7 +180,9 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+A schema is a what defines what each column in a table represents.  To take it further, if a row represents an object, then a column is each objects properties and the table is a collection of objects and their properties.
+
+In the people to wishes relationship model, a single person can have 3 wishes.  The wishes table is an extension of a person. This relationship does not work in the inverse though.
 ```
 
 ### Question 7
@@ -183,7 +207,7 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+person = Person.new(name: 'Stone Cold Steve Austin', age: 45)
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -191,7 +215,7 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+Person.where("age == 15")
 ```
 
 ### Question 8
@@ -201,5 +225,7 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+get '/oh_hello'
+  return "<h2>hello world</h2>"
+end
 ```
