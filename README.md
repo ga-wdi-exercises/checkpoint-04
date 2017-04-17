@@ -163,7 +163,9 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+A schema is an outline of column names, data types and unique cases like
+'primary key'. We can represent 1:many relationships in our schema by adding
+additional variables to each table. 
 ```
 
 ### Question 7
