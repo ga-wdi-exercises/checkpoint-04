@@ -139,7 +139,10 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+Schema is a collection of database objects(tables) associated with a database
+
+teacher: teach_id, first_name, last_name #the 'one' side
+classes: class_id, class_name, teacher_id #the 'many' side
 ```
 
 ### Question 7
