@@ -29,7 +29,13 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
-# code here
+
+	def offer_rose(person)
+		puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+	end
+
+
+offer_rose("young prince")
 ```
 
 ### Question 2
@@ -54,7 +60,8 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+town[:residents].delete("Belle")
+town[:castle][:guests]<<"Belle"
 ```
 
 ### Question 3
@@ -77,7 +84,9 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+friends.each do |friend|
+puts "Belle is friends with #{friend}"
+end
 ```
 
 ## Ruby OOP
@@ -100,7 +109,43 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+class Animal
+		# I blanked on the name for attr_accessor so I looked that up
+		attr_accessor :name
+
+		def initialize(name)
+			@name = name
+		end
+
+		def greet
+			puts "Good morning #{name}!"
+		end
+	end
+
+	pumba = Animal.new("Pumba")
+
+	class Lion < Animal
+		@@pack = []
+
+		def initialize(name)
+			super(name)
+			@king = false
+			@@pack << @name
+		end
+
+		def king_status
+			if @name == "Simba"
+				@king = true
+			end
+		end
+
+		def Lion.show_pack
+			puts @@pack
+		end
+	end
+
+	simba = Lion.new("Simba")
+	simba.king_status
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -118,7 +163,16 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+An ERD is an entity relational diagram.  It helps visualize how different sets of data might relate to each other, and is helpful for developing applications so you know how to set up your databases and models.
+
+A genie's attributes might be: name, origin, number of wishes it grants
+A lamps' attributes might be: color, material, how to activate it
+A person's attributes might be: name, hopes, fears
+A pet's attributes might be: name, species
+
+Usually a lamp has one genie and a genie belongs to one lamp.
+A person can have many lamps, a lamp only belongs to one person at a time.
+A person can have many pets, a pet only belongs to one person at a time.
 ```
 
 ### Question 6
@@ -129,7 +183,17 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+A schema lays out how the data from a database will look?
+like
+genie (
+name: VARCHAR NOT NULL
+origin: VARCHAR NOT NULL)
+
+person
+has_many lamps
+
+lamp
+belongs_to person
 ```
 
 ### Question 7
@@ -154,7 +218,7 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+caroline = Person.create(name: "Caroline", age: 99)
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -162,7 +226,7 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+Person.where(age >= 15)
 ```
 
 ### Question 8
@@ -172,5 +236,7 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+gets '/oh_hello' do
+puts "hello world"
+end
 ```
