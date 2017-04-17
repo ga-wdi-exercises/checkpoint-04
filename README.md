@@ -29,7 +29,11 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
-# code here
+def offer_rose(person)
+  puts "would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+
+offer_rose(young prince)
 ```
 
 ### Question 2
@@ -54,7 +58,8 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+town[:residents].delete("Belle")
+town[:castle][:guests] << "Belle"
 ```
 
 ### Question 3
@@ -77,7 +82,9 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+friends.each do |friend|
+  puts "Belle is friends with #{friend}"
+end
 ```
 
 ## Ruby OOP
@@ -100,7 +107,30 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+class Animal
+  attr_accessor :name
+
+  def initialize name
+    @name = name
+
+  def say_hello
+    puts "hello person, my name is #{@name}"
+  end
+
+class Lion < Animal
+  attr_accessor :king
+  @@pack = []
+
+  def initialize name
+    super(name)
+    if name = "Simba"
+      then @king = true
+    else
+      then @king = false
+    end
+    @@pack += 1
+  end
+
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -118,7 +148,13 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+ERD is and entity relationship diagram, we use these to help visualize relationships our major enitities will have with eachother.
+
+genie-lamp: one to one
+genie-person: one to one
+person - pet: one to many
+lamp - person: one to many
+
 ```
 
 ### Question 6
@@ -129,7 +165,7 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+
 ```
 
 ### Question 7
@@ -154,7 +190,7 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+Person.create(name:"Conner", age:"22")
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -162,7 +198,7 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+Person.where(age:15)
 ```
 
 ### Question 8
@@ -172,5 +208,7 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+get '/oh_hello' do
+  puts "hello world"
+end
 ```
