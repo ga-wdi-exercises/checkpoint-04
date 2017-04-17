@@ -52,9 +52,9 @@ Using Ruby...
 - Add her to the list of guests in the castle.
 
 Write your code here...
-
 ```ruby
-# code here
+town[:resindents].delete(1)
+town[:guests].push()
 ```
 
 ### Question 3
@@ -77,7 +77,8 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+for friends.each do |use|
+  puts "Belle is friends woiths #{use}"
 ```
 
 ## Ruby OOP
