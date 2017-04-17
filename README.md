@@ -29,7 +29,11 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
-# code here
+def offer_rose(person)
+  puts "Would you take this rose, #{person} in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+
+offer_rose("Young Prince")
 ```
 
 ### Question 2
@@ -54,7 +58,8 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+belle = town[:residents][1]
+town.delete(belle) ## Not sure why this doesn't work, halp please
 ```
 
 ### Question 3
@@ -77,7 +82,9 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+friends.each {|friend|
+  puts "Belle is friends with #{friend}"
+}
 ```
 
 ## Ruby OOP
@@ -100,7 +107,46 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+class Animal
+  attr_accessor :name
+
+  def initialize(name)
+    @name = name
+  end
+
+  def name
+    @name
+  end
+
+  def greet
+    puts "Greetings. My name is #{@name}!"
+  end
+end
+
+pumba = Animal.new("Pumba")
+
+class Lion < Animal
+  @@pack = []
+
+  def initialize(name)
+    @name = name
+    @@pack.push(self)
+  end
+
+  def self.pack
+    return @@pack
+  end
+
+  def is_king ## This last bit was confusing so I made an is king method
+    if @name == 'Simba'
+      puts "I'm #{@name}, king of the Pridelands!"
+    else
+      puts "False King"
+    end
+  end
+end
+
+simba = Lion.new("Simba")
 ```
 
 ## SQL, Databases, and ActiveRecord
