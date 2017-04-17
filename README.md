@@ -28,8 +28,13 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 
 Write your code here...
 
-```ruby
-# code here
+``` 
+def offer_rose person
+	puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+
+offer_rose "little_prince"
+
 ```
 
 ### Question 2
@@ -53,8 +58,10 @@ Using Ruby...
 
 Write your code here...
 
-```ruby
-# code here
+```
+town[:residents].delete("Belle")
+town[:castle][:guests].push "Belle"
+
 ```
 
 ### Question 3
@@ -76,8 +83,9 @@ Belle is friends with Mrs. Potts
 
 Write your code here...
 
-```ruby
-# code here
+```
+friends.each{ |friend| puts "Belle is a friend with #{friend}"}
+
 ```
 
 ## Ruby OOP
@@ -99,8 +107,28 @@ Each lion should have...
 
 Create a new lion instance with the name "Simba".
 
-```ruby
-# code here
+```
+class Animal
+  attr_accessor :name
+
+  def initialize name
+    @name = name
+  end
+
+  def greet
+    puts "Stay away, this is a  #{@name}."
+  end
+end
+
+class Lion < Animal
+  attr_accessor :king
+  @@pack = []
+  
+  
+  
+end
+
+
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -118,7 +146,10 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+Entity relational digram to virtualy plan a software for example:
+
+one-to-one relationship between Genie and Lamp
+one-to-many relationship between Person and Pet
 ```
 
 ### Question 6
@@ -129,7 +160,7 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+A representation of a plan or theory in the form of an outline or model.
 ```
 
 ### Question 7
@@ -154,7 +185,7 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+Person.create(name: "Ammar", age: 29)
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -162,7 +193,7 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+Person.where(age: >= 15)
 ```
 
 ### Question 8
