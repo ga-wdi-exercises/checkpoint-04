@@ -29,7 +29,12 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
-# code here
+def offer_rose (person)
+  puts "Would you take this rose #{person}, in exchnage for giving an old beggar woman shelter from the bitter cold?"
+end
+
+offer_rose.
+
 ```
 
 ### Question 2
@@ -54,7 +59,7 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+town.delete(residents: 1)
 ```
 
 ### Question 3
@@ -100,7 +105,21 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+class Animal
+  def initialize(name)
+    @name = name
+  end
+
+    def greet
+    end
+end
+
+class Lion < Animal (name)
+  def greet
+    @name = name
+    @pack = pack
+  end
+end
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -154,7 +173,7 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+this_person = Person.new(name: "Stormy", age: "39")
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -162,7 +181,7 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+fifteen = Person.where( 'age == 15')
 ```
 
 ### Question 8
