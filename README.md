@@ -160,7 +160,7 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-schema is the structure of the database. We can structure the database as rows and and id. 
+A representation of a plan or theory in the form of an outline or model.
 ```
 
 ### Question 7
