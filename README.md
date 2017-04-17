@@ -153,7 +153,7 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+ERD is an Entity-Relationship Diagram which gives an overview of your models and how they are associated. For example, 'Genie' is related to 'Lamp'(one-to-one), and 'Pet' is related to 'Person'(many-to-many).
 ```
 
 ### Question 6
@@ -164,7 +164,8 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+Each schema defines what each columns it has in application's database.
+Ex)Schema for 'people' would define name, gender, address, etc.
 ```
 
 ### Question 7
