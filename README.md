@@ -21,17 +21,20 @@ or the language specifier after them.
 ### Question 1
 
 Define a method called `offer_rose`, which should take one argument named `person`.
-
+  person = "Omar"
+  offer_rose.each do |person|
+    puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+  end
 When called the method should `puts` "Would you take this rose, `person`, in exchange for giving an old beggar woman shelter from the bitter cold?"
 
 Demonstrate calling the method, passing in "young prince" as the argument.
 
 Write your code here...
-
 ```ruby
-# code here
+for young_prince in person do
+offer_rose
+end
 ```
-
 ### Question 2
 
 Assume the following hash...
@@ -52,11 +55,10 @@ Using Ruby...
 - Add her to the list of guests in the castle.
 
 Write your code here...
-
 ```ruby
-# code here
+  residents.delete[1]
+  castle[:guests] << "Belle"
 ```
-
 ### Question 3
 
 Assume you have an array of strings representing friend's names...
@@ -77,7 +79,10 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+friends = ["Chip Potts", "Cogsworth", "Lumière", "Mrs. Potts"]
+friends.each do
+  puts "Belle is friends with #{friends}"
+end  
 ```
 
 ## Ruby OOP
