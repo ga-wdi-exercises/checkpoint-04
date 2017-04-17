@@ -58,7 +58,8 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+town[:castle][:guests].push(town[:residents][1])
+town[:residents][1].delete("Belle")
 ```
 
 ### Question 3
@@ -81,7 +82,7 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+friends.each {|friend| puts "Belle is friends with #{friend}"}
 ```
 
 ## Ruby OOP
@@ -104,7 +105,31 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+class Animal
+	attr_accessor :name
+	def initialize( initial_name, initial_greet)
+		@name = initial_name
+		@greet = initial_greet
+	end
+end
+
+pumba = Animal.new('Pumba', 'Hello!!')
+
+class Lion < Animal
+  attr_accessor :name, :greet
+  @@pack = []
+	def initialize( initial_name, initial_greet)
+    super(initial_name, initial_greet)
+    @king = true if @name == "Simba"
+    @king = false if @name != "Simba"
+
+		@name = initial_name
+		@greet = initial_greet
+    @@pack << self
+	end
+end
+
+simba = Lion.new('Simba', 'Rawr!')
 ```
 
 ## SQL, Databases, and ActiveRecord
