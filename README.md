@@ -32,6 +32,8 @@ Write your code here...
 def offer_rose(person)
   puts "would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
 end
+
+offer_rose(young prince)
 ```
 
 ### Question 2
@@ -56,7 +58,8 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+town[:residents].delete("Belle")
+town[:castle][:guests] << "Belle"
 ```
 
 ### Question 3
@@ -79,7 +82,9 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+friends.each do |friend|
+  puts "Belle is friends with #{friend}"
+end
 ```
 
 ## Ruby OOP
@@ -102,7 +107,27 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+class Animal
+  attr_accessor :name
+
+  def initialize name
+    @name = name
+
+  def say_hello
+    puts "hello person my name is #{@name}"
+  end
+
+class Lion < Animal
+  attr_accessor :king
+  @@pack = []
+
+  def initialize name
+    super(name)
+    if name = "Simba"
+      then @king = true
+    else
+      then @king = false
+
 ```
 
 ## SQL, Databases, and ActiveRecord
