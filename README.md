@@ -182,5 +182,7 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+get '/oh_hello'
+  puts "Hello world!"
+end
 ```
