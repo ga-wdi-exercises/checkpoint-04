@@ -32,9 +32,12 @@ Write your code here...
 require 'pry'
 class User
   def offer_rose (person)
-    @person = person
+    puts "Would you take this rose, #{person} in exchange for giving an old beggar woman shelter from the bitter cold?"
   end
+  young_prince = User.new("Young Prince")
+  binding.pry
 
+  puts "end of file"
 ```
 
 ### Question 2
@@ -59,7 +62,11 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+def Belle
+  return "#{residents,1}"
+end
+def residents<< 'Belle'
+
 ```
 
 ### Question 3
@@ -82,7 +89,9 @@ Belle is friends with Mrs. Potts
 Write your code here
 
 ```ruby
-# code here
+  for friends.each do |friend|
+>     puts "Belle is friends with #{friends}"
+>   end
 ```
 
 ## Ruby OOP
@@ -123,7 +132,7 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+It is a relational database used to connect large collections of information
 ```
 
 ### Question 6
@@ -134,7 +143,7 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+A schema is
 ```
 
 ### Question 7
@@ -177,5 +186,10 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+require 'sinatra'
+require 'sinatra/reloader'
+get '/oh_hello' do
+  return 'Hello world!'
+end
+
 ```
