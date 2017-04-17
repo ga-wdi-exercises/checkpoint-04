@@ -160,7 +160,7 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+schema is the structure of the database. We can structure the database as rows and and id. 
 ```
 
 ### Question 7
@@ -185,7 +185,7 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+Person.create(name: "Ammar", age: 29)
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -193,7 +193,7 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+Person.where(age: >= 15)
 ```
 
 ### Question 8
