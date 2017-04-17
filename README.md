@@ -110,7 +110,12 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+class Animal
+
+end
+
+
+
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -128,7 +133,13 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+This is an entity-relationship diagram.  It illustrates an information system's entities and relationships between all of those entities.
+
+Genie & Lamp
+this is a one-to-one relationship.  Only one genie can live in one Lamp
+
+Person & Pet
+This is a many-to-many relationship (I think?).  Many people can have many pets.
 ```
 
 ### Question 6
