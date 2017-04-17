@@ -153,7 +153,11 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+an ERD is an Entity Relationship Diagram.  it shows the relationships between different parts of an applications, which helps us to figure out exactly how we want to structure our application.
+  Genie to Lamp is a one-to-one
+  Lamp to Genie could be a one-to-many, but is probably more likely a one-to-one.
+  Person to Pet is a one-to-many.
+  Pet to Person is also a one-to many.
 ```
 
 ### Question 6
@@ -164,7 +168,7 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+a schema is the structure for a table in our database.  a one to many relationship would be
 ```
 
 ### Question 7
