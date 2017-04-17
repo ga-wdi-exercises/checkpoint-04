@@ -106,7 +106,7 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -124,7 +124,12 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+ERD also known as Enitiy Relationship Diagram, it's a tool that using for describe the relationship between data and visualizing those data, and group those values of data and the relationships.
+
+Example:
+one-to-one : Genie and lamp
+one-to-many : Person and many pets
+many-to-many :
 ```
 
 ### Question 6
@@ -133,9 +138,8 @@ Describe what a schema is, and how we represent a one-to-many relationship in a
 SQL database. If you need an example, you can use `people` and `wishes` models.
 
 Your answer...
-
 ```
-Replace this with your answer
+
 ```
 
 ### Question 7
