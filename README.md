@@ -164,7 +164,9 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+An ERD is an 'Entity Relationship Diagram' that is used as a planning tool for applications. It helps show the relationship between entities or assets in order to decide what attributes they're being given.
+
+eg. A genie is an entity on it's own that can be contained by a lamp. Lamps can only have one genie and be owned by one person at a time. Those can be considered one to one relationships. A person can have many pets and occasionally a pet can have more than one person. That can be considered a many to many relationship.
 ```
 
 ### Question 6
@@ -175,7 +177,7 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+A schema holds the basic contents that can populate data tables. For example, a schema file for 'people' can have the attributes, name, age, occupation, etc. and those attributes would create columns with the information that will be filled in when there is a new entry. In the SQL database a one-to-many relationship can be represented using "belongs_to" and "has_many". For example, "wishes" belong to "people" but "people" can have many "wishes".
 ```
 
 ### Question 7
