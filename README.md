@@ -163,7 +163,16 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+An ERD is an entity relational diagram.  It helps visualize how different sets of data might relate to each other, and is helpful for developing applications so you know how to set up your databases and models.
+
+A genie's attributes might be: name, origin, number of wishes it grants
+A lamps' attributes might be: color, material, how to activate it
+A person's attributes might be: name, hopes, fears
+A pet's attributes might be: name, species
+
+Usually a lamp has one genie and a genie belongs to one lamp.
+A person can have many lamps, a lamp only belongs to one person at a time.
+A person can have many pets, a pet only belongs to one person at a time.
 ```
 
 ### Question 6
@@ -174,7 +183,17 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+A schema lays out how the data from a database will look?
+like
+genie (
+name: VARCHAR NOT NULL
+origin: VARCHAR NOT NULL)
+
+person
+has_many lamps
+
+lamp
+belongs_to person
 ```
 
 ### Question 7
