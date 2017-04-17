@@ -144,7 +144,15 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+An Entity Relationship Diagram is a technique for modeling the why our
+disparate tables/databases/content interact with each other. 1:1, 1:many, and
+many:many are the three types of relationships.
+
+- Theres only 1 lamp to 1 genie
+- 1 genie can only be 1 person
+- 1 genie can have many pets
+
+(This is all I can remember from Alladin)
 ```
 
 ### Question 6
