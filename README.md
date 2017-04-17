@@ -81,7 +81,10 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+friends.each do |friends|
+  puts "Belle is friends with #{friends}"
+end
+
 ```
 
 ## Ruby OOP
@@ -104,7 +107,26 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+class Animal
+  attr_accessor :name, :greet
+  def initialize (name, greet)
+    @name = name
+    @greet = greet
+  end
+end
+
+animal = Animal.new("Pumba", nil)
+# Ceating Pumba works. Getting and "Uninitilized constant error for Lion class"  
+
+class Person < Lion
+    attr_accessor :name, :greet
+    def initialize (name, greet)
+    @name = name
+    @greet = greet
+  end
+end
+
+lion = Lion.new("Simba")
 ```
 
 ## SQL, Databases, and ActiveRecord
