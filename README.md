@@ -29,7 +29,11 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 Write your code here...
 
 ```ruby
-# code here
+def offer_rose (person)
+  puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+
+offer_rose ("young prince")# code here
 ```
 
 ### Question 2
@@ -54,7 +58,8 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+town[:residents] - ["Belle"]
+town[:castle][:guests].push("Belle")# code here
 ```
 
 ### Question 3
@@ -77,7 +82,7 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+friends.each {|friend| puts "Belle is friends with #{friend}"}# code here
 ```
 
 ## Ruby OOP
@@ -100,7 +105,30 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```ruby
-# code here
+class Animal
+  attr_accessor :name
+  def initialize (name)
+    @name = name
+  end
+
+  def greet
+    return "Hello, my name is #{@name}"
+  end
+end
+
+zebra = Animal.new ("Pumba")
+
+class Lion < Animal
+  @@pack = []
+  def initialize (name, is_king)
+    @name = name
+    @king = is_king
+    @@pack.push(name)
+  end
+end
+
+
+  # code here
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -118,7 +146,8 @@ entities (no need to draw an ERD)...
 Your answer...
 
 ```
-Replace this with your answer
+ ERDs is the process used to establish relationships between entities.
+
 ```
 
 ### Question 6
@@ -129,7 +158,8 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+A schema is the footprint (list of attributes) that will be contained in the new table.
+Relationships can be has_many or belongs_to.
 ```
 
 ### Question 7
