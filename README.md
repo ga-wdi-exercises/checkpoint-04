@@ -162,9 +162,12 @@ entities (no need to draw an ERD)...
 - Pet
 
 Your answer...
+ERD stands for Entity Relationship Diagram.  It lists out the relationships of entity sets stored in a database.
+Entity meaning a component of data.  The ERD acts as a way of creating logical structure for our databases.
 
-```
-Replace this with your answer
+A lamp can have one genie.  One to One relationships.
+A person can have many pets.  A one to many relationship.
+``
 ```
 
 ### Question 6
@@ -173,7 +176,7 @@ Describe what a schema is, and how we represent a one-to-many relationship in a
 SQL database. If you need an example, you can use `people` and `wishes` models.
 
 Your answer...
-
+The schema basically represents the table's columns.  It lays out what the columns consist of as well as the data types within those columns.
 ```
 Replace this with your answer
 ```
@@ -200,7 +203,7 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+person = Person.new(name: "Marcus Miller", age: 27)
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -208,7 +211,7 @@ Write Ruby code that will query for any person that is 15 years of age.
 Your answer...
 
 ```ruby
-Replace this with your answer
+Person.where(age: 15)
 ```
 
 ### Question 8
@@ -218,5 +221,7 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 Your answer...
 
 ```ruby
-Replace this with your answer
+get '/oh_hello'
+return "hello world"
+end
 ```
