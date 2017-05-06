@@ -27,10 +27,19 @@ When called the method should `puts` "Would you take this rose, `person`, in exc
 Demonstrate calling the method, passing in "young prince" as the argument.
 
 Write your code here...
+  def offer_rose(person)
+  'person' => "young prince"
+  puts "Would you take this rose in, in exchange for giving an old beggar woman shelter from the bitter cold?"(#person)
+end
+
 
 ```ruby
 # code here
 ```
+def offer_rose(person)
+'person' => "young prince"
+ puts "Would you take this rose in, in exchange for giving an old beggar woman shelter from the bitter cold?"(#person)
+end
 
 ### Question 2
 
@@ -47,6 +56,9 @@ town = {
 }
 ```
 
+residents.delete(belle)
+belle.push]guests: []
+
 Using Ruby...
 - Remove Belle from the town residents
 - Add her to the list of guests in the castle.
@@ -54,7 +66,9 @@ Using Ruby...
 Write your code here...
 
 ```ruby
-# code here
+# code her
+residents.delete(belle)
+belle.push]guests:[]
 ```
 
 ### Question 3
@@ -77,7 +91,10 @@ Belle is friends with Mrs. Potts
 Write your code here...
 
 ```ruby
-# code here
+friends = ["Chip Potts", "Cogsworth", "Lumière", "Mrs. Potts"]
+Friends.each do |i|
+  puts "friends of Belle"
+end
 ```
 
 ## Ruby OOP
@@ -115,10 +132,13 @@ entities (no need to draw an ERD)...
 - Person
 - Pet
 
-Your answer...
+ERD is a entity-relationship diagram. An ERD initiates the Active Record models and processes their attributes.
 
+Person is the parent
+Pet would be the child associated with the Person
+Genie is grandchild associated with the Person
+Lamp is the great grandchild associated with the person
 ```
-Replace this with your answer
 ```
 
 ### Question 6
@@ -129,7 +149,7 @@ SQL database. If you need an example, you can use `people` and `wishes` models.
 Your answer...
 
 ```
-Replace this with your answer
+
 ```
 
 ### Question 7
@@ -154,7 +174,16 @@ Write Ruby code that will create an instance of a person.
 Your answer...
 
 ```ruby
-Replace this with your answer
+module ActiveRecord
+  class person
+    # some stuff
+    class << self
+      def find(...)
+        # blah
+      end
+    end
+  end
+end
 ```
 
 Write Ruby code that will query for any person that is 15 years of age.
@@ -171,6 +200,7 @@ Write a route in Sinatra that will print "hello world" in the web browser at the
 
 Your answer...
 
+
 ```ruby
-Replace this with your answer
+require_relative "hello world"
 ```
