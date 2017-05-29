@@ -120,8 +120,6 @@ Your answer goes here...
 
 ### Question 7
 
-> This question has two parts.
-
 Consider a class `Person` that inherits from `ActiveRecord::Base` and has the following schema...
 
 ```rb
@@ -143,16 +141,18 @@ Write Ruby code that will create an instance of a person...
 # Your code goes here...
 ```
 
-Write Ruby code that will query for any person that is 15 years of age...
+### Question 8
 
-```ruby
+Assuming the `Person` class from the previous question, write Ruby code that will query for any person that is 15 years of age...
+
+```rb
 # Your code goes here...
 ```
 
-### Question 8
+### Question 9
 
 Write a route in Sinatra that will print "Hello world" in the web browser at the following URL: `http://localhost:4567/oh_hello`
 
-```ruby
+```rb
 # Your code goes here...
 ```
