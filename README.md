@@ -42,8 +42,8 @@ town = {
 ```
 
 Using Ruby...
-- Remove Belle from `residents`
-- Add her to the `guests` array
+- Remove "Belle" from `residents`
+- Add "Belle" to the `guests` array
 
 ```rb
 # Your code goes here...
