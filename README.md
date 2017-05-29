@@ -10,7 +10,7 @@
 
 For questions 1-4, you must test your code before filling in an answer. You can do this by creating and running your own `app.rb` file.
 
-> **Note**: Only place your answer between backticks. Don't modify the backticks or the language specifier after them.
+> Only place your answer between the backticks provided for you throughout the checkpoint.
 
 ## Ruby Basics & Enumerables
 
@@ -44,8 +44,6 @@ town = {
 Using Ruby...
 - Remove Belle from `residents`
 - Add her to the `guests` array
-
-Write your code here...
 
 ```rb
 # Your code goes here...
