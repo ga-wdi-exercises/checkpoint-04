@@ -23,7 +23,21 @@ When called the method should print "Would you take this rose, `person`, in exch
 Demonstrate calling the method, passing in "young prince" as the argument.
 
 ```rb
-# Your code goes here...
+require "pry"
+Class Person
+  def initialize (person)
+     @person:person
+  end
+  def offer_rose(person)
+    puts "Would you take this rose, #{@person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+  end
+end
+
+binding.pry
+# To call the method:
+young_prince=Person.new("offer_rose")
+young_prince.offer_rose
+
 ```
 
 ### Question 2
@@ -46,7 +60,9 @@ Using Ruby...
 - Add "Belle" to the `guests` array
 
 ```rb
-# Your code goes here...
+
+town.delete([:residents][1])
+town[:guests][0]="Belle"
 ```
 
 ### Question 3
@@ -67,7 +83,10 @@ Belle is friends with Mrs. Potts
 ```
 
 ```rb
-# Your code goes here...
+friends.map |friend| do
+  Puts "Belle is friends with #{friend}"
+end
+
 ```
 
 ## Ruby OOP
@@ -90,7 +109,23 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```rb
-# Your code goes here...
+class Animal
+  attr_accessor:name
+  def initialize (name)
+     @name:name
+  end
+  def greet
+    puts "Hi my name is #{@name} and I am Animal."
+  end
+
+end
+class Lion < Animal
+  @@pack=[]
+  def initialize (name)
+     @name:name
+     @@pack.push(@name)
+  end
+end
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -106,7 +141,10 @@ entities (no need to draw an ERD)...
 - Pet
 
 ```
-Your answer goes here...
+# ERD (Entity Relation Diagram) is a diagrammatic representation of the relationship
+# between the major entities and feature in our application.
+# E.g. A person can have many pet, so the relationship will be one to many.
+# In reverse, many pet can belong to a single Person, but can`t belong to many person assuming Person as registered owner. So the relationship will be many to one.
 ```
 
 ### Question 6
@@ -115,7 +153,9 @@ Describe what a schema is and how we represent a one-to-many relationship in a
 SQL database.
 
 ```
-Your answer goes here...
+# Schema is used to define what columns the table will have. Such as column name, data type
+# and any constraints if they have.
+# We represent one-to-many relation using the keyword"has_many"
 ```
 
 ### Question 7
@@ -138,7 +178,11 @@ CREATE TABLE persons(
 Write Ruby code that will create an instance of a person...
 
 ```rb
-# Your code goes here...
+abc= Person.new(name:abc,age: 53)
+abc.save
+
+OR
+abc=Person.create(name:abc,age: 53)
 ```
 
 ### Question 8
@@ -146,7 +190,7 @@ Write Ruby code that will create an instance of a person...
 Assuming the `Person` class from the previous question, write Ruby code that will query for any person that is 15 years of age...
 
 ```rb
-# Your code goes here...
+age_of_15=Person.find_by(age:15)
 ```
 
 ### Question 9
@@ -154,5 +198,8 @@ Assuming the `Person` class from the previous question, write Ruby code that wil
 Write a route in Sinatra that will print "Hello world" in the web browser at the following URL: `http://localhost:4567/oh_hello`
 
 ```rb
-# Your code goes here...
+get '/oh_hello'
+  "Hello world"
+end
+
 ```
