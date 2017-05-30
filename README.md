@@ -23,7 +23,30 @@ When called the method should print "Would you take this rose, `person`, in exch
 Demonstrate calling the method, passing in "young prince" as the argument.
 
 ```rb
-# Your code goes here...
+require "pry"
+
+class BeautyAndTheBeast
+
+  attr_accessor :person
+
+  def initialize ([person])
+    @person = person
+
+    def set_name_to(some_string)
+      @person = some_string
+    end
+
+    def offer_rose
+      puts "Would you take this rose #{@person} in exchange for giving an old beggar woman shelter from the bitter cold?"
+    end
+
+  end
+@young_prince.offer_rose
+end
+
+binding.pry
+
+puts "end of test"
 ```
 
 ### Question 2
@@ -46,7 +69,11 @@ Using Ruby...
 - Add "Belle" to the `guests` array
 
 ```rb
-# Your code goes here...
+
+residents.delete_at(1)
+
+guests.push("Belle")
+
 ```
 
 ### Question 3
@@ -67,7 +94,21 @@ Belle is friends with Mrs. Potts
 ```
 
 ```rb
-# Your code goes here...
+
+require "pry"
+
+class Belle
+
+@friends = ["Chip Potts", "Cogsworth", "Lumière", "Mrs. Potts"]
+
+def say_friends
+  puts "Belle is friends with #{@friends.each}"
+end
+
+say_friends
+end
+
+binding.pry
 ```
 
 ## Ruby OOP
