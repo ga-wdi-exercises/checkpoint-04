@@ -23,7 +23,11 @@ When called the method should print "Would you take this rose, `person`, in exch
 Demonstrate calling the method, passing in "young prince" as the argument.
 
 ```rb
-# Your code goes here...
+def offer_rose person
+  puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+
+offer_rose "young prince"
 ```
 
 ### Question 2
@@ -46,7 +50,9 @@ Using Ruby...
 - Add "Belle" to the `guests` array
 
 ```rb
-# Your code goes here...
+town[:residents].delete("Belle")
+town[:guests].push("Belle")
+
 ```
 
 ### Question 3
@@ -67,7 +73,9 @@ Belle is friends with Mrs. Potts
 ```
 
 ```rb
-# Your code goes here...
+friends.each do |name|
+  puts "Belle is friends with #{name}."
+end
 ```
 
 ## Ruby OOP
@@ -90,7 +98,28 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```rb
-# Your code goes here...
+class Animal
+
+  def set_name(name)
+    @name = name
+  end
+  def get_name(name)
+    puts @name
+  end
+  def greet
+    puts "Hi my name is #{@name}."
+  end
+
+end
+
+pumba = Animal.new
+pumba.set_name("Pumba")
+
+
+class Lion < Animal
+
+
+end
 ```
 
 ## SQL, Databases, and ActiveRecord
