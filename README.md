@@ -23,7 +23,10 @@ When called the method should print "Would you take this rose, `person`, in exch
 Demonstrate calling the method, passing in "young prince" as the argument.
 
 ```rb
-# Your code goes here...
+def offer_rose(person)
+  puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+offer_rose("young prince")
 ```
 
 ### Question 2
@@ -46,7 +49,8 @@ Using Ruby...
 - Add "Belle" to the `guests` array
 
 ```rb
-# Your code goes here...
+residents.delete("Belle")
+guests.push("Belle")
 ```
 
 ### Question 3
@@ -67,7 +71,9 @@ Belle is friends with Mrs. Potts
 ```
 
 ```rb
-# Your code goes here...
+friends.each do |friend|
+  puts "Belle is friends with #{friend}"
+end
 ```
 
 ## Ruby OOP
@@ -91,6 +97,35 @@ Create a new lion instance with the name "Simba".
 
 ```rb
 # Your code goes here...
+class Animal
+
+  def initialize(name)
+    @name = name
+  end
+  def greet
+    puts "Hello! my name is #{@name}. I am an animal and definitely not a robot."
+  end
+  def get_name
+    return @name
+  end
+  def set_name(name)
+    @name = name
+  end
+end
+
+class Lion < Animal
+  @king = false
+  pack = []
+  if @name == "Simba"
+    king = true
+  end
+  pack.push(Lion)
+  def get_king
+    return @king
+  end
+end
+
+Pumba = Animal.new("Pumba")
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -106,7 +141,11 @@ entities (no need to draw an ERD)...
 - Pet
 
 ```
-Your answer goes here...
+An ERD is a way of mapping out the relationships between entities and how they can interact.  It's a good way to visualize what's going on between tables, objects, etc.
+Genie would be many to one with person (one person could activate several genies), one to one with lamp (I think. I don't know the rules, maybe there's an apartment complex in there?), and I don't think they have pets. Attributes could include their master, their freedom status, how many wishes they have granted, age, in or out of lamp
+Lamp - many to one with person, and no pets.  Lamp would hold a genie (or no genie), and user.
+Person - one to many with Genie, lamp, and pets.  Attributes could include number of lamps/genies/pets, name, age, wishes. All sorts of stuff.
+Pet - many to one with person.  No real relationships with genie and lamp. Attributes could include their owner, their age
 ```
 
 ### Question 6
@@ -115,7 +154,7 @@ Describe what a schema is and how we represent a one-to-many relationship in a
 SQL database.
 
 ```
-Your answer goes here...
+A schema is basically a collection of tables that have an owner.  one-to-many is represented visually by a line from the owner, to the schema, with many prongs coming off the end of the line toward schema, representing many things belonging to one owner
 ```
 
 ### Question 7
@@ -138,7 +177,7 @@ CREATE TABLE persons(
 Write Ruby code that will create an instance of a person...
 
 ```rb
-# Your code goes here...
+Person = Person.new(id, name, age)
 ```
 
 ### Question 8
@@ -146,7 +185,9 @@ Write Ruby code that will create an instance of a person...
 Assuming the `Person` class from the previous question, write Ruby code that will query for any person that is 15 years of age...
 
 ```rb
-# Your code goes here...
+persons.find_each do |person|
+  person.age == 15
+end
 ```
 
 ### Question 9
@@ -154,5 +195,9 @@ Assuming the `Person` class from the previous question, write Ruby code that wil
 Write a route in Sinatra that will print "Hello world" in the web browser at the following URL: `http://localhost:4567/oh_hello`
 
 ```rb
-# Your code goes here...
+require 'sinatra'
+
+get '/oh_hello' do
+  return 'Hello world!'
+end
 ```
