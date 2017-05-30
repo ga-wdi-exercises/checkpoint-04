@@ -188,7 +188,7 @@ is_15 = Person.where("age = 15")
 Write a route in Sinatra that will print "Hello world" in the web browser at the following URL: `http://localhost:4567/oh_hello`
 
 ```rb
-get '.oh_hello' do
+get '/oh_hello' do
 	puts "Hello World"
 end
 ```
