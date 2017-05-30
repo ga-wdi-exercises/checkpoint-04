@@ -23,7 +23,10 @@ When called the method should print "Would you take this rose, `person`, in exch
 Demonstrate calling the method, passing in "young prince" as the argument.
 
 ```rb
-# Your code goes here...
+def offer_rose person
+	puts "Would you take this rose, #{person}. in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+offer_rose "young Prince"
 ```
 
 ### Question 2
@@ -46,7 +49,10 @@ Using Ruby...
 - Add "Belle" to the `guests` array
 
 ```rb
-# Your code goes here...
+belle = town[:residents][1]
+town[:residents].delete("Belle")
+town[:guests] = [belle]
+
 ```
 
 ### Question 3
@@ -67,7 +73,10 @@ Belle is friends with Mrs. Potts
 ```
 
 ```rb
-# Your code goes here...
+friends = ["Chip Potts", "Cogsworth", "Lumière", "Mrs. Potts"]
+friends.each do |person|
+	puts "Belle is friends with #{person}"
+end
 ```
 
 ## Ruby OOP
@@ -90,7 +99,32 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```rb
-# Your code goes here...
+class Animal
+	attr_accessor :animal_name
+	def initialize(animal_name)
+		@animal_name = animal_name
+	end
+	def greet
+		puts "Hi my name is #{animal_name}"
+	end
+end
+pumba = Animal.new("Pumba")
+class Lion < Animal
+	@@pack = []
+	def initialize(animal_name)
+		@animal_name = animal_name
+		@king = make_king(@animal_name)
+		@@pack.push(self)
+	end
+	def make_king names
+		if names == "Simba"
+			@king = true
+		else
+			@king = false
+		end
+	end
+end
+ simba = Lion.new("Simba")
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -106,7 +140,7 @@ entities (no need to draw an ERD)...
 - Pet
 
 ```
-Your answer goes here...
+entity relationship diagram aka ERD. Is a method of showing relationships between data stored in databases. It is a visual tool used to understand how data will interact and how it is related to each other. A Person may have many pets and or Lamps(one-to-many). A Lamp will only have one Genie and a Genie one Lamp(one-to-one). A Person/Genie/Pet may share attributes such as name,age,gender but person could also have occupation and Lamp possesion.Lamp could have a metal attribute and a has_genie attribute.
 ```
 
 ### Question 6
@@ -115,7 +149,7 @@ Describe what a schema is and how we represent a one-to-many relationship in a
 SQL database.
 
 ```
-Your answer goes here...
+schema is the template for the data in the table. a one-to-many relationship can be shown by a foreign_key that is based on the primary key of its sole owner.
 ```
 
 ### Question 7
@@ -138,7 +172,7 @@ CREATE TABLE persons(
 Write Ruby code that will create an instance of a person...
 
 ```rb
-# Your code goes here...
+me = Person.create(name: "Tim",age: 27)
 ```
 
 ### Question 8
@@ -146,7 +180,7 @@ Write Ruby code that will create an instance of a person...
 Assuming the `Person` class from the previous question, write Ruby code that will query for any person that is 15 years of age...
 
 ```rb
-# Your code goes here...
+is_15 = Person.where("age = 15")
 ```
 
 ### Question 9
@@ -154,5 +188,7 @@ Assuming the `Person` class from the previous question, write Ruby code that wil
 Write a route in Sinatra that will print "Hello world" in the web browser at the following URL: `http://localhost:4567/oh_hello`
 
 ```rb
-# Your code goes here...
+get '/oh_hello' do
+	puts "Hello World"
+end
 ```
