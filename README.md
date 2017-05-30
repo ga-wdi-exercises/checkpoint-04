@@ -177,7 +177,7 @@ Write Ruby code that will create an instance of a person...
 
 
 ```rb
-INSERT INTO persons(name, age) VALUES ('Rob', 25);
+rob = Person.create(name: 'Robert', age: 25);
 ```
 
 ### Question 8
