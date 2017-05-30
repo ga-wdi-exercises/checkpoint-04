@@ -23,7 +23,10 @@ When called the method should print "Would you take this rose, `person`, in exch
 Demonstrate calling the method, passing in "young prince" as the argument.
 
 ```rb
-# Your code goes here...
+def offer_rose("person"){
+  puts "Would you take this rose" + person
+
+}
 ```
 
 ### Question 2
@@ -46,7 +49,8 @@ Using Ruby...
 - Add "Belle" to the `guests` array
 
 ```rb
-# Your code goes here...
+residents.delete(1)
+guests.push("Belle")
 ```
 
 ### Question 3
@@ -67,7 +71,9 @@ Belle is friends with Mrs. Potts
 ```
 
 ```rb
-# Your code goes here...
+friends.each do |frieds|
+  puts "Belle is friends with" + friends
+end
 ```
 
 ## Ruby OOP
@@ -90,7 +96,14 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```rb
-# Your code goes here...
+class Animal
+  def set_name()
+    @name = ()
+  end
+  def greet
+    puts "Hi + #{@name}"
+class Lion <Animal
+
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -106,7 +119,12 @@ entities (no need to draw an ERD)...
 - Pet
 
 ```
-Your answer goes here...
+An ERD is an Entity Relationahip Diagram. We use them so that we can map which entities in a program are related.
+
+Person will have relationships with pet, lamp and Genie.
+Genie will have relationships with Lamp and person.
+Lamp will have realtionship with Genie and person
+Pet will have a relationship with Person.
 ```
 
 ### Question 6
@@ -115,7 +133,8 @@ Describe what a schema is and how we represent a one-to-many relationship in a
 SQL database.
 
 ```
-Your answer goes here...
+A schema defines what columns a table has.
+We represent a one to many relationship in a database with a key (id).
 ```
 
 ### Question 7
@@ -138,7 +157,7 @@ CREATE TABLE persons(
 Write Ruby code that will create an instance of a person...
 
 ```rb
-# Your code goes here...
+antwana = Person.new("Antwana", 36)
 ```
 
 ### Question 8
@@ -154,5 +173,7 @@ Assuming the `Person` class from the previous question, write Ruby code that wil
 Write a route in Sinatra that will print "Hello world" in the web browser at the following URL: `http://localhost:4567/oh_hello`
 
 ```rb
-# Your code goes here...
+get '/oh hello' do
+  return 'Hello World'
+end
 ```
