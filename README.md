@@ -24,7 +24,10 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 
 ```rb
 # Your code goes here...
-```
+def offer_rose 'person'
+	print "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+
 
 ### Question 2
 
@@ -47,7 +50,8 @@ Using Ruby...
 
 ```rb
 # Your code goes here...
-```
+[:residents].delete_at(1)
+[:guest].push(Belle)
 
 ### Question 3
 
@@ -68,8 +72,9 @@ Belle is friends with Mrs. Potts
 
 ```rb
 # Your code goes here...
-```
-
+loop freinds.each do |name|
+puts "Belle is friends with #{name}" 
+end
 ## Ruby OOP
 
 ### Question 4
@@ -107,7 +112,12 @@ entities (no need to draw an ERD)...
 
 ```
 Your answer goes here...
-```
+Entity Relationship Diagram.
+
+- Genie - # of wishes - activation procedures - 
+- Lamp - physical base, attachements - eletrical componenet, wire to outlet - bulb for electrical light outlet
+- Person - body anatomy, limb, organs - intelligent life form - dangerous to earth and mother nature.
+- Pet - so called man's best friend - society tamed pet - belongs to animal kingdom 
 
 ### Question 6
 
@@ -116,7 +126,13 @@ SQL database.
 
 ```
 Your answer goes here...
-```
+a schema is a collection of databases and information.
+
+a one to many relationship is for example a member of the police force 'to' a 'many' - law enforcement agency. 
+
+Or
+
+college student - college courses
 
 ### Question 7
 
