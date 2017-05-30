@@ -24,6 +24,12 @@ Demonstrate calling the method, passing in "young prince" as the argument.
 
 ```rb
 # Your code goes here...
+@person = person
+def offer_rose(person)
+  puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+offer_rose(young prince)
+
 ```
 
 ### Question 2
@@ -43,10 +49,15 @@ town = {
 
 Using Ruby...
 - Remove "Belle" from `residents`
+
 - Add "Belle" to the `guests` array
+town
 
 ```rb
 # Your code goes here...
+town[:residents].delete("Belle")
+town[:castle{:guest}].push("Belle")
+
 ```
 
 ### Question 3
@@ -68,6 +79,10 @@ Belle is friends with Mrs. Potts
 
 ```rb
 # Your code goes here...
+
+get friends.each do |i|
+puts "Belle is friends with #{i[:names]}"
+end
 ```
 
 ## Ruby OOP
@@ -91,6 +106,27 @@ Create a new lion instance with the name "Simba".
 
 ```rb
 # Your code goes here...
+class Animal(name, greet)
+  attr :name
+  @@name = name
+  @@greet = greet
+
+  get animal do(name)
+    if @@name == Simba
+      king = true
+    end
+  end
+
+
+  class Pack
+  end
+end
+class Lion
+  @king = king
+  class Pack
+  end
+end
+end
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -107,6 +143,18 @@ entities (no need to draw an ERD)...
 
 ```
 Your answer goes here...
+ERD is an entitiy relationship diagram that can give us a visual representation of our data.
+Genie
+- id
+Lamp
+- type
+- production
+Person
+- id
+- profession
+Pet
+- animal category
+
 ```
 
 ### Question 6
@@ -116,6 +164,7 @@ SQL database.
 
 ```
 Your answer goes here...
+Schema is a collection of database objects that can be associated with a particular database username.
 ```
 
 ### Question 7
@@ -139,6 +188,7 @@ Write Ruby code that will create an instance of a person...
 
 ```rb
 # Your code goes here...
+fitssum = Person.new(name:"Fitssum");
 ```
 
 ### Question 8
@@ -147,6 +197,7 @@ Assuming the `Person` class from the previous question, write Ruby code that wil
 
 ```rb
 # Your code goes here...
+select * from person where age > 15;
 ```
 
 ### Question 9
@@ -155,4 +206,7 @@ Write a route in Sinatra that will print "Hello world" in the web browser at the
 
 ```rb
 # Your code goes here...
+get '/' do
+  return '<h1>Hello world!</h1>'
+end
 ```
