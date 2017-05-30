@@ -23,7 +23,11 @@ When called the method should print "Would you take this rose, `person`, in exch
 Demonstrate calling the method, passing in "young prince" as the argument.
 
 ```rb
-# Your code goes here...
+def offer_rose person
+    puts "Would you take this rose, #{person}, in exchange for giving an old beggar woman shelter from the bitter cold?"
+end
+
+offer_rose 'Young prince'
 ```
 
 ### Question 2
@@ -46,7 +50,8 @@ Using Ruby...
 - Add "Belle" to the `guests` array
 
 ```rb
-# Your code goes here...
+town[:residents].delete('Belle')
+town[:castle][:guests].push("Belle")
 ```
 
 ### Question 3
@@ -67,7 +72,9 @@ Belle is friends with Mrs. Potts
 ```
 
 ```rb
-# Your code goes here...
+friends.each do |name|
+    puts "Belle is friends with #{name}"
+end
 ```
 
 ## Ruby OOP
@@ -90,7 +97,38 @@ Each lion should have...
 Create a new lion instance with the name "Simba".
 
 ```rb
-# Your code goes here...
+class Animal
+    attr_accessor :name
+    def initialize animal_name
+        @name = animal_name;
+    end
+
+    def greet
+        puts "What's up. #{@name.capitalize} in the house."
+    end
+end
+
+pumba = Animal.new('Pumba')
+
+class Lion < Animal
+    @@pack = []
+    def initialize lion_name
+        @name = lion_name
+        if lion_name.downcase == "simba"
+            @king = true
+        else
+            @king = false
+        end
+        @@pack.push(@name)
+        super
+    end
+
+    def self.display_pack
+        puts @@pack
+    end
+end
+
+simba = Lion.new('Simba')
 ```
 
 ## SQL, Databases, and ActiveRecord
@@ -106,7 +144,7 @@ entities (no need to draw an ERD)...
 - Pet
 
 ```
-Your answer goes here...
+An ERD shows relationships between stored data in a database. An example could be that Genie's usually exist within a lamp or that a person owns a pet.
 ```
 
 ### Question 6
@@ -115,7 +153,7 @@ Describe what a schema is and how we represent a one-to-many relationship in a
 SQL database.
 
 ```
-Your answer goes here...
+A schema is the model for how data will be stored in a database. A one to one relationship in a sql database would have one row in one table correspond to one other row in another table.
 ```
 
 ### Question 7
@@ -137,8 +175,9 @@ CREATE TABLE persons(
 
 Write Ruby code that will create an instance of a person...
 
+
 ```rb
-# Your code goes here...
+INSERT INTO persons(name, age) VALUES ('Rob', 25);
 ```
 
 ### Question 8
