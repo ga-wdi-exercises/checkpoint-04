@@ -49,14 +49,6 @@ Using Ruby...
 - Add "Belle" to the `guests` array
 
 ```rb
-town = {
-  residents: ["Maurice", "Belle", "Gaston"],
-  castle: {
-    num_rooms: 47,
-    residents: "Robby Benson",
-    guests: []
-  }
-}
 belle = town[:residents][1]
 town[:residents].delete("Belle")
 town[:guests] = [belle]
